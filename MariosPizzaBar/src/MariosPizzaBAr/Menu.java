@@ -50,6 +50,4 @@ public class Menu {
             System.out.println("Can't find file");;
         }
     }
-    
-	
 }
