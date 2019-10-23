@@ -11,4 +11,9 @@ package MariosPizzaBAr;
  */
 public class BestillingsListe {
     
+    
+    
+    public void fjærnOrdre(){
+        // Skal skrive, gemme order som tekst i tekst file - tilføje sletted order til tekst file
+    }
 }
