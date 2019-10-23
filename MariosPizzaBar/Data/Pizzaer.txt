@@ -1,0 +1,30 @@
+1; Pepo; peperoni, ost; 65
+2; Sofie; peperoni, skinke, ost;70
+3; ostedroem; gorgonzola, oksekoed og ost;70
+4; bejamin; tomat, ost, gorgonzola, champignon og groen peber;80
+5; Malene;tomat, ost, skinke og champignon;75
+6; Mathias;tomat, ost, hakket oksekoed, champignon og loeg;80
+7; Thomas;tomat, ost, skinke, salami og champignon;75
+8; Anders; tomat, ost, skinke, bacon og eag;75
+9; Rasmus; tomat, ost, kylling, loeg og paprika;80
+10; Clara; tomat, ost, kebab og loeg;75
+11; Freja; tomat, ost, skinke og ananas;70
+12; Egon; tomat, ost, skinke og pepperoni;75
+13; Hanne; tomat, ost, skinke og bacon;70
+14; Klaus; tomat, ost, parmaskinke, rucolasalat og pesto;80
+15; Kevin; tomat, ost, skinke og cocktailpoelser;75
+16; Matti; tomat, ost, skinke, koedsauce, shawarma, koedboller, rejer og ananas;85
+17; Ulla; tomat, ost, champignon, loeg, ananas, asparges og paprika;80
+18; Simon; tomat, ost, skinke, pepperoni, cocktailpoelser og bacon;80
+19; Peter; tomat, ost, kebab, loeg, fetaost og tomatskiver;75
+20; Paul; tomat, ost, kylling, friske tomater, paprika, loeg og bacon;80
+21; Olivia; tomat, ost, shawarma og champignon;75
+22; Anna; tomat, ost, kebab, pepperoni, groen peber, chili og hvidloeg;80
+23; Martin; tomat, ost, hakket oksekoed, groen peber, shawarma, chili og hvidloeg;85
+24; Greta; tomat, ost, hakket oksekoed, groen peber og gorgonzola;80
+25; Vibeke; tomat, ost, skinke, bacon og loeg;75
+26; Cathrine; tomat, ost, skinke, koedsauce og champignon;80
+27; Magdalena; tomat, ost, skinke, hakket oksekoed og bearnaisesauce;85
+28; Ingrid; tomat, ost, shawarma, gorgonzola, hvidloeg og chili;85
+29; Frej; tomat, ost, rucola salat, kylling og pesto;90
+30; Thor; tomat, ost, kebab, bacon, hvidloeg, pepperoni og loeg;85
