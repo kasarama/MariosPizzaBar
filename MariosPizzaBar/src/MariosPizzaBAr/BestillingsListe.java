@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package MariosPizzaBAr;
 
-/**
- *
- * @author Magdalena
- */
+import java.util.ArrayList;
+
 public class BestillingsListe {
-    
+    ArrayList<Pizza> pizzaCompound;
+
+public void addPizza(Pizza pizza){
+pizzaCompound.add(pizza);
+}
 }
