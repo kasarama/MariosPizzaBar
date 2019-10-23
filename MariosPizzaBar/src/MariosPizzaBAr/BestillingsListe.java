@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class BestillingsListe {
 
-    ArrayList<Pizza> pizzaCompound;
+    ArrayList<Ordrer> bestillingsliste;
 
-    public void addPizza(Pizza pizza) {
-        pizzaCompound.add(pizza);
+    public void addPizza(Ordrer o) {
+        bestillingsliste.add(o);
 
     }
 
-    public void fjærnOrdre() {
-        // Skal skrive, gemme order som tekst i tekst file - tilføje sletted order til tekst file
+    public void fjernOrdre(Ordrer o) {
+        bestillingsliste.remove(o);
     }
 }
