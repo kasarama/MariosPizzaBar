@@ -30,9 +30,10 @@ public class Ordrer {
 
     public void pickUpTime() {
         Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.MINUTE,+(30));
 
         int hour = calendar.get(Calendar.HOUR);
-        int minute = calendar.get(Calendar.MINUTE) + 30;
+        int minute = calendar.get(Calendar.MINUTE);
         int second = calendar.get(Calendar.SECOND);
         System.out.println(hour + ":" + minute + ":" + second);
 
