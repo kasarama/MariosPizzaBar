@@ -10,8 +10,8 @@ import java.util.Date;
  */
 public class Ordrer {
 
-    private Date afTid;
-    ArrayList<Pizza> ordrer;
+    Date afTid;
+    ArrayList <Pizza> ordrer;
 
     public void tilføjPizza(Pizza pizza) {
         ordrer.add(pizza);

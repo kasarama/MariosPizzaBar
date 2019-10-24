@@ -21,7 +21,13 @@ public class MariosPizzaBar {
         } catch (FileNotFoundException ex) {
             //Logger.getLogger(MariosPizzaBar.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Error");
+           
         }
+        Pizza p = new Pizza(1,"ok","ok",1);
+        Ordrer o = new Ordrer(p);
+        BestillingsListe bl= new BestillingsListe(o);
+
+        
     }
     
 }

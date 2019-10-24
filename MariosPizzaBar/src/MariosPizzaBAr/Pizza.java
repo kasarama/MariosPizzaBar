@@ -2,10 +2,10 @@
 package MariosPizzaBAr;
 
 public class Pizza {
-    private int position;
-    private String pizzaNavn;
-    private String ingredienser;
-    private int pizzaPrice;
+     int position;
+     String pizzaNavn;
+     String ingredienser;
+     int pizzaPrice;
 
     public Pizza(int position, String pizzaNavn, String ingredienser, int pizzaPrice) {
         this.position = position;
