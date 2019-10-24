@@ -30,5 +30,4 @@ public class Pizza {
         return pizzaPrice;
     }
     
-    
 }

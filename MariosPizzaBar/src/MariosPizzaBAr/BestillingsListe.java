@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BestillingsListe {
 
-    ArrayList<Ordrer> bestillingsliste;
+    ArrayList<Ordrer> bestillingsliste = new ArrayList();
 
     public void addPizza(Ordrer o) {
         bestillingsliste.add(o);
