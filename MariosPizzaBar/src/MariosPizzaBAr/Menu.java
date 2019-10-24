@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Menu {
+    private Ordrer order;
         
         /*int nr;
         String name;
@@ -44,7 +45,7 @@ public class Menu {
                 line= in.nextLine();
                 String[] myArr=line.split(";");
                 Pizza tmpPizza= new Pizza(Integer.parseInt(myArr[0]), myArr[1], myArr[2], Integer.parseInt(myArr[3]));
-                pizzaCompound.addPizza(tmpPizza);  
+                order.addPizza(tmpPizza);  
             }
         } catch (FileNotFoundException ex) {
             System.out.println("Can't find file");;

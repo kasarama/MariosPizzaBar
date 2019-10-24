@@ -17,6 +17,11 @@ public class Ordrer {
         ordrer.add(pizza);
     }
 
+    public Ordrer(Date afTid, ArrayList<Pizza> ordrer) {
+        this.afTid = afTid;
+        this.ordrer = ordrer;
+    }
+
     public Ordrer(ArrayList<Pizza> ordrer) {
         this.ordrer = ordrer;
         afTid = new Date();
