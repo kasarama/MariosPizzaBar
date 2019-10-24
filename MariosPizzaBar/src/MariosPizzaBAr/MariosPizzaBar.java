@@ -12,8 +12,9 @@ public class MariosPizzaBar {
      */
     public static void main(String[] args) {
         //Opret pizzaListe
-        Ordrer ordrer = new Ordrer();
-        System.out.println(ordrer);
+        Ordrer ordrer1 = new Ordrer();
+        ordrer1.tilføjPizza();
+        System.out.println(ordrer1);
         // TODO code application logic here
         Menu x = new Menu();
         try {
