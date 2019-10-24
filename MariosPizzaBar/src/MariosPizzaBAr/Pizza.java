@@ -7,7 +7,7 @@ public class Pizza {
     private String ingredienser;
     private int pizzaPrice;
 
-    public Pizza(int position, String pizzaNavn, String ingredientser, int pizzaPrice) {
+    public Pizza(int position, String pizzaNavn, String ingredienser, int pizzaPrice) {
         this.position = position;
         this.pizzaNavn = pizzaNavn;
         this.ingredienser = ingredienser;
