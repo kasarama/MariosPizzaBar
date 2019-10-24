@@ -4,13 +4,13 @@ package MariosPizzaBAr;
 public class Pizza {
     private int position;
     private String pizzaNavn;
-    private String ingredeienser;
+    private String ingredientser;
     private int pizzaPrice;
 
-    public Pizza(int position, String pizzaNavn, String ingredeienser, int pizzaPrice) {
+    public Pizza(int position, String pizzaNavn, String ingredientser, int pizzaPrice) {
         this.position = position;
         this.pizzaNavn = pizzaNavn;
-        this.ingredeienser = ingredeienser;
+        this.ingredientser = ingredientser;
         this.pizzaPrice = pizzaPrice;
     }
 
@@ -22,8 +22,8 @@ public class Pizza {
         return pizzaNavn;
     }
 
-    public String getIngredeienser() {
-        return ingredeienser;
+    public String getIngredientser() {
+        return ingredientser;
     }
 
     public int getPizzaPrice() {
