@@ -1,4 +1,3 @@
-
 package MariosPizzaBAr;
 
 import java.io.File;
@@ -45,7 +44,7 @@ public class Menu {
                 line= in.nextLine();
                 String[] myArr=line.split(";");
                 Pizza tmpPizza= new Pizza(Integer.parseInt(myArr[0]), myArr[1], myArr[2], Integer.parseInt(myArr[3]));
-                order.addPizza(tmpPizza);  
+                order.tilføjPizza(tmpPizza);  
             }
         } catch (FileNotFoundException ex) {
             System.out.println("Can't find file");;

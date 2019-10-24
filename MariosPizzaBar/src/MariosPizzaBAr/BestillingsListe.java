@@ -10,14 +10,19 @@ public class BestillingsListe {
 
 
     ArrayList<Ordrer> bestillingsliste = new ArrayList();
+
+    public BestillingsListe() {
+        
+    }
     
     public void addOdrer(Ordrer o) {
-
         bestillingsliste.add(o);
+    }
+    public void addOrdrerToArchive(){
         File file = new File("Arkiv.txt");
         try(BufferedWriter br =  new BufferedWriter(new FileWriter(file))){
-            for (Ordrer o: bestillingsliste){
-                br.write(o.toString);
+            for (Ordrer ordrer: bestillingsliste){
+                br.write(ordrer.toString());
                 br.newLine();
             }
             

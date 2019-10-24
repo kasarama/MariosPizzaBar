@@ -1,4 +1,4 @@
-package MariosPizzaBar;
+package MariosPizzaBAr;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -19,8 +19,8 @@ public class Ordrer {
         ordrer.add(pizza);
     }
 
-    public double samletPris() {
-        double prisSum = 0;
+    public int samletPris() {
+        int prisSum = 0;
 
         for (Pizza pizza : ordrer) {
             prisSum = prisSum + pizza.getPizzaPrice();
@@ -42,7 +42,8 @@ public class Ordrer {
         this.nummer = nummerMax++;
         this.ordrer = ordrer;
         afTid = new Date();
-        this.samletPris = ordrer.SamletPris();
+        //this.samletPris = ordrer.samletPris();
+        this.samletPris = samletPris();
         //Date date = new Date();
         //System.out.println(new Timestamp(date.getTime()));
 

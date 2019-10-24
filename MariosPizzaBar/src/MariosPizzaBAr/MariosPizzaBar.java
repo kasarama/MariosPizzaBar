@@ -1,4 +1,3 @@
-
 package MariosPizzaBAr;
 
 import java.io.FileNotFoundException;
@@ -24,8 +23,8 @@ public class MariosPizzaBar {
            
         }
         Pizza p = new Pizza(1,"ok","ok",1);
-        Ordrer o = new Ordrer(p);
-        BestillingsListe bl= new BestillingsListe(o);
+        Ordrer o = new Ordrer();
+        BestillingsListe bl= new BestillingsListe();
 
         
     }
