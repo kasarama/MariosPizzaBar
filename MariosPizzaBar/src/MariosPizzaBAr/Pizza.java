@@ -28,5 +28,11 @@ public class Pizza {
     public int getPizzaPrice() {
         return pizzaPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Pizza{" + "position=" + position + ", pizzaNavn=" + pizzaNavn + ", ingredienser=" + ingredienser + '}';
+    }
+    
     
 }
