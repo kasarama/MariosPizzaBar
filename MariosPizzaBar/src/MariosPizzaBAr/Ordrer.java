@@ -7,11 +7,13 @@ import java.util.Calendar;
 
 public class Ordrer {
 
+
     private static int nummerMax = 0;
     private int nummer;
     private int samletPris;
     private Date afTid;
     private ArrayList<Pizza> ordrer = new ArrayList();
+
 
     public void tilføjPizza(Pizza pizza) {
         ordrer.add(pizza);
@@ -75,5 +77,5 @@ public class Ordrer {
     public ArrayList<Pizza> getOrdrer() {
         return ordrer;
     }
-
+    
 }
