@@ -17,15 +17,24 @@ public class Ordrer {
         ordrer.add(pizza);
     }
 
-    public Ordrer(Date afTid, ArrayList<Pizza> ordrer) {
-        this.afTid = afTid;
-        this.ordrer = ordrer;
-    }
-
+   
     public Ordrer(ArrayList<Pizza> ordrer) {
         this.ordrer = ordrer;
         afTid = new Date();
 
+    }
+
+    @Override
+    public String toString() {
+        return "Ordrer{" + "afTid=" + afTid + ", ordrer=" + ordrer + '}';
+    }
+
+    public Date getAfTid() {
+        return afTid;
+    }
+
+    public ArrayList<Pizza> getOrdrer() {
+        return ordrer;
     }
 
 }
