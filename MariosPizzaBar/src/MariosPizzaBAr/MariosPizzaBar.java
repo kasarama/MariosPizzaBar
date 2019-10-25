@@ -14,7 +14,9 @@ public class MariosPizzaBar {
     public static void main(String[] args) {
         //Opret pizzaListe
 
-        PizzaFactory pizza1 = new PizzaFactory(1);
+        PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+        Pizza tmpPizza = myFactory.getPizzaByPosition(3);
+        System.out.println(tmpPizza.toString());
 
         Menu x = new Menu();
         try {
