@@ -1,5 +1,8 @@
 package MariosPizzaBAr;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,9 +31,9 @@ public class Ordrer {
 
     public int samletPris() {
         int prisSum = 0;
-
+        
         for (Pizza pizza : ordrer) {
-            prisSum = prisSum + pizza.getPris();
+            prisSum += pizza.getPris();
         }
         return prisSum;
     }

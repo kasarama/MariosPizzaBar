@@ -28,9 +28,7 @@ public class Pizza {
         return ingredienser;
     }
 
-    public int getPris() {
-        return pris;
-    }
+    
     // https://www.codespeedy.com/read-a-specific-line-from-a-text-file-in-java/
 
     public void PizzaPosition(int n) {
@@ -48,8 +46,12 @@ public class Pizza {
         //return getPosition() + ". " + getNavn() + " (" + getIngredienser() + ")";
     }
 
+    public int getPris() {
+        return this.pris;
+    }
+    
     public String toString() {
-        return getPosition() + "." + getNavn() + " (" + getIngredienser() + " )";
+        return getPosition() + "." + getNavn() + " (" + getIngredienser() + " )" + getPris();
     }
 
     /*
