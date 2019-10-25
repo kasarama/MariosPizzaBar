@@ -5,23 +5,32 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
 
+/*
+Laves en metode som tager en integar som er pizzanummer og ved kun brug 
+af den pizzanummer tilføjej ny pizzaobjekt til en order
+*/
+
 public class Ordrer {
 
-    private static int nummerMax = 0;
+    private static int nummerMax = 1;
     private int nummer;
     private int samletPris;
     private String afTid;
-    private ArrayList<Pizza> ordrer = new ArrayList();
+    private ArrayList<PizzaFactory> ordrer = new ArrayList();
 
-    public void tilføjPizza(Pizza pizza) {
+   /* public void tilføjPizza(Pizza pizza) {
+        ordrer.add(pizza);
+    }
+    */
+    public void addPizza(PizzaFactory pizza) {
         ordrer.add(pizza);
     }
 
     public int samletPris() {
         int prisSum = 0;
 
-        for (Pizza pizza : ordrer) {
-            prisSum = prisSum + pizza.getPizzaPrice();
+        for (PizzaFactory pizza : ordrer) {
+            prisSum = prisSum + pizza.getPris();
         }
         return prisSum;
     }
@@ -53,7 +62,7 @@ public class Ordrer {
     @Override
     public String toString() {
         String result = "";
-        for (Pizza pizza : ordrer) {
+        for (PizzaFactory pizza : ordrer) {
             result += pizza.toString();
         }
         return "Ordrer " + getNummer() + ":" + "\n"
@@ -76,7 +85,7 @@ public class Ordrer {
         return afTid;
     }
 
-    public ArrayList<Pizza> getOrdrer() {
+    public ArrayList<PizzaFactory> getOrdrer() {
         return ordrer;
     }
 
