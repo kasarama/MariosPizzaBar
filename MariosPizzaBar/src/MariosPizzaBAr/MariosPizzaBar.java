@@ -15,11 +15,11 @@ public class MariosPizzaBar {
         //Opret pizzaListe
         
         
-        PizzaFactory pizza1 = new PizzaFactory(1);
+        Pizza pizza1 = new Pizza(1);
         System.out.println(pizza1.toString());
-        PizzaFactory pizza2 = new PizzaFactory(2);
+        Pizza pizza2 = new Pizza(2);
         System.out.println(pizza2.toString());
-        PizzaFactory pizza3 = new PizzaFactory(3);
+        Pizza pizza3 = new Pizza(3);
         System.out.println(pizza3.toString());
         Ordrer ordrer1 = new Ordrer();
         ordrer1.addPizza(pizza1);

@@ -16,20 +16,20 @@ public class Ordrer {
     private int nummer;
     private int samletPris;
     private String afTid;
-    private ArrayList<PizzaFactory> ordrer = new ArrayList();
+    private ArrayList<Pizza> ordrer = new ArrayList();
 
    /* public void tilføjPizza(Pizza pizza) {
         ordrer.add(pizza);
     }
     */
-    public void addPizza(PizzaFactory pizza) {
+    public void addPizza(Pizza pizza) {
         ordrer.add(pizza);
     }
 
     public int samletPris() {
         int prisSum = 0;
 
-        for (PizzaFactory pizza : ordrer) {
+        for (Pizza pizza : ordrer) {
             prisSum = prisSum + pizza.getPris();
         }
         return prisSum;
@@ -47,7 +47,10 @@ public class Ordrer {
     // System.out.println(hour + ":" + minute + ":" + second);
 
     }
-
+/*
+    laves en metode som gemmer hver order i tekstfile
+    
+    */
     public Ordrer() {
         this.nummer = nummerMax++;
     //    this.ordrer = ordrer;
@@ -62,7 +65,7 @@ public class Ordrer {
     @Override
     public String toString() {
         String result = "";
-        for (PizzaFactory pizza : ordrer) {
+        for (Pizza pizza : ordrer) {
             result += pizza.toString();
         }
         return "Ordrer " + getNummer() + ":" + "\n"
@@ -85,7 +88,7 @@ public class Ordrer {
         return afTid;
     }
 
-    public ArrayList<PizzaFactory> getOrdrer() {
+    public ArrayList<Pizza> getOrdrer() {
         return ordrer;
     }
 
