@@ -12,6 +12,8 @@ public class Pizza {
         this.ingredienser = ingredienser;
         this.pizzaPrice = pizzaPrice;
     }
+    
+    
 
     public int getPosition() {
         return position;

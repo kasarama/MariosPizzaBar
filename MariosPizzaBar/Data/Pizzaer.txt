@@ -1,6 +1,7 @@
-1; Pepo; peperoni, ost; 65
+Menu
+1; Pepo; peperoni, ost;65
 2; Sofie; peperoni, skinke, ost;70
-3; ostedroem; gorgonzola, oksekoed og ost;70
+3; Ostedroem; gorgonzola, oksekoed og ost;70
 4; bejamin; tomat, ost, gorgonzola, champignon og groen peber;80
 5; Malene;tomat, ost, skinke og champignon;75
 6; Mathias;tomat, ost, hakket oksekoed, champignon og loeg;80
@@ -26,5 +27,5 @@
 26; Cathrine; tomat, ost, skinke, koedsauce og champignon;80
 27; Magdalena; tomat, ost, skinke, hakket oksekoed og bearnaisesauce;85
 28; Ingrid; tomat, ost, shawarma, gorgonzola, hvidloeg og chili;85
-29; Frej; tomat, ost, rucola salat, kylling og pesto;90
+29; Freja; tomat, ost, rucola salat, kylling og pesto;90
 30; Thor; tomat, ost, kebab, bacon, hvidloeg, pepperoni og loeg;85
