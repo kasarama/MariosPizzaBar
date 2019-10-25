@@ -15,15 +15,14 @@ import java.util.logging.Logger;
  */
 public class PizzaFactory {
 
-    public PizzaFactory(int number) {
-        PizzaPosition(number);
-    }
-    
-
     private int position;
     private String navn;
     private String ingredienser;
     private int pris;
+    
+    public PizzaFactory(int number) {
+        PizzaPosition(number);
+    }
 
    
 

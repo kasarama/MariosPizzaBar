@@ -11,10 +11,13 @@ public class MariosPizzaBar {
     når bruger giver en kommend til det (som for eksampel"send") 
     og går tilbage til at starte på en ny order
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         //Opret pizzaListe
 
-        PizzaFactory pizza1 = new PizzaFactory(1);
+        HovedMenu hm = new HovedMenu();
+        hm.startProgram();
+        /*PizzaFactory pizza1 = new PizzaFactory(1);
+        System.out.println(pizza1);
 
         Menu x = new Menu();
         try {
@@ -23,7 +26,7 @@ public class MariosPizzaBar {
             //Logger.getLogger(MariosPizzaBar.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Error");
 
-        }
+        }*/
 
     }
 
