@@ -29,7 +29,7 @@ public class OrdrerTest {
         int second = calendar.get(Calendar.SECOND);
         System.out.println(hour + ":" + minute + ":" + second);
         
-        
+        //hvis det giver + 30 min så det rigtigt whuuhuu!!
     
 
     
