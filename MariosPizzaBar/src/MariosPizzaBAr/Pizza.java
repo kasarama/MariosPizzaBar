@@ -6,15 +6,17 @@ import java.nio.file.Paths;
 
 public class Pizza {
 
-    public Pizza(int number) {
-        PizzaPosition(number);
-    }
-
     private int position;
     private String navn;
     private String ingredienser;
     private int pris;
-    
+
+    public Pizza(int position, String navn, String ingredienser, int pris) {
+        this.position = position;
+        this.navn = navn;
+        this.ingredienser = ingredienser;
+        this.pris = pris;
+    }
 
     public int getPosition() {
         return position;
@@ -44,6 +46,7 @@ public class Pizza {
             System.out.println("Can't find file");
         }
         //return getPosition() + ". " + getNavn() + " (" + getIngredienser() + ")";
+
     }
 
     public int getPris() {
@@ -53,42 +56,5 @@ public class Pizza {
     public String toString() {
         return getPosition() + "." + getNavn() + " (" + getIngredienser() + " )" + getPris();
     }
-
-    /*
-    private int position;
-    private String pizzaNavn;
-    private String ingredienser;
-    private int pizzaPrice;
-
-    public Pizza(int position, String pizzaNavn, String ingredienser, int pizzaPrice) {
-        this.position = position;
-        this.pizzaNavn = pizzaNavn;
-        this.ingredienser = ingredienser;
-        this.pizzaPrice = pizzaPrice;
-    }
     
-    
-
-    public int getPosition() {
-        return position;
-    }
-
-    public String getPizzaNavn() {
-        return pizzaNavn;
-    }
-
-    public String getIngredientser() {
-        return ingredienser;
-    }
-
-    public int getPizzaPrice() {
-        return pizzaPrice;
-    }
-
-    @Override
-    public String toString() {
-        return "Pizza{" + "position = " + position + ", pizzaNavn = " + pizzaNavn + ", ingredienser = " + ingredienser + '}';
-    }
-    
-     */
 }

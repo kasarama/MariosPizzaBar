@@ -13,34 +13,18 @@ public class MariosPizzaBar {
      */
     public static void main(String[] args) {
         //Opret pizzaListe
-        
-        
-        Pizza pizza1 = new Pizza(1);
-        System.out.println(pizza1.toString());
-        Pizza pizza2 = new Pizza(2);
-        System.out.println(pizza2.toString());
-        Pizza pizza3 = new Pizza(3);
-        System.out.println(pizza3.toString());
-        Ordrer ordrer1 = new Ordrer();
-        ordrer1.addPizza(pizza1);
-        
-        System.out.println(ordrer1);
-        
 
-        // TODO code application logic here
+        PizzaFactory pizza1 = new PizzaFactory(1);
+
         Menu x = new Menu();
         try {
             x.readFiles();
         } catch (FileNotFoundException ex) {
             //Logger.getLogger(MariosPizzaBar.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Error");
-           
+
         }
-        /*Pizza p = new Pizza(1,"ok","ok",1);
-        Ordrer o = new Ordrer();
-        BestillingsListe bl= new BestillingsListe();
-*/
-        
+
     }
-    
+
 }
