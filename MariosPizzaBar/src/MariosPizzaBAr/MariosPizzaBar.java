@@ -6,21 +6,27 @@ import java.util.logging.Logger;
 
 public class MariosPizzaBar {
 
+    /*Laves en loop som spørger bruger om han vil lave en new order og hvis ja,
+    hvilken pizza skal tilføjes, og som lukker order og sender den videre
+    når bruger giver en kommend til det (som for eksampel"send") 
+    og går tilbage til at starte på en ny order
+     */
     public static void main(String[] args) {
         //Opret pizzaListe
-        Ordrer ordrer = new Ordrer();
-        System.out.println(ordrer);
-        Ordrer o2 = new Ordrer();
-        System.out.println(o2);
-        Pizza p1 = new Pizza(2,"Sofie","peperoni, skinke, ost",70);
-        Pizza p2 = new Pizza(4,"benjamin","tomat, ost, gorgonzola, champignon og groen peber",80);
-        System.out.println(p1.toString());
-        p1.toString();
-        System.out.println("");
-        ordrer.tilføjPizza(p1);
-        ordrer.tilføjPizza(p2);
-        System.out.println(ordrer.toString());
-        System.out.println("");
+        
+        
+        PizzaFactory pizza1 = new PizzaFactory(1);
+        System.out.println(pizza1.toString());
+        PizzaFactory pizza2 = new PizzaFactory(2);
+        System.out.println(pizza2.toString());
+        PizzaFactory pizza3 = new PizzaFactory(3);
+        System.out.println(pizza3.toString());
+        Ordrer ordrer1 = new Ordrer();
+        ordrer1.addPizza(pizza1);
+        
+        System.out.println(ordrer1);
+        
+
         // TODO code application logic here
         Menu x = new Menu();
         try {
@@ -30,10 +36,10 @@ public class MariosPizzaBar {
             System.out.println("Error");
            
         }
-        Pizza p = new Pizza(1,"ok","ok",1);
+        /*Pizza p = new Pizza(1,"ok","ok",1);
         Ordrer o = new Ordrer();
         BestillingsListe bl= new BestillingsListe();
-
+*/
         
     }
     

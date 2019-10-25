@@ -10,16 +10,24 @@ import java.util.logging.Logger;
 public class Menu {
     private Ordrer order;
         
-        /*int nr;
-        String name;
-        String ingredientser;
-        int pris;*/
+       
     public Menu() {
         
-        /*this.nr = get;
-        this.name = name;
-        this.ingredientser = ingredientser;
-        this.pris = pris;*/
+        /*public static void makePizza(){
+        String filename= "Data/Pizzaer.docx";
+        File textfile = new File(filename); 
+        String line ="";
+        try {
+            Scanner in = new Scanner(textfile);
+            while (in.hasNextLine()){
+                line= in.nextLine();
+                String[] myArr=line.split(";");
+                Pizza tmpPizza= new Pizza(Integer.parseInt(myArr[0]), myArr[1], myArr[2], Integer.parseInt(myArr[3]));
+                 
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println("Can't find file");
+        }*/
     }
     
     public void readFiles() throws FileNotFoundException{
@@ -34,20 +42,7 @@ public class Menu {
                 }
                 in.close();   
     }
-    public void makePizza(){
-        String filename= "Data/Pizzaer.txt";
-        File textfile = new File(filename); 
-        String line ="";
-        try {
-            Scanner in = new Scanner(textfile);
-            while (in.hasNextLine()){
-                line= in.nextLine();
-                String[] myArr=line.split(";");
-                Pizza tmpPizza= new Pizza(Integer.parseInt(myArr[0]), myArr[1], myArr[2], Integer.parseInt(myArr[3]));
-                order.tilføjPizza(tmpPizza);  
-            }
-        } catch (FileNotFoundException ex) {
-            System.out.println("Can't find file");;
-        }
-    }
+    // https://www.codespeedy.com/read-a-specific-line-from-a-text-file-in-java/
+    
+    
 }
