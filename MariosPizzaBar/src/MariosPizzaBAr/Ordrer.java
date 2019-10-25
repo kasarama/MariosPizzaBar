@@ -8,7 +8,7 @@ import java.util.Calendar;
 public class Ordrer {
 
 
-    private static int nummerMax = 0;
+    private static int nummerMax = 1;
     private int nummer;
     private int samletPris;
     private Date afTid;
@@ -56,7 +56,7 @@ public class Ordrer {
             result += pizza.toString();
         }
         return "Ordrer " + nummer + ":" + "" + "\n"
-                + result + "SamletPris: " + samletPris + ", afTid=" + afTid + ", ordrer=" + ordrer + '}';
+                + "Ordrer: " + result + "\n" + "SamletPris: " + samletPris + ", afTid=" + afTid/* + ", ordrer=" + ordrer + '}'*/;
     }
 
     public static int getNummerMax() {
