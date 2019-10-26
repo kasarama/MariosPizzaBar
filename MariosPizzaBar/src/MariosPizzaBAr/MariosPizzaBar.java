@@ -11,7 +11,7 @@ public class MariosPizzaBar {
     når bruger giver en kommend til det (som for eksampel"send") 
     og går tilbage til at starte på en ny order
      */
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         //Opret pizzaListe
 
         HovedMenu hm = new HovedMenu();

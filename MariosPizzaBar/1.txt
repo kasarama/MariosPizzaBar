@@ -1,5 +1,5 @@
 Ordrer 1:
 
 SamletPris: 0
-Afhentnings tid: 0:41:9
+Afhentnings tid: 2:22:59
 Sum:0

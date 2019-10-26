@@ -2,6 +2,8 @@ package MariosPizzaBAr;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class HovedMenu {
 
@@ -13,14 +15,21 @@ public class HovedMenu {
     public HovedMenu() {
     }
 
-    public void startProgram() throws FileNotFoundException {
+    public void startProgram() {
         while (quit == false) {
             visHovedmenu();
             char brugerInput = scan.next().charAt(0);
             switch (brugerInput) {
                 case '1':
+            {
+                try {
                     menu.readFiles();
-                    System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til hovedmenuen");
+                } catch (FileNotFoundException ex) {
+                    System.out.println("File not found");;;
+                }
+            }
+                    System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
+                            + "hovedmenuen");
                     scan.next().charAt(0);
                     break;
                 case '2':
@@ -43,7 +52,7 @@ public class HovedMenu {
                     quit = true;
                     break;
                 default: {
-                    System.out.println("Systemet gik ned... \n- Du er tilbage på Startsiden");
+                    System.out.println("Systemet gik ned... \n- Du er tilbage på Hovedmenuen");
                     startProgram();
                 }
             }
@@ -53,16 +62,16 @@ public class HovedMenu {
 
     public void visHovedmenu() {
         System.out.println();
-        System.out.println("\t\t\"Startside\"");
+        System.out.println("\t\t\"Hovedmenuen\"");
         System.out.println();
         System.out.println("Skriv følgende tal og tryk dernæst enter for at gå ind i punktet: ");
         System.out.println();
-        System.out.println("Tryk \"1\" for: Vis \"Menukort\"");
-        System.out.println("Tryk \"2\" for: Lav ordre");
-        System.out.println("Tryk \"3\" for: Vis ordrerliste");
-        System.out.println("Tryk \"4\" for: Slet ordre");
-        System.out.println("Tryk \"5\" for: Vis arkiv");
-        System.out.println("Tryk \"6\" for: Afslut programmet");
+        System.out.println("1) Vis \"Menukort\"");
+        System.out.println("2) Lav ordre");
+        System.out.println("3) Vis ordrerliste");
+        System.out.println("4) Slet ordre");
+        System.out.println("5) Vis arkiv");
+        System.out.println("6) Afslut programmet");
         System.out.println();
     }
 }
