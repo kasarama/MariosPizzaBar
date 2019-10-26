@@ -22,10 +22,13 @@ public class Ordrer {
     private String afTid;
     private ArrayList<Pizza> ordrer = new ArrayList();
 
-   /* public void tilføjPizza(Pizza pizza) {
-        ordrer.add(pizza);
+    public Ordrer(int nummer, int samletPris) {
+        this.nummer = nummer;
+        this.samletPris = samletPris;
     }
-    */
+    
+
+   
     public void addPizza(Pizza pizza) {
         ordrer.add(pizza);
     }
