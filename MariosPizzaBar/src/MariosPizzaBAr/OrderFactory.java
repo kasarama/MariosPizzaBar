@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Scanner;
 
 public class OrderFactory {
 
@@ -75,6 +76,31 @@ public class OrderFactory {
 
         return order;
     }
+    
+public void makeOrdrerObject(){
+        int prisSum = 0;
+        ArrayList<Pizza> ordrer = new ArrayList();
+        System.out.println("Press number of pizza");
+        PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        while(n>0){
+        
+
+        myFactory.getPizzaByPosition(n).toString();
+        ordrer.add(myFactory.getPizzaByPosition(n));    
+        n=sc.nextInt();
+    }
+        System.out.println(ordrer.toString());
+        System.out.println("ordrer is done");
+        
+        
+        for (Pizza pizza : ordrer) {
+            prisSum += pizza.getPris();
+        }
+        System.out.println(prisSum);
+    }
+    
 
     public int getNummer() {
         return nummer;
