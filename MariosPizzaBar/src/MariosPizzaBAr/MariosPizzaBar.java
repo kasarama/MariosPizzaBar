@@ -16,9 +16,10 @@ public class MariosPizzaBar {
 
         HovedMenu hm = new HovedMenu();
         hm.startProgram();
-        /*PizzaFactory pizza1 = new PizzaFactory(1);
-        System.out.println(pizza1);
-
+        
+        /*PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+        Pizza tmpPizza = myFactory.getPizzaByPosition(3);
+        System.out.println(tmpPizza.toString());
         Menu x = new Menu();
         try {
             x.readFiles();

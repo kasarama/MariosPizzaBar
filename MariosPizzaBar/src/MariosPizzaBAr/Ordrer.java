@@ -32,9 +32,9 @@ public class Ordrer {
 
     public int samletPris() {
         int prisSum = 0;
-
+        
         for (Pizza pizza : ordrer) {
-            prisSum = prisSum + pizza.getPris();
+            prisSum += pizza.getPris();
         }
         return prisSum;
     }
