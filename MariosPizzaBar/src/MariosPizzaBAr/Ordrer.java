@@ -12,99 +12,53 @@ import java.util.Calendar;
 /*
 Laves en metode som tager en integar som er pizzanummer og ved kun brug 
 af den pizzanummer tilføjej ny pizzaobjekt til en order
-*/
-
+ */
 public class Ordrer {
 
-    private static int nummerMax = 1;
     private int nummer;
-    private int samletPris;
+    private int sum;
     private String afTid;
     private ArrayList<Pizza> ordrer = new ArrayList();
 
-    public Ordrer(int nummer, int samletPris) {
+    public Ordrer(int nummer, int sum, String afTid) {
         this.nummer = nummer;
-        this.samletPris = samletPris;
+        this.sum = sum;
+        this.afTid = afTid;
     }
-    
 
-   
     public void addPizza(Pizza pizza) {
         ordrer.add(pizza);
     }
 
-    public int samletPris() {
+    
+   
+    /*
+    public int sum() {
         int prisSum = 0;
-        
+
         for (Pizza pizza : ordrer) {
-            prisSum += pizza.getPris();
+            prisSum = prisSum + pizza.getPris();
         }
         return prisSum;
     }
-
-    public String pickUpTime() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MINUTE, +(30));
-
-        int hour = calendar.get(Calendar.HOUR);
-        int minute = calendar.get(Calendar.MINUTE);
-        int second = calendar.get(Calendar.SECOND);
-        return hour + ":" + minute + ":" + second;
-        
-    // System.out.println(hour + ":" + minute + ":" + second);
-
-    }
-/*
-    laves en metode som gemmer hver order i tekstfile
-    
     */
     
-    
-    public Ordrer() {
-        this.nummer = nummerMax++;
-    //    this.ordrer = ordrer;
-        afTid = pickUpTime();
-        //this.samletPris = ordrer.samletPris();
-        this.samletPris = samletPris();
-        //Date date = new Date();
-        //System.out.println(new Timestamp(date.getTime()));
-        SendOrderToArkiv();
+    public int sum() {
+        int prisSum = 0;
 
-    }
-
-    @Override
-    public String toString() {
-        String result = "";
         for (Pizza pizza : ordrer) {
-            result += pizza.toString();
+        int tmpPrisSum=prisSum;
+            prisSum = tmpPrisSum + pizza.getPris();
         }
-        return "Ordrer " + getNummer() + ":" + "\n"
-                + result + "\n" + "SamletPris: " + getSamletPris() + "\n" + "Afhentnings tid: " + getAfTid();
-    }
-    
-    public void SendOrderToArkiv(){
-        File file = new File(getNummer()+".txt");
-          
-        try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
-           br.write(toString());
-           br.newLine();
-           br.write("Sum:" + getSamletPris());
-           br.newLine();
-        } catch (IOException e) {
-            System.out.println("Unable to read file " + file.toString());
-        }
-    }
-
-    public static int getNummerMax() {
-        return nummerMax;
+        return prisSum;
     }
 
     public int getNummer() {
         return nummer;
     }
 
-    public int getSamletPris() {
-        return samletPris;
+    public int getSum() {
+        return sum;
     }
 
     public String getAfTid() {
@@ -113,6 +67,18 @@ public class Ordrer {
 
     public ArrayList<Pizza> getOrdrer() {
         return ordrer;
+    }
+    
+    @Override
+    public String toString() {
+        String result = "";
+        for (Pizza pizza : ordrer) {
+            result += pizza.toString()+"\n";
+        }
+        return "Ordrer " + getNummer() + ":" + "\n"
+                + result + "\n"
+                + "Afhentnings tid: " + getAfTid()
+                + "\t\tSamletPris: " + sum() + "\n";
     }
 
 }

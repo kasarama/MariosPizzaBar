@@ -6,10 +6,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class HovedMenu {
-
+    
+    OrderFactory myOrderFactory = new OrderFactory();
     Scanner scan = new Scanner(System.in);
     Menu menu = new Menu();
-    Ordrer ordre = new Ordrer();
+    Ordrer ordre = myOrderFactory.nextOrder();
+ //   Pizza tmpPizza = myFactory.getPizzaByPosition(3); 
+    
     private boolean quit = false;
 
     public HovedMenu() {

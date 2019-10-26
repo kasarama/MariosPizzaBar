@@ -14,7 +14,9 @@ import static org.junit.Assert.*;
  * @author John
  */
 public class PizzaTest {
-    Pizza pizza;
+    Pizza pizza;    
+    PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+    Pizza tmpPizza = myFactory.getPizzaByPosition(3);
     public PizzaTest() {
         int nr;
         String navn;
@@ -81,6 +83,31 @@ public class PizzaTest {
         fail("The test case is a prototype.");
     }
 */
+
+    /**
+     * Test of getPosition method, of class Pizza.
+     */
+    @Test
+    public void testGetPosition() {
+    }
+
+    /**
+     * Test of getPris method, of class Pizza.
+     */
+    @Test
+    public void testGetPris() {
+        int expected = 70;
+        int actual = tmpPizza.getPris();
+        assertEquals(expected, actual);
+                
+    }
+
+    /**
+     * Test of toString method, of class Pizza.
+     */
+    @Test
+    public void testToString() {
+    }
     
 
     

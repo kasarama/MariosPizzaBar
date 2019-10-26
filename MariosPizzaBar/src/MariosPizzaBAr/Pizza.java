@@ -36,7 +36,7 @@ public class Pizza {
     }
 
      public String toString() {
-        return getPosition() + "." + getNavn() + " (" + getIngredienser() + " )" + getPris();
+        return getPosition() + "." + getNavn() + " (" + getIngredienser();
         
     }
 }

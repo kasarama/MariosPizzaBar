@@ -9,15 +9,8 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Magdalena
- */
 public class PizzaFactory {
 
-    /*public PizzaFactory(int number) {
-        PizzaPosition(number);
-    }*/
     String filename;
 
     public PizzaFactory(String filename) {
