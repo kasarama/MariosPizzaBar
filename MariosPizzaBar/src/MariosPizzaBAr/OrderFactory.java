@@ -32,7 +32,10 @@ public class OrderFactory {
 
     
     public void sendToArkiv() {
-        File file = new File(getNummer() + ".txt");
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        File file = new File(day+"."+month+"."+getNummer() + ".txt");
 
         try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
             br.write(toString());
@@ -81,10 +84,12 @@ public void newOrder(){
         PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
         Scanner sc= new Scanner(System.in);
         int n=sc.nextInt();
+        
+        
         while(n>0){
         
 
-        myFactory.getPizzaByPosition(n).toString();
+     //   myFactory.getPizzaByPosition(n).toString();
         ordrer.add(myFactory.getPizzaByPosition(n));    
         n=sc.nextInt();
     }

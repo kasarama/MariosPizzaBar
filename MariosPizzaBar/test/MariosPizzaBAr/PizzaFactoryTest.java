@@ -28,7 +28,7 @@ public class PizzaFactoryTest {
     @Test
     public void testToString() {
         OrderFactory myOrderFactory = new OrderFactory();
-        Ordrer order = myOrderFactory.nextOrder();
+        Ordrer order = myOrderFactory.orderMaker();
         PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
         Pizza pizza1 = myFactory.getPizzaByPosition(8);
         Pizza pizza2 = myFactory.getPizzaByPosition(2);
