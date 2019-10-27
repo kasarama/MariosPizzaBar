@@ -1,13 +1,20 @@
 package MariosPizzaBAr;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+//import java.io.File;
+//import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.Scanner;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+
+/*
+??
+PizzaFactory craver filename som ikke bliver brugt senere - enten springer vi
+det over eller giver vi bruger en mulighed for at læse menu fra en anden file 
+*/
+
 
 public class PizzaFactory {
 

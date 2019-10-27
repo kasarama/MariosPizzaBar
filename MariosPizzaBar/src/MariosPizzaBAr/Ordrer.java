@@ -69,6 +69,20 @@ public class Ordrer {
         return ordrer;
     }
     
+    public void sendToArkiv() {
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        File file = new File(day + "." + month + "." + getNummer() + ".txt");
+
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
+            br.write(toString());
+            br.newLine();
+        } catch (IOException e) {
+            System.out.println("Unable to read file " + file.toString());
+        }
+    }
+    
     @Override
     public String toString() {
         String result = "";

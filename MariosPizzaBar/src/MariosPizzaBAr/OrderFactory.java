@@ -31,19 +31,6 @@ public class OrderFactory {
     }
 
     
-    public void sendToArkiv() {
-        Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-        int month = calendar.get(Calendar.MONTH);
-        File file = new File(day+"."+month+"."+getNummer() + ".txt");
-
-        try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
-            br.write(toString());
-            br.newLine();
-        } catch (IOException e) {
-            System.out.println("Unable to read file " + file.toString());
-        }
-    }
 
     @Override
     public String toString() {
@@ -61,7 +48,7 @@ public class OrderFactory {
         int prisSum = 0;
 
         for (Pizza pizza : order) {
-        int tmpPrisSum=prisSum;
+            int tmpPrisSum = prisSum;
             prisSum = tmpPrisSum + pizza.getPris();
         }
         return prisSum;
@@ -76,33 +63,30 @@ public class OrderFactory {
 
         return order;
     }
-    
-public void newOrder(){
+
+    public void newOrder() {
         //int prisSum = 0;
         ArrayList<Pizza> ordrer = new ArrayList();
         System.out.println("Press number of pizza");
         PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
-        Scanner sc= new Scanner(System.in);
-        int n=sc.nextInt();
-        
-        
-        while(n>0){
-        
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
 
-     //   myFactory.getPizzaByPosition(n).toString();
-        ordrer.add(myFactory.getPizzaByPosition(n));    
-        n=sc.nextInt();
-    }
+        while (n > 0) {
+
+            //   myFactory.getPizzaByPosition(n).toString();
+            ordrer.add(myFactory.getPizzaByPosition(n));
+            n = sc.nextInt();
+        }
         System.out.println(ordrer.toString());
         System.out.println("ordrer is done");
-        
-      /* sum is allready called in orderMaker  
+
+        /* sum is allready called in orderMaker  
         for (Pizza pizza : ordrer) {
             prisSum += pizza.getPris();
         }
         System.out.println(prisSum);*/
     }
-    
 
     public int getNummer() {
         return nummer;

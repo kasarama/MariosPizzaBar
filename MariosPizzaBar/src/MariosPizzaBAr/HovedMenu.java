@@ -8,8 +8,7 @@ import java.util.logging.Logger;
 /*
 Skal Menu printes i hver case eller kan den printes en gang før switch og forblive på skræmen?
 fra case 2 alle ordrer bliver send til bestillinsliste
-*/
-
+ */
 public class HovedMenu {
 
     OrderFactory myOrderFactory = new OrderFactory();
@@ -43,12 +42,13 @@ public class HovedMenu {
                 case '2':
                     myOrderFactory.newOrder();
                     bestListe.addOrder(ordre);
-                    
-                    
+
                     menu.toString();
 //TO DO - Få lavet en ordre, så man kan tilføje pizzaer fra menu;
                     break;
                 case '3':
+                    
+                    System.out.println("Bestillings Liste\n"+bestListe.toString());
                     menu.toString();
 //TODO - Vis ordrerliste;
                     break;

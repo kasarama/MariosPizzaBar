@@ -14,7 +14,16 @@ public class BestillingsListe {
 
     }
 
-    public void addOdrer(Ordrer o) {
+    @Override
+    public String toString() {
+        String result = "";
+        for (Ordrer o : bestillingsliste) {
+            result += o.toString() + "\n";
+        }
+        return result;
+    }
+
+    public void addOrder(Ordrer o) {
         bestillingsliste.add(o);
     }
 
