@@ -8,16 +8,20 @@ import java.util.ArrayList;
 
 public class BestillingsListe {
 
-
     ArrayList<Ordrer> bestillingsliste = new ArrayList();
 
     public BestillingsListe() {
-        
+
     }
-    
+
     public void addOdrer(Ordrer o) {
         bestillingsliste.add(o);
     }
+
+    public void fjernOrdre(Ordrer o) {
+        bestillingsliste.remove(o);
+
+        /*
     public void addOrdrerToArchive(){
         File file = new File("Arkiv.txt");
         try(BufferedWriter br =  new BufferedWriter(new FileWriter(file))){
@@ -31,8 +35,6 @@ public class BestillingsListe {
             System.out.println("can't find file");
         }
     }
-    
-    public void fjernOrdre(Ordrer o) {
-        
+         */
     }
 }

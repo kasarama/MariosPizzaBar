@@ -31,7 +31,10 @@ public class OrderFactory {
     }
 
     public void sendToArkiv() {
-        File file = new File(getNummer() + ".txt");
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        File file = new File(day+"."+month+"."+getNummer() + ".txt");
 
         try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
             br.write(toString());
@@ -96,6 +99,19 @@ public class OrderFactory {
                 newOrder();
             }
         }
+/*=======
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        
+        while(n>0){
+        
+
+     //   myFactory.getPizzaByPosition(n).toString();
+        ordrer.add(myFactory.getPizzaByPosition(n));    
+        n=sc.nextInt();
+    }
+>>>>>>> ba5dfdf3a7761c339ea6f651d1437b33004a06f1*/
         System.out.println(ordrer.toString());
         System.out.println("^ Denne ordre er tilføjet");
         //returner ordre med nummer
