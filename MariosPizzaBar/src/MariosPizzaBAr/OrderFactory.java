@@ -30,7 +30,6 @@ public class OrderFactory {
         return hour + ":" + minute;
     }
 
-    
     public void sendToArkiv() {
         File file = new File(getNummer() + ".txt");
 
@@ -58,7 +57,7 @@ public class OrderFactory {
         int prisSum = 0;
 
         for (Pizza pizza : order) {
-        int tmpPrisSum=prisSum;
+            int tmpPrisSum = prisSum;
             prisSum = tmpPrisSum + pizza.getPris();
         }
         return prisSum;
@@ -73,32 +72,40 @@ public class OrderFactory {
 
         return order;
     }
-    
-public void newOrder(){
+
+    public void newOrder() { // lav metoden ikke void , men returner ordre med nummer
         //int prisSum = 0;
         ArrayList<Pizza> ordrer = new ArrayList();
-        System.out.println("Press number of pizza");
+        System.out.println("Indtast nummeret af pizza(er) og gå videre ved at trykke \"0\":");
         PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
-        Scanner sc= new Scanner(System.in);
-        int n=sc.nextInt();
-        while(n>0){
-        
-
-        myFactory.getPizzaByPosition(n).toString();
-        ordrer.add(myFactory.getPizzaByPosition(n));    
-        n=sc.nextInt();
-    }
+        Scanner sc = new Scanner(System.in);
+        String n = "";
+        boolean quit = false;
+        while (quit == false) {
+            n = sc.nextLine();
+            if (Integer.parseInt(n) == 0) {
+                quit = true;
+            } else if (Integer.parseInt(n) > 0 && Integer.parseInt(n) <= 30) {
+                myFactory.getPizzaByPosition(Integer.parseInt(n)).toString();
+                ordrer.add(myFactory.getPizzaByPosition(Integer.parseInt(n)));
+            } else if (Integer.parseInt(n) > 30) {
+                System.out.println("Pizzanummeret findes ikke, prøv igen");
+                newOrder();
+            } else {
+                System.out.println("Dette er ikke et tal, prøv igen");
+                newOrder();
+            }
+        }
         System.out.println(ordrer.toString());
-        System.out.println("ordrer is done");
-        
-      /* sum is allready called in orderMaker  
+        System.out.println("^ Denne ordre er tilføjet");
+        //returner ordre med nummer
+    }
+
+    /* sum is allready called in orderMaker  
         for (Pizza pizza : ordrer) {
             prisSum += pizza.getPris();
         }
         System.out.println(prisSum);*/
-    }
-    
-
     public int getNummer() {
         return nummer;
     }

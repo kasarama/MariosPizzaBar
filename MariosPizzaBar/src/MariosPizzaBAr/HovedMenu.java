@@ -21,38 +21,37 @@ public class HovedMenu {
     public void startProgram() {
         while (quit == false) {
             visHovedmenu();
-            char brugerInput = scan.next().charAt(0);
+            String brugerInput = scan.nextLine();
             switch (brugerInput) {
-                case '1':
+                case "1":
             {
                 try {
                     menu.readFiles();
                 } catch (FileNotFoundException ex) {
-                    System.out.println("File not found");;;
+                    System.out.println("File not found");
                 }
             }
                     System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
                             + "hovedmenuen");
                     scan.next().charAt(0);
                     break;
-                case '2':
+                case "2":
                     myOrderFactory.newOrder();
-                    menu.toString();
 //TO DO - Få lavet en ordre, så man kan tilføje pizzaer fra menu;
                     break;
-                case '3':
+                case "3":
                     menu.toString();
 //TODO - Vis ordrerliste;
                     break;
-                case '4':
+                case "4":
                     menu.toString();
 //TODO - Fjern ordre fra Bestillingsliste;
                     break;
-                case '5':
+                case "5":
                     menu.toString();
 //TODO - Vis arkivflier;
                     break;
-                case '6':
+                case "6":
                     quit = true;
                     break;
                 default: {
