@@ -14,14 +14,16 @@ public class MariosPizzaBar {
     public static void main(String[] args) {
         //Opret pizzaListe
 
-       // HovedMenu hm = new HovedMenu();
-       // hm.startProgram();
-        PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+        HovedMenu hm = new HovedMenu();
+        hm.startProgram();
+       
+      /* 
+       PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
         Pizza tmpPizza = myFactory.getPizzaByPosition(3);
         System.out.println(tmpPizza.toString());
         OrderFactory myOrderFactory = new OrderFactory();
 
-        Ordrer order = myOrderFactory.nextOrder();
+        Ordrer order = myOrderFactory.orderMaker();
 
         Pizza pizza1 = myFactory.getPizzaByPosition(8);
         Pizza pizza2 = myFactory.getPizzaByPosition(2);
@@ -35,6 +37,9 @@ public class MariosPizzaBar {
         System.out.println(order.toString());
         System.out.println("Sum of order:" + order.sum());
 
+       */
+      
+      
         /*   
         Menu x = new Menu();
         try {

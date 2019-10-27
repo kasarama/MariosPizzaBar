@@ -30,10 +30,7 @@ public class OrderFactory {
         return hour + ":" + minute;
     }
 
-    public void addPizza(Pizza pizza) {
-        order.add(pizza);
-    }
-
+    
     public void sendToArkiv() {
         File file = new File(getNummer() + ".txt");
 
@@ -67,7 +64,7 @@ public class OrderFactory {
         return prisSum;
     }
 
-    public Ordrer nextOrder() {
+    public Ordrer orderMaker() {
         Ordrer order = null;
         this.nummer = nummerMax++;
         this.afTid = pickUpTime();
@@ -77,8 +74,8 @@ public class OrderFactory {
         return order;
     }
     
-public void makeOrdrerObject(){
-        int prisSum = 0;
+public void newOrder(){
+        //int prisSum = 0;
         ArrayList<Pizza> ordrer = new ArrayList();
         System.out.println("Press number of pizza");
         PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
@@ -94,11 +91,11 @@ public void makeOrdrerObject(){
         System.out.println(ordrer.toString());
         System.out.println("ordrer is done");
         
-        
+      /* sum is allready called in orderMaker  
         for (Pizza pizza : ordrer) {
             prisSum += pizza.getPris();
         }
-        System.out.println(prisSum);
+        System.out.println(prisSum);*/
     }
     
 

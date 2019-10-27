@@ -10,7 +10,7 @@ public class HovedMenu {
     OrderFactory myOrderFactory = new OrderFactory();
     Scanner scan = new Scanner(System.in);
     Menu menu = new Menu();
-    Ordrer ordre = myOrderFactory.nextOrder();
+    Ordrer ordre = myOrderFactory.orderMaker();
  //   Pizza tmpPizza = myFactory.getPizzaByPosition(3); 
     
     private boolean quit = false;
@@ -36,6 +36,7 @@ public class HovedMenu {
                     scan.next().charAt(0);
                     break;
                 case '2':
+                    myOrderFactory.newOrder();
                     menu.toString();
 //TO DO - Få lavet en ordre, så man kan tilføje pizzaer fra menu;
                     break;
