@@ -5,14 +5,20 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/*
+Skal Menu printes i hver case eller kan den printes en gang før switch og forblive på skræmen?
+fra case 2 alle ordrer bliver send til bestillinsliste
+*/
+
 public class HovedMenu {
-    
+
     OrderFactory myOrderFactory = new OrderFactory();
     Scanner scan = new Scanner(System.in);
     Menu menu = new Menu();
     Ordrer ordre = myOrderFactory.orderMaker();
- //   Pizza tmpPizza = myFactory.getPizzaByPosition(3); 
-    
+    //   Pizza tmpPizza = myFactory.getPizzaByPosition(3); 
+    BestillingsListe bestListe = new BestillingsListe();
+
     private boolean quit = false;
 
     public HovedMenu() {
@@ -23,20 +29,22 @@ public class HovedMenu {
             visHovedmenu();
             char brugerInput = scan.next().charAt(0);
             switch (brugerInput) {
-                case '1':
-            {
-                try {
-                    menu.readFiles();
-                } catch (FileNotFoundException ex) {
-                    System.out.println("File not found");;;
+                case '1': {
+                    try {
+                        menu.readFiles();
+                    } catch (FileNotFoundException ex) {
+                        System.out.println("File not found");;;
+                    }
                 }
-            }
-                    System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
-                            + "hovedmenuen");
-                    scan.next().charAt(0);
-                    break;
+                System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
+                        + "hovedmenuen");
+                scan.next().charAt(0);
+                break;
                 case '2':
                     myOrderFactory.newOrder();
+                    bestListe.addOrder(ordre);
+                    
+                    
                     menu.toString();
 //TO DO - Få lavet en ordre, så man kan tilføje pizzaer fra menu;
                     break;
@@ -49,6 +57,7 @@ public class HovedMenu {
 //TODO - Fjern ordre fra Bestillingsliste;
                     break;
                 case '5':
+                    System.out.println("");
                     menu.toString();
 //TODO - Vis arkivflier;
                     break;
