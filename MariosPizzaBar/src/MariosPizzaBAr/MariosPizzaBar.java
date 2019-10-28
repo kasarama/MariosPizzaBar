@@ -15,13 +15,13 @@ public class MariosPizzaBar {
     public static void main(String[] args) throws IOException {
         //Opret pizzaListe
 
-        //HovedMenu hm = new HovedMenu();
-        //hm.startProgram();
-       OrderFactory of= new OrderFactory();
-       of.makeOrdrerObject();
-       of.makeOrdrerObject();
-      /* 
-       PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+        HovedMenu hm = new HovedMenu();
+        hm.startProgram();
+     //  OrderFactory of= new OrderFactory();
+       //of.makeOrdrerObject();
+      //* of.makeOrdrerObject();*/
+      
+      /* PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
         Pizza tmpPizza = myFactory.getPizzaByPosition(3);
         System.out.println(tmpPizza.toString());
         OrderFactory myOrderFactory = new OrderFactory();
@@ -38,9 +38,9 @@ public class MariosPizzaBar {
         order.addPizza(pizza4);
 
         System.out.println(order.toString());
-        System.out.println("Sum of order:" + order.sum());
+        System.out.println("Sum of order:" + order.sum());*/
 
-       */
+       
       
       
         /*   
