@@ -1,8 +1,5 @@
 package MariosPizzaBAr;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+//@Cathrine, Vibeke, Matti og Magdalena
 
 public class Pizza {
 
@@ -18,6 +15,11 @@ public class Pizza {
         this.pris = pris;
     }
 
+    public String toString() {
+        return getPosition() + "." + getNavn() + " (" + getIngredienser() + " )";
+
+    }
+    
     public int getPosition() {
         return position;
     }
@@ -29,14 +31,8 @@ public class Pizza {
     public String getIngredienser() {
         return ingredienser;
     }
-
-    // https://www.codespeedy.com/read-a-specific-line-from-a-text-file-in-java/
+    
     public int getPris() {
         return this.pris;
-    }
-
-     public String toString() {
-        return getPosition() + "." + getNavn() + " (" + getIngredienser();
-        
     }
 }

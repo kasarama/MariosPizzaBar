@@ -1,28 +1,37 @@
 package MariosPizzaBAr;
 
+//@Cathrine, Vibeke, Matti og Magdalena
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Calendar;
 
-/*
-Laves en metode som tager en integar som er pizzanummer og ved kun brug 
-af den pizzanummer tilføjej ny pizzaobjekt til en order
- */
-public class Ordrer {
+
+public class Order {
     private int nummer;
     private int sum;
     private String afTid;
-    private ArrayList<Pizza> ordrer = new ArrayList();
+    private ArrayList<Pizza> ordrer;
 
-    public Ordrer(int nummer, int sum, String afTid) {
+    public Order(int nummer, int sum, String afTid) {
         this.nummer = nummer;
         this.sum = sum;
         this.afTid = afTid;
+        ordrer = new ArrayList();
+    }
+    
+    @Override
+    public String toString() {
+        String result = "";
+        for (Pizza pizza : ordrer) {
+            result += pizza.toString()+"\n";
+        }
+        return "Order nr. " + getNummer() + ":" + "\n"
+                + result + "\n"
+                + "Afhentnings tid: " + getAfTid()
+                + "\t\tSamletPris: " + sum() + "\n";
     }
 
     public void addPizza(Pizza pizza) {
@@ -32,29 +41,11 @@ public class Ordrer {
     
     public int sum() {
         int prisSum = 0;
-
         for (Pizza pizza : ordrer) {
         int tmpPrisSum=prisSum;
             prisSum = tmpPrisSum + pizza.getPris();
         }
         return prisSum;
-    }
-
-    public int getNummer() {
-        
-        return nummer;
-    }
-
-    public int getSum() {
-        return sum;
-    }
-
-    public String getAfTid() {
-        return afTid;
-    }
-
-    public ArrayList<Pizza> getOrdrer() {
-        return ordrer;
     }
     
     public void sendToArkiv() {
@@ -71,16 +62,20 @@ public class Ordrer {
         }
     }
     
-    @Override
-    public String toString() {
-        String result = "";
-        for (Pizza pizza : ordrer) {
-            result += pizza.toString()+"\n";
-        }
-        return "Ordrer " + getNummer() + ":" + "\n"
-                + result + "\n"
-                + "Afhentnings tid: " + getAfTid()
-                + "\t\tSamletPris: " + sum() + "\n";
+    public int getNummer() {
+        return nummer;
+    }
+
+    public int getSum() {
+        return sum;
+    }
+
+    public String getAfTid() {
+        return afTid;
+    }
+
+    public ArrayList<Pizza> getOrdrer() {
+        return ordrer;
     }
 
 }

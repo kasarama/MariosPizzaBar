@@ -1,35 +1,22 @@
 package MariosPizzaBAr;
 
-//import java.io.File;
-//import java.io.FileNotFoundException;
+//@Cathrine, Vibeke, Matti og Magdalena
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-//import java.util.Scanner;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-
-/*
-??
-PizzaFactory craver filename som ikke bliver brugt senere - enten springer vi
-det over eller giver vi bruger en mulighed for at læse menu fra en anden file 
-*/
-
 
 public class PizzaFactory {
 
     String filename;
-
-    public PizzaFactory(String filename) {
-        this.filename = filename;
-    }
-
     private int position;
     private String navn;
     private String ingredienser;
     private int pris;
 
-    // https://www.codespeedy.com/read-a-specific-line-from-a-text-file-in-java/
+    public PizzaFactory(String filename) {
+        this.filename = filename;
+    }
+
     public String toString() {
         return getPosition() + "." + getNavn() + " (" + getIngredienser() + " )";
     }
@@ -46,7 +33,7 @@ public class PizzaFactory {
             this.pris = Integer.parseInt(myArr[3]);
             pizza = new Pizza(Integer.parseInt(myArr[0]), myArr[1], myArr[2], Integer.parseInt(myArr[3]));
         } catch (IOException ex) {
-            System.out.println("Can't find file");
+            System.out.println("Fejl - kan ikke finde " + filename);
         }
         return pizza;
     }
