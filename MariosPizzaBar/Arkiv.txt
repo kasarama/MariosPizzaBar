@@ -1,1 +1,51 @@
+1Ordrer 3:
+21. Olivia ( tomat, ost, shawarma og champignon
+
+Afhentnings tid: 11:37		SamletPris: 75
+0
+1Ordrer 2:
+3. Ostedroem ( gorgonzola, oksekoed og ost
+6. Mathias (tomat, ost, hakket oksekoed, champignon og loeg
+
+Afhentnings tid: 11:38		SamletPris: 150
+0
+2Ordrer 3:
+6. Mathias (tomat, ost, hakket oksekoed, champignon og loeg
+5. Malene (tomat, ost, skinke og champignon
+
+Afhentnings tid: 11:38		SamletPris: 155
+0
+3Ordrer 4:
+4. bejamin ( tomat, ost, gorgonzola, champignon og groen peber
+
+Afhentnings tid: 11:39		SamletPris: 80
+0
+1Ordrer 2:
+5. Malene (tomat, ost, skinke og champignon
+5. Malene (tomat, ost, skinke og champignon
+
+Afhentnings tid: 11:43		SamletPris: 150
+0
+1Ordrer 2:
+5. Malene (tomat, ost, skinke og champignon
+4. bejamin ( tomat, ost, gorgonzola, champignon og groen peber
+
+Afhentnings tid: 11:44		SamletPris: 1550
+1Ordrer 2:
+3. Ostedroem ( gorgonzola, oksekoed og ost
+4. bejamin ( tomat, ost, gorgonzola, champignon og groen peber
+
+Afhentnings tid: 11:46		SamletPris: 150
+0
+1Ordrer 2:
+7. Thomas (tomat, ost, skinke, salami og champignon
+7. Thomas (tomat, ost, skinke, salami og champignon
+
+Afhentnings tid: 11:50		SamletPris: 150
+0 Hej 
+ Hej1Ordrer 2:
+1. Pepo ( peperoni, ost
+1. Pepo ( peperoni, ost
+
+Afhentnings tid: 11:51		SamletPris: 130
 

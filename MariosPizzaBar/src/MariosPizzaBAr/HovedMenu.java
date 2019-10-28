@@ -33,7 +33,7 @@ public class HovedMenu {
                     try {
                         menu.readFiles();
                     } catch (FileNotFoundException ex) {
-                        System.out.println("File not found");;;
+                        System.out.println("File not found");
                     }
                 }
                 System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
@@ -41,8 +41,8 @@ public class HovedMenu {
                 scan.next().charAt(0);
                 break;
                 case "2":
-                    myOrderFactory.newOrder();
-                    bestListe.addOrder(ordre);
+                    Ordrer nyOrdre = myOrderFactory.newOrder();
+                    bestListe.addOrder(nyOrdre);
 
                     menu.toString();
 //TO DO - Få lavet en ordre, så man kan tilføje pizzaer fra menu;

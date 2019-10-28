@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class OrderFactory {
     static int count;
@@ -79,10 +81,11 @@ public class OrderFactory {
     }
 
 
-    public void newOrder() { // lav metoden ikke void , men returner ordre med nummer
+    public Ordrer newOrder() { // lav metoden ikke void , men returner ordre med nummer
 
         //int prisSum = 0;
-        ArrayList<Pizza> ordrer = new ArrayList();
+        //ArrayList<Pizza> ordrer = new ArrayList();
+        Ordrer ordre = orderMaker();
         System.out.println("Indtast nummeret af pizza(er) og gå videre ved at trykke \"0\":");
         PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
         Scanner sc = new Scanner(System.in);
@@ -94,7 +97,7 @@ public class OrderFactory {
                 quit = true;
             } else if (Integer.parseInt(n) > 0 && Integer.parseInt(n) <= 30) {
                 myFactory.getPizzaByPosition(Integer.parseInt(n)).toString();
-                ordrer.add(myFactory.getPizzaByPosition(Integer.parseInt(n)));
+                ordre.addPizza(myFactory.getPizzaByPosition(Integer.parseInt(n)));
             } else if (Integer.parseInt(n) > 30) {
                 System.out.println("Pizzanummeret findes ikke, prøv igen");
                 newOrder();
@@ -104,11 +107,22 @@ public class OrderFactory {
             }
             
         }
+        File f = new File("Arkiv.txt");
         
+        try (BufferedWriter bw= new BufferedWriter(new FileWriter(f,true))){
+            
+                
+                     
+            bw.write(getNummer()+ordre.toString());
+            bw.write("\n");
+        } catch (IOException ex) {
+            System.out.println("Error: Kan ikke tilføje til fil");
+        }
 
-        System.out.println(ordrer.toString());
+        System.out.println(ordre.toString());
         System.out.println("^ Denne ordre er tilføjet");
         //returner ordre med nummer
+        return ordre;
     }
 
    public void makeOrdrerObject() throws IOException{

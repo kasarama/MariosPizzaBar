@@ -14,7 +14,6 @@ Laves en metode som tager en integar som er pizzanummer og ved kun brug
 af den pizzanummer tilføjej ny pizzaobjekt til en order
  */
 public class Ordrer {
-    static int count;
     private int nummer;
     private int sum;
     private String afTid;
@@ -43,7 +42,7 @@ public class Ordrer {
 
     public int getNummer() {
         
-        return count;
+        return nummer;
     }
 
     public int getSum() {
