@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public class OrderFactory {
-
+    static int count;
     private static int nummerMax = 1;
     private int nummer;
     private int sum;
@@ -136,15 +136,16 @@ public class OrderFactory {
             
                 
                      
-            bw.write(ordrer.toString());
+            bw.write(getNummer()+ordrer.toString()+prisSum);
             bw.write("\n");
         }
-        System.out.println(ordrer.toString()+prisSum);
+        System.out.println(getNummer()+ordrer.toString()+prisSum);
         System.out.println("ordrer is done");
     }
 
     public int getNummer() {
-        return nummer;
+        count++;
+        return count;
     }
 
     public int getSum() {
