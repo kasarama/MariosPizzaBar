@@ -3,12 +3,9 @@ package MariosPizzaBAr;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.io.FileReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Menu {
-    private Ordrer order;
+    //private Ordrer order;
         
        
     public Menu() {

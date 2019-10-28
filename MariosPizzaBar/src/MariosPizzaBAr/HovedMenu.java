@@ -26,9 +26,10 @@ public class HovedMenu {
     public void startProgram() {
         while (quit == false) {
             visHovedmenu();
-            char brugerInput = scan.next().charAt(0);
+            String brugerInput = scan.nextLine();
             switch (brugerInput) {
-                case '1': {
+
+                case "1": {
                     try {
                         menu.readFiles();
                     } catch (FileNotFoundException ex) {
@@ -39,29 +40,28 @@ public class HovedMenu {
                         + "hovedmenuen");
                 scan.next().charAt(0);
                 break;
-                case '2':
+                case "2":
                     myOrderFactory.newOrder();
                     bestListe.addOrder(ordre);
 
                     menu.toString();
 //TO DO - Få lavet en ordre, så man kan tilføje pizzaer fra menu;
                     break;
-                case '3':
-                    
-                    System.out.println("Bestillings Liste\n"+bestListe.toString());
-                    menu.toString();
-//TODO - Vis ordrerliste;
-                    break;
-                case '4':
+                case "3":
+
+                    System.out.println("Bestillings Liste\n" + bestListe.toString());
+
+                case "4":
                     menu.toString();
 //TODO - Fjern ordre fra Bestillingsliste;
                     break;
-                case '5':
+                case "5":
                     System.out.println("");
+
                     menu.toString();
 //TODO - Vis arkivflier;
                     break;
-                case '6':
+                case "6":
                     quit = true;
                     break;
                 default: {

@@ -30,7 +30,21 @@ public class OrderFactory {
         return hour + ":" + minute;
     }
 
-    
+
+    public void sendToArkiv() {
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        File file = new File(day+"."+month+"."+getNummer() + ".txt");
+
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
+            br.write(toString());
+            br.newLine();
+        } catch (IOException e) {
+            System.out.println("Unable to read file " + file.toString());
+        }
+    }
+
 
     @Override
     public String toString() {
@@ -64,28 +78,75 @@ public class OrderFactory {
         return order;
     }
 
-    public void newOrder() {
+
+    public void newOrder() { // lav metoden ikke void , men returner ordre med nummer
+
         //int prisSum = 0;
+        ArrayList<Pizza> ordrer = new ArrayList();
+        System.out.println("Indtast nummeret af pizza(er) og gå videre ved at trykke \"0\":");
+        PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+        Scanner sc = new Scanner(System.in);
+        String n = "";
+        boolean quit = false;
+        while (quit == false) {
+            n = sc.nextLine();
+            if (Integer.parseInt(n) == 0) {
+                quit = true;
+            } else if (Integer.parseInt(n) > 0 && Integer.parseInt(n) <= 30) {
+                myFactory.getPizzaByPosition(Integer.parseInt(n)).toString();
+                ordrer.add(myFactory.getPizzaByPosition(Integer.parseInt(n)));
+            } else if (Integer.parseInt(n) > 30) {
+                System.out.println("Pizzanummeret findes ikke, prøv igen");
+                newOrder();
+            } else {
+                System.out.println("Dette er ikke et tal, prøv igen");
+                newOrder();
+            }
+            
+        }
+        
+
+        System.out.println(ordrer.toString());
+        System.out.println("^ Denne ordre er tilføjet");
+        //returner ordre med nummer
+    }
+
+   public void makeOrdrerObject() throws IOException{
+        
+        int prisSum = 0;
         ArrayList<Pizza> ordrer = new ArrayList();
         System.out.println("Press number of pizza");
         PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
 
-        while (n > 0) {
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        while(n>0){
+        
+        
+        myFactory.getPizzaByPosition(n).toString();
+        ordrer.add(myFactory.getPizzaByPosition(n));    
+        n=sc.nextInt();
+        
+    }
+        
 
-            //   myFactory.getPizzaByPosition(n).toString();
-            ordrer.add(myFactory.getPizzaByPosition(n));
-            n = sc.nextInt();
-        }
-        System.out.println(ordrer.toString());
-        System.out.println("ordrer is done");
-
-        /* sum is allready called in orderMaker  
         for (Pizza pizza : ordrer) {
             prisSum += pizza.getPris();
         }
-        System.out.println(prisSum);*/
+        System.out.println(prisSum);
+        
+        
+        File f = new File("Arkiv.txt");
+        
+        try (BufferedWriter bw= new BufferedWriter(new FileWriter(f,true))){
+            
+                
+                     
+            bw.write(ordrer.toString());
+            bw.write("\n");
+        }
+        System.out.println(ordrer.toString()+prisSum);
+        System.out.println("ordrer is done");
     }
 
     public int getNummer() {
