@@ -29,8 +29,9 @@ public class BestillingsListe {
 
     public void fjernOrdre(Ordrer o) {
         bestillingsliste.remove(o);
+    }
 
-        /*
+    /*
     public void addOrdrerToArchive(){
         File file = new File("Arkiv.txt");
         try(BufferedWriter br =  new BufferedWriter(new FileWriter(file))){
@@ -44,10 +45,15 @@ public class BestillingsListe {
             System.out.println("can't find file");
         }
     }
-         */
-    }
-    
-    public void findEfterNummer(int n) {
-        
+     */
+    public Ordrer findEfterNummer(int n) {
+
+        Ordrer tmpOrder = null;
+        for (Ordrer order : bestillingsliste) {
+            if (n == order.getNummer()) {
+                 tmpOrder=order;
+            }
+
+        }return tmpOrder;
     }
 }

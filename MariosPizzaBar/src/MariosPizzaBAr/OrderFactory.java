@@ -11,8 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class OrderFactory {
-    static int count;
-    private static int nummerMax = 1;
+    
+    private static int count = 0;
     private int nummer;
     private int sum;
     private String afTid;
@@ -72,7 +72,7 @@ public class OrderFactory {
 
     public Ordrer orderMaker() {
         Ordrer order = null;
-        this.nummer = nummerMax++;
+        this.nummer = count++;
         this.afTid = pickUpTime();
         this.sum = sum();
         order = new Ordrer(this.nummer, this.sum, this.afTid);
@@ -124,8 +124,7 @@ public class OrderFactory {
     }
 
 
-    public int getNummer() {
-        count++;
+    public int getNummer() {        
         return count;
     }
 

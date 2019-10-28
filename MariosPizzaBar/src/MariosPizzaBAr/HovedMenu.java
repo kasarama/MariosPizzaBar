@@ -47,23 +47,29 @@ public class HovedMenu {
                     menu.toString();
 //TO DO - Få lavet en ordre, så man kan tilføje pizzaer fra menu;
                     break;
+                    
                 case "3":
-
                     System.out.println("Bestillings Liste\n" + bestListe.toString());
-
-                case "4":
-                    menu.toString();
-//TODO - Fjern ordre fra Bestillingsliste;
                     break;
+                    
+                case "4":
+                    Scanner scaner = new Scanner(System.in);
+                    System.out.println("skriv order nummer og tryk enter");
+                    int orderNummer = scaner.nextInt();
+                    bestListe.fjernOrdre(bestListe.findEfterNummer(orderNummer));
+                    menu.toString();
+                    break;
+                    
                 case "5":
                     System.out.println("");
 
                     menu.toString();
 //TODO - Vis arkivflier;
                     break;
+                    
                 case "6":
                     quit = true;
-                    break;
+                    break;                    
                 default: {
                     System.out.println("Systemet gik ned... \n- Du er tilbage på Hovedmenuen");
                     startProgram();
