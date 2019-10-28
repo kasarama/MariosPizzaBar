@@ -46,4 +46,8 @@ public class BestillingsListe {
     }
          */
     }
+    
+    public Ordrer findEfterNummer(int n) {
+        
+    }
 }
