@@ -1,5 +1,0 @@
-Ordrer 1:
-
-SamletPris: 0
-Afhentnings tid: 2:22:59
-Sum:0

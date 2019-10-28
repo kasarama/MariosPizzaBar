@@ -105,7 +105,7 @@ public class OrderFactory {
             }
             
         }
-        File f = new File("Arkiv.txt");
+        File f = new File("Data/Arkiv.txt");
         
         try (BufferedWriter bw= new BufferedWriter(new FileWriter(f,true))){
             
