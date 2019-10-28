@@ -47,7 +47,7 @@ public class BestillingsListe {
          */
     }
     
-    public Ordrer findEfterNummer(int n) {
+    public void findEfterNummer(int n) {
         
     }
 }

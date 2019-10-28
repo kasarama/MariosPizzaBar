@@ -83,8 +83,6 @@ public class OrderFactory {
 
     public Ordrer newOrder() { // lav metoden ikke void , men returner ordre med nummer
 
-        //int prisSum = 0;
-        //ArrayList<Pizza> ordrer = new ArrayList();
         Ordrer ordre = orderMaker();
         System.out.println("Indtast nummeret af pizza(er) og gå videre ved at trykke \"0\":");
         PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
@@ -113,7 +111,7 @@ public class OrderFactory {
             
                 
                      
-            bw.write(getNummer()+ordre.toString());
+            bw.write(ordre.toString());
             bw.write("\n");
         } catch (IOException ex) {
             System.out.println("Error: Kan ikke tilføje til fil");
@@ -125,43 +123,6 @@ public class OrderFactory {
         return ordre;
     }
 
-   public void makeOrdrerObject() throws IOException{
-        
-        int prisSum = 0;
-        ArrayList<Pizza> ordrer = new ArrayList();
-        System.out.println("Press number of pizza");
-        PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
-
-        Scanner sc= new Scanner(System.in);
-        int n=sc.nextInt();
-        while(n>0){
-        
-        
-        myFactory.getPizzaByPosition(n).toString();
-        ordrer.add(myFactory.getPizzaByPosition(n));    
-        n=sc.nextInt();
-        
-    }
-        
-
-        for (Pizza pizza : ordrer) {
-            prisSum += pizza.getPris();
-        }
-        System.out.println(prisSum);
-        
-        
-        File f = new File("Arkiv.txt");
-        
-        try (BufferedWriter bw= new BufferedWriter(new FileWriter(f,true))){
-            
-                
-                     
-            bw.write(getNummer()+ordrer.toString()+prisSum);
-            bw.write("\n");
-        }
-        System.out.println(getNummer()+ordrer.toString()+prisSum);
-        System.out.println("ordrer is done");
-    }
 
     public int getNummer() {
         count++;
