@@ -1,6 +1,7 @@
 package MariosPizzaBAr;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -11,12 +12,14 @@ public class MariosPizzaBar {
     når bruger giver en kommend til det (som for eksampel"send") 
     og går tilbage til at starte på en ny order
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //Opret pizzaListe
 
-        HovedMenu hm = new HovedMenu();
-        hm.startProgram();
-       
+        //HovedMenu hm = new HovedMenu();
+        //hm.startProgram();
+       OrderFactory of= new OrderFactory();
+       of.makeOrdrerObject();
+       of.makeOrdrerObject();
       /* 
        PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
         Pizza tmpPizza = myFactory.getPizzaByPosition(3);

@@ -98,30 +98,51 @@ public class OrderFactory {
                 System.out.println("Dette er ikke et tal, prøv igen");
                 newOrder();
             }
+            
         }
-/*=======
-        Scanner sc= new Scanner(System.in);
-        int n=sc.nextInt();
-        
-        
-        while(n>0){
         
 
-     //   myFactory.getPizzaByPosition(n).toString();
-        ordrer.add(myFactory.getPizzaByPosition(n));    
-        n=sc.nextInt();
-    }
->>>>>>> ba5dfdf3a7761c339ea6f651d1437b33004a06f1*/
         System.out.println(ordrer.toString());
         System.out.println("^ Denne ordre er tilføjet");
         //returner ordre med nummer
     }
 
-    /* sum is allready called in orderMaker  
+   public void makeOrdrerObject() throws IOException{
+        
+        int prisSum = 0;
+        ArrayList<Pizza> ordrer = new ArrayList();
+        System.out.println("Press number of pizza");
+        PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        while(n>0){
+        
+        
+        myFactory.getPizzaByPosition(n).toString();
+        ordrer.add(myFactory.getPizzaByPosition(n));    
+        n=sc.nextInt();
+        
+    }
+        
         for (Pizza pizza : ordrer) {
             prisSum += pizza.getPris();
         }
-        System.out.println(prisSum);*/
+        System.out.println(prisSum);
+        
+        
+        File f = new File("Arkiv.txt");
+        
+        try (BufferedWriter bw= new BufferedWriter(new FileWriter(f,true))){
+            
+                
+                     
+            bw.write(ordrer.toString());
+            bw.write("\n");
+        }
+        System.out.println(ordrer.toString()+prisSum);
+        System.out.println("ordrer is done");
+    }
+
     public int getNummer() {
         return nummer;
     }
