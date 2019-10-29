@@ -15,11 +15,6 @@ public class PizzaFactory {
 
     public PizzaFactory() {
     }
-    
-    //String med menunummer, navn og ingredienser.
-    public String toString() {
-        return getPosition() + "." + getNavn() + " (" + getIngredienser() + " )";
-    }
 
     /*Initialiserer et "tom" pizza objekt. 
     Læser menufilen "Pizzaer" og opdeler informationerne i forskellige variabler.
@@ -41,22 +36,6 @@ public class PizzaFactory {
             System.out.println("Fejl - kan ikke finde " + filename);
         }
         return pizza;
-    }
-
-    public int getPosition() {
-        return position;
-    }
-
-    public String getNavn() {
-        return navn;
-    }
-
-    public String getIngredienser() {
-        return ingredienser;
-    }
-
-    public int getPris() {
-        return pris;
     }
 
 }

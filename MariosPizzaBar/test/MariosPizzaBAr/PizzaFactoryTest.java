@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package MariosPizzaBAr;
 
 import java.io.IOException;
@@ -13,18 +9,8 @@ import java.util.logging.Logger;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Magdalena
- */
 public class PizzaFactoryTest {
 
-    public PizzaFactoryTest() {
-    }
-
-    /**
-     * Test of toString method, of class PizzaFactory.
-     */
     @Test
     public void testToString() {
         OrderFactory myOrderFactory = new OrderFactory();
@@ -37,37 +23,6 @@ public class PizzaFactoryTest {
 
     }
 
-    /**
-     * Test of getPizzaByPosition method, of class PizzaFactory.
-     */
-    @Test
-    public void testGetPizzaByPosition() {
-    }
-
-    /**
-     * Test of getPosition method, of class PizzaFactory.
-     */
-    @Test
-    public void testGetPosition() {
-    }
-
-    /**
-     * Test of getNavn method, of class PizzaFactory.
-     */
-    @Test
-    public void testGetNavn() {
-    }
-
-    /**
-     * Test of getIngredienser method, of class PizzaFactory.
-     */
-    @Test
-    public void testGetIngredienser() {
-    }
-
-    /**
-     * Test of getPris method, of class PizzaFactory.
-     */
     @Test
     public void testGetPris() {
         try {

@@ -5,8 +5,6 @@ package MariosPizzaBAr;
 import java.util.Calendar;
 import org.junit.Test;
 
-
-
 public class OrderTest {
 
     OrderFactory myOrderFactory = new OrderFactory();
@@ -17,9 +15,6 @@ public class OrderTest {
     Pizza pizza3 = myFactory.getPizzaByPosition(3);
     Pizza pizza4 = myFactory.getPizzaByPosition(5);
 
-    public OrderTest() {
-    }
-
     @Test
     public void TestpickUpTime() {
         Calendar calendar = Calendar.getInstance();
@@ -28,57 +23,6 @@ public class OrderTest {
         int minute = calendar.get(Calendar.MINUTE);
         int second = calendar.get(Calendar.SECOND);
         System.out.println(hour + ":" + minute + ":" + second);
-
-        //hvis det giver + 30 min så det rigtigt whuuhuu!!
     }
 
-    /**
-     * Test of addPizza method, of class Ordrer.
-     */
-    @Test
-    public void testAddPizza() {
-    }
-
-    /**
-     * Test of sum method, of class Ordrer.
-     */
-    @Test
-    public void testSum() {
-    }
-
-    /**
-     * Test of getNummer method, of class Ordrer.
-     */
-    @Test
-    public void testGetNummer() {
-    }
-
-    /**
-     * Test of getSum method, of class Ordrer.
-     */
-    @Test
-    public void testGetSum() {
-    }
-
-    /**
-     * Test of getAfTid method, of class Ordrer.
-     */
-    @Test
-    public void testGetAfTid() {
-    }
-
-    /**
-     * Test of getOrdrer method, of class Ordrer.
-     */
-    @Test
-    public void testGetOrdrer() {
-    }
-
-    /**
-     * Test of toString method, of class Ordrer.
-     */
-    @Test
-    public void testToString() {
-        
-    }
 }

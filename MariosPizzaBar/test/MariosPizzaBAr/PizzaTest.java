@@ -9,19 +9,11 @@ import static org.junit.Assert.*;
 public class PizzaTest {
     Pizza pizza;    
     PizzaFactory myFactory = new PizzaFactory();
-    Pizza tmpPizza = myFactory.getPizzaByPosition(3);
-    public PizzaTest() {
-        int nr;
-        String navn;
-        String ingredienser;
-        int pris;
-    }
-    
+    Pizza tmpPizza = myFactory.getPizzaByPosition(3);    
     
     @Before
     public void setUp() {
         pizza=new Pizza(1,"toto","takria",1);
-        
     }
      
     @Test
@@ -42,13 +34,8 @@ public class PizzaTest {
         String result = instance.getIngredienser();
         assertEquals("takria", result);
         System.out.println("result is that ingredients are "+result);
-        
     }
 
-    @Test
-    public void testGetPosition() {
-    }
-    
     @Test
     public void testGetPris() {
         int expected = 70;
