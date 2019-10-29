@@ -28,8 +28,8 @@ public class PizzaFactoryTest {
     @Test
     public void testToString() {
         OrderFactory myOrderFactory = new OrderFactory();
-        Ordrer order = myOrderFactory.orderMaker();
-        PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+        Order order = myOrderFactory.orderMaker();
+        PizzaFactory myFactory = new PizzaFactory();
         Pizza pizza1 = myFactory.getPizzaByPosition(8);
         Pizza pizza2 = myFactory.getPizzaByPosition(2);
         Pizza pizza3 = myFactory.getPizzaByPosition(3);

@@ -1,55 +1,44 @@
 package MariosPizzaBAr;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+//@Cathrine, Vibeke, Matti og Magdalena
 import java.util.ArrayList;
 
 public class BestillingsListe {
 
-    ArrayList<Ordrer> bestillingsliste = new ArrayList();
+    ArrayList<Order> bestillingsliste = new ArrayList();
 
     public BestillingsListe() {
-
     }
 
+    //Udskriver alle skabte og gemte ordrer i ArrayListen "bestillingsliste".
     @Override
     public String toString() {
         String result = "";
-        for (Ordrer o : bestillingsliste) {
+        for (Order o : bestillingsliste) {
             result += o.toString() + "\n";
         }
         return result;
     }
-
-    public void addOrder(Ordrer o) {
+    
+    //Tilføjer en skabt ordre til ArrayListen.
+    public void addOrder(Order o) {
         bestillingsliste.add(o);
     }
 
-    public void fjernOrdre(Ordrer o) {
+    //Fjerner en ordre fra ArrayListen.
+    public void fjernOrdre(Order o) {
         bestillingsliste.remove(o);
+        System.out.println("Ordren nr " + o.getNummer() + " er slettet");
     }
+    
+    /*Find en skabt ordre i ArrayListen ud fra et givent nummer; ordrenummer.
+    Bliver ikke brugt alene, men sammen med fjernOrdre ovenover for at fjerne
+    en ordre fra ArrayListen.*/
+    
+    public Order findEfterNummer(int n) {
 
-    /*
-    public void addOrdrerToArchive(){
-        File file = new File("Arkiv.txt");
-        try(BufferedWriter br =  new BufferedWriter(new FileWriter(file))){
-            for (Ordrer ordrer: bestillingsliste){
-                br.write(ordrer.toString());
-                br.newLine();
-            }
-            
-            
-        } catch (IOException e){
-            System.out.println("can't find file");
-        }
-    }
-     */
-    public Ordrer findEfterNummer(int n) {
-
-        Ordrer tmpOrder = null;
-        for (Ordrer order : bestillingsliste) {
+        Order tmpOrder = null;
+        for (Order order : bestillingsliste) {
             if (n == order.getNummer()) {
                 tmpOrder = order;
             } else {
