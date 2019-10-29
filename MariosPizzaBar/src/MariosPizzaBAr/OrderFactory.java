@@ -25,7 +25,7 @@ public class OrderFactory {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.MINUTE, +(30));
 
-        int hour = calendar.get(Calendar.HOUR);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
         // int second = calendar.get(Calendar.SECOND);
         // return hour + ":" + minute + ":" + second;

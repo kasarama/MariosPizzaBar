@@ -9,11 +9,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
-/**
- *
- * @author John
- */
 public class OrdrerTest {
 
     OrderFactory myOrderFactory = new OrderFactory();
@@ -23,34 +20,55 @@ public class OrdrerTest {
     Pizza pizza2 = myFactory.getPizzaByPosition(2);
     Pizza pizza3 = myFactory.getPizzaByPosition(3);
     Pizza pizza4 = myFactory.getPizzaByPosition(5);
+    String time;
 
     public OrdrerTest() {
     }
 
-    @Test
-    public void TestpickUpTime() {
+    @Before
+    public void setUp() throws Exception {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.MINUTE, +(30));
-        int hour = calendar.get(Calendar.HOUR);
-        int minute = calendar.get(Calendar.MINUTE);
-        int second = calendar.get(Calendar.SECOND);
-        System.out.println(hour + ":" + minute + ":" + second);
 
-        //hvis det giver + 30 min så det rigtigt whuuhuu!!
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        // int second = calendar.get(Calendar.SECOND);
+        // return hour + ":" + minute + ":" + second;
+        time= hour + ":" + minute;
+    }
+
+    @Test
+    public void TestpickUpTime() { //@autor Magdalena
+        
+        String expected=time;
+        String actual=order.getAfTid();
+        assertEquals(expected, actual);
+        //Indtast aktuel tid + 30 minutter i actual
     }
 
     /**
      * Test of addPizza method, of class Ordrer.
      */
     @Test
-    public void testAddPizza() {
+    public void testAddPizza() { //@autor Magdalena
+        order.addPizza(pizza1);
+        order.addPizza(pizza2);
+        int expected=145;
+        int actual = order.sum();
+        assertEquals(expected, actual);
+        
     }
 
     /**
      * Test of sum method, of class Ordrer.
      */
     @Test
-    public void testSum() {
+    public void testSum() { //@autor Magdalena
+        order.addPizza(pizza3);
+        order.addPizza(pizza3);
+        int expected = 140;
+        int actual = order.sum();
+        assertEquals(expected, actual);
     }
 
     /**
@@ -82,10 +100,18 @@ public class OrdrerTest {
     }
 
     /**
+     * Test of sendToArkiv method, of class Ordrer.
+     */
+    @Test
+    public void testSendToArkiv() {
+    }
+
+    /**
      * Test of toString method, of class Ordrer.
      */
     @Test
     public void testToString() {
-        
     }
+
+   
 }
