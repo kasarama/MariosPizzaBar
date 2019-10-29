@@ -8,6 +8,7 @@ public class Pizza {
     private String ingredienser;
     private int pris;
 
+    //Constructor:
     public Pizza(int position, String navn, String ingredienser, int pris) {
         this.position = position;
         this.navn = navn;
@@ -15,6 +16,7 @@ public class Pizza {
         this.pris = pris;
     }
 
+    //String med pizzanummer, navn og ingredienser.
     public String toString() {
         return getPosition() + "." + getNavn() + " (" + getIngredienser() + " )";
 
@@ -35,4 +37,5 @@ public class Pizza {
     public int getPris() {
         return this.pris;
     }
+     
 }

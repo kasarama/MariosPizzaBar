@@ -7,7 +7,7 @@ import org.junit.Test;
 
 
 
-public class OrdrerTest {
+public class OrderTest {
 
     OrderFactory myOrderFactory = new OrderFactory();
     Order order = myOrderFactory.orderMaker();
@@ -17,7 +17,7 @@ public class OrdrerTest {
     Pizza pizza3 = myFactory.getPizzaByPosition(3);
     Pizza pizza4 = myFactory.getPizzaByPosition(5);
 
-    public OrdrerTest() {
+    public OrderTest() {
     }
 
     @Test

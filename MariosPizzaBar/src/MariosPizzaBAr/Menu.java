@@ -11,6 +11,7 @@ public class Menu {
     public Menu() {
     }
     
+    //Læser filen "Pizzaer" som er menukortet til restauranten og udskriver det.
     public void readFiles() throws FileNotFoundException{
      String filename= "Data/Pizzaer.txt";
                 File textfile = new File(filename); 
@@ -23,8 +24,5 @@ public class Menu {
                 }
                 in.close();   
     }
-    
-    // https://www.codespeedy.com/read-a-specific-line-from-a-text-file-in-java/
-    
     
 }

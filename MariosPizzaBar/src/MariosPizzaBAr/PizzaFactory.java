@@ -15,11 +15,17 @@ public class PizzaFactory {
 
     public PizzaFactory() {
     }
-
+    
+    //String med menunummer, navn og ingredienser.
     public String toString() {
         return getPosition() + "." + getNavn() + " (" + getIngredienser() + " )";
     }
 
+    /*Initialiserer et "tom" pizza objekt. 
+    Læser menufilen "Pizzaer" og opdeler informationerne i forskellige variabler.
+    Her bliver menunummer og pris også lavet om til integers.
+    Til sidst bliver et nyt pizza objekt instantieret med informationer fra filen
+    Metoden returnerer også den skabte pizza.*/
     public Pizza getPizzaByPosition(int n) {
         Pizza pizza = null;
         try {

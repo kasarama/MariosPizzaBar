@@ -15,6 +15,7 @@ public class Archive {
     public Archive() {
     }
 
+    //Viser arkiv-fil
     public void showArchive() {
         String fileName = "Data/Arkiv.txt";
 
@@ -31,11 +32,12 @@ public class Archive {
             }
             in.close();
         } catch (FileNotFoundException ex) {
-            System.out.println("Fejl - kan ikke finde arkiv-fil");;
+            System.out.println("Fejl - kan ikke finde arkiv-fil!");;
         }
 
     }
 
+    //Sender ordre til arkiv
     public void sendToArkiv(Order o) {
         File f = new File("Data/Arkiv.txt");
 
@@ -45,7 +47,7 @@ public class Archive {
             bw.write("\n");
             bw.close();
         } catch (IOException ex) {
-            System.out.println("Error: Kan ikke tilføje til fil");
+            System.out.println("Fejl: Kan ikke tilføje til fil!");
         }
     }
     //https://www.codespeedy.com/read-a-specific-line-from-a-text-file-in-java/
