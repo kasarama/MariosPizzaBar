@@ -24,6 +24,7 @@ public class HovedMenu {
     public HovedMenu() {
     }
 
+    //Metode til at køre hovedmenuen. Hver del er skrevet som en case i en switch.
     public void startProgram() {
         while (quit == false) {
             try {
@@ -31,6 +32,7 @@ public class HovedMenu {
                 String brugerInput = scan.nextLine();
                 switch (brugerInput) {
                     
+                    //Viser hele menukortet fra "Pizzaer" filen.
                     case "1": {
                         try {
                             menu.readFiles();
@@ -42,6 +44,8 @@ public class HovedMenu {
                             + "hovedmenuen");
                     scan.next().charAt(0);
                     break;
+                    
+                    //Tilføjer en ordre til ArrayListen og arkivet.
                     case "2":
                         Ordrer nyOrdre = myOrderFactory.newOrder();
                         bestListe.addOrder(nyOrdre);
@@ -50,10 +54,12 @@ public class HovedMenu {
 //TO DO - Få lavet en ordre, så man kan tilføje pizzaer fra menu;
                         break;
                         
+                    //Viser ArrayListens indhold.
                     case "3":
                         System.out.println("Bestillings Liste\n" + bestListe.toString());
                         break;
                         
+                    //Fjerner en ordre fra ArrayListen.
                     case "4":
                         Scanner scaner = new Scanner(System.in);
                         System.out.println("skriv order nummer og tryk enter");
@@ -62,6 +68,7 @@ public class HovedMenu {
                         menu.toString();
                         break;
                         
+                    //Udskriver "Arkiv" filen med gemte ordrer.
                     case "5":
                         System.out.println("Arkiv\n");
                         String fileName = "Data/Arkiv.txt";
@@ -81,6 +88,7 @@ public class HovedMenu {
 //TODO - Vis arkivflier;
                         break;
                         
+                    //Lukker programmet igen.
                     case "6":
                         quit = true;
                         break;
@@ -96,6 +104,7 @@ public class HovedMenu {
         }
     }
 
+    //Instruktioner til at betjene hovedmenuen og kommandoerne i metoden startProgram.
     public void visHovedmenu() {
         System.out.println();
         System.out.println("\t\t\"Hovedmenuen\"");

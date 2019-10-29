@@ -21,6 +21,7 @@ public class OrderFactory {
     public OrderFactory() {
     }
 
+    //Regner nuværende tid ud og tilføjer 30 minutter til afhentningstidspunkt.
     public String pickUpTime() {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.MINUTE, +(30));
@@ -48,6 +49,7 @@ public class OrderFactory {
     }
 
 
+    //String til at udskrive skabte ordre med dens tilføjede pizza(er).
     @Override
     public String toString() {
         String result = "";
@@ -60,6 +62,7 @@ public class OrderFactory {
                 + "\t\tSamletPris: " + getSum() + "\n";
     }
 
+    //Regner den samlede sum af pizza(er) i ordreren ud.
     public int sum() {
         int prisSum = 0;
 
@@ -70,6 +73,7 @@ public class OrderFactory {
         return prisSum;
     }
 
+    //Laver et ordre objekt med id/nummer, afhentningstid og samlet sum.
     public Ordrer orderMaker() {
         Ordrer order = null;
         this.nummer = count++;
@@ -80,7 +84,10 @@ public class OrderFactory {
         return order;
     }
 
-
+    /*Skaber en ordre hvor du kan indtaste den mængde pizzaer du skal bruge.
+    Indtast et nummer fra menukortet og pizzaen bliver tilføjet.
+    Derefter bliver ordreren gemt i Arkivet med BufferedWriter.
+    Ordreren bliver så returneret så den kan tilføjet til ArrayListen.*/
     public Ordrer newOrder() { // lav metoden ikke void , men returner ordre med nummer
 
         Ordrer ordre = orderMaker();

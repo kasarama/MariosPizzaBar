@@ -19,17 +19,19 @@ public class Ordrer {
     private String afTid;
     private ArrayList<Pizza> ordrer = new ArrayList();
 
+    //Constructor:
     public Ordrer(int nummer, int sum, String afTid) {
         this.nummer = nummer;
         this.sum = sum;
         this.afTid = afTid;
     }
 
+    //Tilføjer en pizza til ArrayListen "ordrer".
     public void addPizza(Pizza pizza) {
         ordrer.add(pizza);
     }
 
-    
+    //Regner den samlede sum ud af alle pizzaer i en skabt ordre.
     public int sum() {
         int prisSum = 0;
 
@@ -71,6 +73,8 @@ public class Ordrer {
         }
     }
     
+    /*Udskriver en string med alle ordrer i ArrayListen "ordrer".
+    Giver information om pizzaerne, plus deres afhentningstid og samlede pris.*/
     @Override
     public String toString() {
         String result = "";

@@ -27,6 +27,7 @@ public class Menu {
         }*/
     }
     
+    //Læser filen "Pizzaer" som er menukortet til restauranten og udskriver det.
     public void readFiles() throws FileNotFoundException{
      String filename= "Data/Pizzaer.txt";
                 File textfile = new File(filename); 
@@ -39,6 +40,8 @@ public class Menu {
                 }
                 in.close();   
     }
+    
+    //Læser filen "Arkiv" som indeholder alle skabte ordrer i programmet og udskriver det.
     public void readArkiv() throws FileNotFoundException{
      String filename= "Arkiv.txt";
                 File textfile = new File(filename); 

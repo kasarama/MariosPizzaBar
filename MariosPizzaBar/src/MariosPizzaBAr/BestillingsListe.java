@@ -14,6 +14,7 @@ public class BestillingsListe {
 
     }
 
+    //Udskriver alle skabte og gemte ordrer i ArrayListen "bestillingsliste".
     @Override
     public String toString() {
         String result = "";
@@ -23,10 +24,12 @@ public class BestillingsListe {
         return result;
     }
 
+    //Tilføjer en skabt ordre til ArrayListen.
     public void addOrder(Ordrer o) {
         bestillingsliste.add(o);
     }
 
+    //Fjerner en ordre fra ArrayListen.
     public void fjernOrdre(Ordrer o) {
         bestillingsliste.remove(o);
     }
@@ -46,6 +49,11 @@ public class BestillingsListe {
         }
     }
      */
+    
+    /*Find en skabt ordre i ArrayListen ud fra et givent nummer; ordrenummer.
+    Bliver ikke brugt alene, men sammen med fjernOrdre ovenover for at fjerne
+    en ordre fra ArrayListen.*/
+    
     public Ordrer findEfterNummer(int n) {
 
         Ordrer tmpOrder = null;
