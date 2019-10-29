@@ -12,18 +12,6 @@ import static org.junit.Assert.*;
 public class PizzaFactoryTest {
 
     @Test
-    public void testToString() {
-        OrderFactory myOrderFactory = new OrderFactory();
-        Order order = myOrderFactory.orderMaker();
-        PizzaFactory myFactory = new PizzaFactory();
-        Pizza pizza1 = myFactory.getPizzaByPosition(8);
-        Pizza pizza2 = myFactory.getPizzaByPosition(2);
-        Pizza pizza3 = myFactory.getPizzaByPosition(3);
-        Pizza pizza4 = myFactory.getPizzaByPosition(5);
-
-    }
-
-    @Test
     public void testGetPris() {
         try {
             String filename = "Data/Pizzaer.txt";

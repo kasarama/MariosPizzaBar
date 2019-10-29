@@ -34,7 +34,6 @@ public class BestillingsListe {
     /*Find en skabt ordre i ArrayListen ud fra et givent nummer; ordrenummer.
     Bliver ikke brugt alene, men sammen med fjernOrdre ovenover for at fjerne
     en ordre fra ArrayListen.*/
-    
     public Order findEfterNummer(int n) {
 
         Order tmpOrder = null;
