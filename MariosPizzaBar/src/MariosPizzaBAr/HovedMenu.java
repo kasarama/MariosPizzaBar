@@ -1,6 +1,7 @@
 package MariosPizzaBAr;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -19,53 +20,69 @@ public class HovedMenu {
 
     public void startProgram() {
         while (quit == false) {
+        try{
             visHovedmenu();
-            userInputString = scan.nextLine();
-            switch (userInputString) {
+            String brugerInput = scan.nextLine();
+            switch (brugerInput) {
 
                 case "1": {
                     try {
                         menu.readFiles();
                     } catch (FileNotFoundException ex) {
-                        System.out.println("Fejl: Filen fra menukort blev ikke fundet");
+                        System.out.println("Fejl! Menu-fil ikke fundet");
                     }
                 }
                 System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
                         + "hovedmenuen");
                 scan.next().charAt(0);
                 break;
+                
                 case "2":
-                    newOrderObject = myOrderFactory.newOrder();
-                    bestListe.addOrder(newOrderObject);
+                    Order nyOrdre = myOrderFactory.newOrder();
+                    bestListe.addOrder(nyOrdre);
                     break;
 
                 case "3":
-                    System.out.println("Bestillingsliste\n" + bestListe.toString());
+                    System.out.println("Bestillings Liste\n" + bestListe.toString());
                     break;
 
                 case "4":
-                    System.out.println("Indtast order nummer og tryk dernæst enter");
-                    int orderNummer = scan.nextInt();
-                    bestListe.fjernOrdre(bestListe.findEfterNummer(orderNummer));
+                    System.out.println("Skriv ordrenummer og tryk enter for at tilføje pizza til ordre");
+                    int ordreNummer = scan.nextInt();
+                    bestListe.fjernOrdre(bestListe.findEfterNummer(ordreNummer));
                     break;
 
-                case "5":
-                    System.out.println("");
-                    //TODO - Vis arkivflier;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                case "5": // ?? Skal der ikke være en metode istedet vi kalder på ?? - kig f.eks. i Menu selvom den nok
+                    //skal være i Order
+                    System.out.println("Arkiv\n");
+                    String fileName = "Data/Arkiv.txt";
+
+                    File txtFile = new File(fileName);
+
+                    Scanner in = new Scanner(txtFile);
+                    int count = 1;
+                    while (in.hasNextLine()) {
+                        String line = in.nextLine();
+                        System.out.println(line);
+                        count++;
+                    }
+                    in.close();
                     break;
 
                 case "6":
-                    System.out.println("Programmet afsluttes...");
                     quit = true;
+                    System.out.println("Programmet afsluttes...");
                     break;
-
                 default: {
                     System.out.println("Systemet gik ned... \n- Du er tilbage på Hovedmenuen");
                     startProgram();
                 }
             }
-
-        }
+        
+        }catch (FileNotFoundException ex) {
+                System.out.println("Fejl! Menu-filen er ikke fundet");;
+                }
+    }
     }
 
     public void visHovedmenu() {
