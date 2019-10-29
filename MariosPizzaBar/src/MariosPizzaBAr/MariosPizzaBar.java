@@ -8,5 +8,4 @@ public class MariosPizzaBar {
         HovedMenu hm = new HovedMenu();
         hm.startProgram();
     }
-
 }

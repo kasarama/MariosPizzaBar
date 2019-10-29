@@ -1,24 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package MariosPizzaBAr;
 
-import java.util.ArrayList;
+
 import java.util.Calendar;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-/**
- *
- * @author John
- */
+
+
 public class OrdrerTest {
 
     OrderFactory myOrderFactory = new OrderFactory();
     Order order = myOrderFactory.orderMaker();
-    PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+    PizzaFactory myFactory = new PizzaFactory();
     Pizza pizza1 = myFactory.getPizzaByPosition(8);
     Pizza pizza2 = myFactory.getPizzaByPosition(2);
     Pizza pizza3 = myFactory.getPizzaByPosition(3);

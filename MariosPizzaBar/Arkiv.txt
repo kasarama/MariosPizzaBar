@@ -285,3 +285,31 @@ Ordrer 0:
 
 Afhentnings tid: 9:37		SamletPris: 160
 
+Order nr. 0:
+6. Mathias (tomat, ost, hakket oksekoed, champignon og loeg )
+7. Thomas (tomat, ost, skinke, salami og champignon )
+8. Anders ( tomat, ost, skinke, bacon og eag )
+
+Afhentnings tid: 14:7		SamletPris: 230
+
+Order nr. 0:
+7. Thomas (tomat, ost, skinke, salami og champignon )
+8. Anders ( tomat, ost, skinke, bacon og eag )
+8. Anders ( tomat, ost, skinke, bacon og eag )
+9. Rasmus ( tomat, ost, kylling, loeg og paprika )
+
+Afhentnings tid: 14:28		SamletPris: 305
+
+Order nr. 1:
+1. Pepo ( peperoni, ost )
+13. Hanne ( tomat, ost, skinke og bacon )
+
+Afhentnings tid: 14:42		SamletPris: 135
+
+Order nr. 1:
+10. Clara ( tomat, ost, kebab og loeg )
+2. Sofie ( peperoni, skinke, ost )
+2. Sofie ( peperoni, skinke, ost )
+
+Afhentnings tid: 14:45		SamletPris: 215
+

@@ -1,34 +1,19 @@
-Ordrer 1:
-2. Sofie ( peperoni, skinke, ost
+Order nr. 1:
+1. Pepo ( peperoni, ost )
+2. Sofie ( peperoni, skinke, ost )
+3. Ostedroem ( gorgonzola, oksekoed og ost )
 
-Afhentnings tid: 10:14		SamletPris: 70
+Afhentnings tid: 15:9		SamletPris: 205
 
-Ordrer 1:
-1. Pepo ( peperoni, ost
-2. Sofie ( peperoni, skinke, ost
+Order nr. 1:
+2. Sofie ( peperoni, skinke, ost )
+3. Ostedroem ( gorgonzola, oksekoed og ost )
+4. bejamin ( tomat, ost, gorgonzola, champignon og groen peber )
 
-Afhentnings tid: 10:41		SamletPris: 135
+Afhentnings tid: 15:11		SamletPris: 220
 
-Ordrer 1:
-19. Peter ( tomat, ost, kebab, loeg, fetaost og tomatskiver
-29. Freja ( tomat, ost, rucola salat, kylling og pesto
-9. Rasmus ( tomat, ost, kylling, loeg og paprika
+Order nr. 1:
+23. Martin ( tomat, ost, hakket oksekoed, groen peber, shawarma, chili og hvidloeg )
 
-Afhentnings tid: 10:48		SamletPris: 245
-
-Ordrer 1:
-1. Pepo ( peperoni, ost
-
-Afhentnings tid: 1:20		SamletPris: 65
-
-Ordrer 2:
-5. Malene (tomat, ost, skinke og champignon
-6. Mathias (tomat, ost, hakket oksekoed, champignon og loeg
-
-Afhentnings tid: 1:20		SamletPris: 155
-
-Ordrer 3:
-3. Ostedroem ( gorgonzola, oksekoed og ost
-
-Afhentnings tid: 1:20		SamletPris: 70
+Afhentnings tid: 15:34		SamletPris: 85
 

@@ -13,8 +13,7 @@ public class PizzaFactory {
     private String ingredienser;
     private int pris;
 
-    public PizzaFactory(String filename) {
-        this.filename = filename;
+    public PizzaFactory() {
     }
 
     public String toString() {

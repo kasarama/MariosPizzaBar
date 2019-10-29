@@ -1,7 +1,6 @@
 package MariosPizzaBAr;
 
 //@Cathrine, Vibeke, Matti og Magdalena
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -14,36 +13,43 @@ public class HovedMenu {
     private boolean quit = false;
     String userInputString;
     Order newOrderObject;
+    Archive arkiv = new Archive();
 
     public HovedMenu() {
     }
 
     public void startProgram() {
         while (quit == false) {
-        try{
             visHovedmenu();
             String brugerInput = scan.nextLine();
             switch (brugerInput) {
 
-                case "1": {
+                case "1":
                     try {
                         menu.readFiles();
                     } catch (FileNotFoundException ex) {
                         System.out.println("Fejl! Menu-fil ikke fundet");
                     }
-                }
-                System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
-                        + "hovedmenuen");
-                scan.next().charAt(0);
-                break;
-                
+
+                    System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
+                            + "hovedmenuen");
+                    scan.next().charAt(0);
+                    startProgram();
+                    break;
+
                 case "2":
                     Order nyOrdre = myOrderFactory.newOrder();
                     bestListe.addOrder(nyOrdre);
+                    arkiv.sendToArkiv(nyOrdre);
+                    System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
+                            + "hovedmenuen");
                     break;
 
                 case "3":
                     System.out.println("Bestillings Liste\n" + bestListe.toString());
+                    System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
+                            + "hovedmenuen");
+                    scan.next().charAt(0);
                     break;
 
                 case "4":
@@ -52,21 +58,12 @@ public class HovedMenu {
                     bestListe.fjernOrdre(bestListe.findEfterNummer(ordreNummer));
                     break;
 
-                case "5": // ?? Skal der ikke være en metode istedet vi kalder på ?? - kig f.eks. i Menu selvom den nok
-                    //skal være i Order
-                    System.out.println("Arkiv\n");
-                    String fileName = "Data/Arkiv.txt";
-
-                    File txtFile = new File(fileName);
-
-                    Scanner in = new Scanner(txtFile);
-                    int count = 1;
-                    while (in.hasNextLine()) {
-                        String line = in.nextLine();
-                        System.out.println(line);
-                        count++;
-                    }
-                    in.close();
+                case "5": 
+                    System.out.println("Arkiv");
+                    arkiv.showArchive();
+                    System.out.println("\nTryk på vilkårlig tast(andet end enter) og dernæst enter for at komme til "
+                            + "hovedmenuen");
+                    scan.next().charAt(0);
                     break;
 
                 case "6":
@@ -78,11 +75,7 @@ public class HovedMenu {
                     startProgram();
                 }
             }
-        
-        }catch (FileNotFoundException ex) {
-                System.out.println("Fejl! Menu-filen er ikke fundet");;
-                }
-    }
+        }
     }
 
     public void visHovedmenu() {

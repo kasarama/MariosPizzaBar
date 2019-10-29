@@ -1,22 +1,19 @@
 package MariosPizzaBAr;
 
 //@Cathrine, Vibeke, Matti og Magdalena
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
 
 public class OrderFactory {
 
-    private static int count = 0;
+    private static int count = 1;
     private int nummer;
     private int sum;
     private String afTid;
     private ArrayList<Pizza> ordrer = new ArrayList();
     Calendar calendar = Calendar.getInstance();
+    Archive arkiv = new Archive();
 
     public OrderFactory() {
     }
@@ -40,19 +37,6 @@ public class OrderFactory {
         int minute = calendar.get(Calendar.MINUTE);
 
         return hour + ":" + minute;
-    }
-
-    public void sendToArkiv() {
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-        int month = calendar.get(Calendar.MONTH);
-        File file = new File(day + "." + month + "." + getNummer() + ".txt"); //?????
-
-        try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
-            br.write(toString());
-            br.newLine();
-        } catch (IOException e) {
-            System.out.println("Unable to read file " + file.toString());
-        }
     }
     
     public int sum() {
@@ -79,7 +63,7 @@ public class OrderFactory {
 
         Order ordre = orderMaker();
         System.out.println("Indtast nummeret af pizza(er) og gå videre ved at trykke \"0\":");
-        PizzaFactory myFactory = new PizzaFactory("Data/Pizzaer.txt");
+        PizzaFactory myFactory = new PizzaFactory();
         Scanner sc = new Scanner(System.in);
         String n = "";
         boolean quit = false;
@@ -99,16 +83,6 @@ public class OrderFactory {
             }
 
         }
-        /*File f = new File("Arkiv.txt");
-
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(f, true))) {
-
-            bw.write(ordre.toString());
-            bw.write("\n");
-        } catch (IOException ex) {
-            System.out.println("Error: Kan ikke tilføje til fil");
-        }
-*/
         System.out.println(ordre.toString());
         System.out.println("^ Denne ordre er tilføjet");
         //returner ordre med nummer
