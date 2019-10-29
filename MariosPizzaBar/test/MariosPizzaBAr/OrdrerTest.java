@@ -38,7 +38,7 @@ public class OrdrerTest {
     }
 
     @Test
-    public void TestpickUpTime() { //@autor Magdalena
+    public void TestpickUpTime() { 
         
         String expected=time;
         String actual=order.getAfTid();
@@ -50,7 +50,7 @@ public class OrdrerTest {
      * Test of addPizza method, of class Ordrer.
      */
     @Test
-    public void testAddPizza() { //@autor Magdalena
+    public void testAddPizza() { 
         order.addPizza(pizza1);
         order.addPizza(pizza2);
         int expected=145;
@@ -63,7 +63,7 @@ public class OrdrerTest {
      * Test of sum method, of class Ordrer.
      */
     @Test
-    public void testSum() { //@autor Magdalena
+    public void testSum() { 
         order.addPizza(pizza3);
         order.addPizza(pizza3);
         int expected = 140;
