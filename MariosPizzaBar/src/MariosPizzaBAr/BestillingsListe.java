@@ -51,9 +51,12 @@ public class BestillingsListe {
         Ordrer tmpOrder = null;
         for (Ordrer order : bestillingsliste) {
             if (n == order.getNummer()) {
-                 tmpOrder=order;
+                tmpOrder = order;
+            } else {
+                System.out.println("Ordren findes ikke");
             }
 
-        }return tmpOrder;
+        }
+        return tmpOrder;
     }
 }

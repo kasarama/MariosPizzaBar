@@ -16,3 +16,19 @@ Ordrer 1:
 
 Afhentnings tid: 10:48		SamletPris: 245
 
+Ordrer 1:
+1. Pepo ( peperoni, ost
+
+Afhentnings tid: 1:20		SamletPris: 65
+
+Ordrer 2:
+5. Malene (tomat, ost, skinke og champignon
+6. Mathias (tomat, ost, hakket oksekoed, champignon og loeg
+
+Afhentnings tid: 1:20		SamletPris: 155
+
+Ordrer 3:
+3. Ostedroem ( gorgonzola, oksekoed og ost
+
+Afhentnings tid: 1:20		SamletPris: 70
+
