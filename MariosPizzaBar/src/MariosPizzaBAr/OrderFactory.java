@@ -18,18 +18,7 @@ public class OrderFactory {
     public OrderFactory() {
     }
 
-    //String til at udskrive skabte ordre med dens tilføjede pizza(er).
-    @Override
-    public String toString() {
-        String result = "";
-        for (Pizza pizza : ordrer) {
-            result += pizza.toString();
-        }
-        return "Ordrer " + getNummer() + ":" + "\n"
-                + result + "\n"
-                + "Afhentnings tid: " + getAfTid()
-                + "\t\tSamletPris: " + getSum() + "\n";
-    }
+    
     
      //Regner nuværende tid ud og tilføjer 30 minutter til afhentningstidspunkt.
     public String pickUpTime() {
@@ -95,7 +84,7 @@ public class OrderFactory {
         System.out.println("^ Denne ordre er tilføjet");
         return ordre;
     }
-
+/*
     public int getNummer() {
         return count;
     }
@@ -111,4 +100,5 @@ public class OrderFactory {
     public ArrayList<Pizza> getOrdrer() {
         return ordrer;
     }
+*/
 }
