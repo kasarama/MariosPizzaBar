@@ -46,16 +46,6 @@ public class OrderTest {
 
     }
 
-    /**
-     * Test of toString method, of class Order.
-     */
-    @Test
-    public void testToString() {
-    }
-
-    /**
-     * Test of sum method, of class Order.
-     */
     @Test
     public void testSum() {
         order.addPizza(pizza2);
@@ -65,44 +55,5 @@ public class OrderTest {
         assertEquals(expected, actual);
         
     }
-
-    /**
-     * Test of getNummer method, of class Order.
-     */
-    @Test
-    public void testGetNummer() {
-    }
-
-    /**
-     * Test of getSum method, of class Order.
-     */
-    @Test
-    public void testGetSum() {
-        order.addPizza(pizza2);
-        order.addPizza(pizza1);
-        order.addPizza(pizza4);
-        System.out.println(order.toString());
-        System.out.println("Samlet pris: " + order.getSum());
-        int expected = 220;
-        int actual = order.getSum();
-        assertEquals(expected, actual);
-    }
-
-    /**
-     * Test of getAfTid method, of class Order.
-     */
-    @Test
-    public void testGetAfTid() {
-    }
-
-    /**
-     * Test of getOrdrer method, of class Order.
-     */
-    @Test
-    public void testGetOrdrer() {
-    }
     
-
-    
-
 }
