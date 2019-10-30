@@ -1,6 +1,8 @@
 package MariosPizzaBAr;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+
+import static java.lang.String.format;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
@@ -27,7 +29,7 @@ public class OrderFactory {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
 
-        return hour + ":" + minute;
+        return format("%d:%02d",hour,minute);
     }
     
     //Regner den samlede sum af pizza(er) i ordreren ud.
