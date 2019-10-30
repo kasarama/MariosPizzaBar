@@ -1,6 +1,7 @@
 package MariosPizzaBAr;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+import static java.lang.String.format;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
@@ -18,8 +19,6 @@ public class OrderFactory {
     public OrderFactory() {
     }
 
-    
-    
      //Regner nuværende tid ud og tilføjer 30 minutter til afhentningstidspunkt.
     public String pickUpTime() {
         calendar.add(Calendar.MINUTE, +(30));
@@ -27,7 +26,8 @@ public class OrderFactory {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
 
-        return hour + ":" + minute;
+        //return hour + ":" + minute;
+        return format("%d:%02d", hour, minute);
     }
     
     //Regner den samlede sum af pizza(er) i ordreren ud.
@@ -84,21 +84,4 @@ public class OrderFactory {
         System.out.println("^ Denne ordre er tilføjet");
         return ordre;
     }
-/*
-    public int getNummer() {
-        return count;
-    }
-
-    public int getSum() {
-        return sum;
-    }
-
-    public String getAfTid() {
-        return afTid;
-    }
-
-    public ArrayList<Pizza> getOrdrer() {
-        return ordrer;
-    }
-*/
 }
