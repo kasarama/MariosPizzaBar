@@ -2,6 +2,7 @@ package MariosPizzaBAr;
 
 //@Cathrine, Vibeke, Matti og Magdalena
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class HovedMenu {
@@ -31,7 +32,7 @@ public class HovedMenu {
                                 + "tilbage til Hovedmenu");
                         scan.next().charAt(0);
                         scan.nextLine();
-                        } catch (FileNotFoundException ex) {
+                        } catch (SQLException ex) {
                             System.out.println("Fejl - Menu-filen ikke fundet!");
                         }
                     }
