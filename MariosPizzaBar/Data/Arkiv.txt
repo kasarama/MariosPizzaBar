@@ -18,3 +18,10 @@ Order nr. 3:
 
 Afhentnings tid: 13:13		SamletPris: 75
 
+Order nr. 1:
+1.Pepo (peperoni, ost )
+2.Sofie (peperoni, skinke, ost )
+3.Ostedroem (gorgonzola, oksekoed og ost )
+
+Afhentnings tid: 11:38		SamletPris: 215
+
