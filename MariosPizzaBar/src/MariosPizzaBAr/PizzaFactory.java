@@ -39,7 +39,7 @@ public class PizzaFactory {
         return pizza;
     }
 
-    public static Pizza GetPizzaByID(int id) throws SQLException {
+    public Pizza GetPizzaByID(int id) throws SQLException {
         Pizza retValPizza = null;
         String query = "SELECT * FROM pizza.pizzaer where NR = ?";
         Connection myConnector = null;
