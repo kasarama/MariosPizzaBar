@@ -7,8 +7,11 @@ package MariosPizzaBAr;
 public class MariosPizzaBar {
 
     public static void main(String[] args) {
-
-        HovedMenu hm = new HovedMenu();
-        hm.startProgram();
+        
+        //HovedMenu hm = new HovedMenu();
+        //hm.startProgram();
+        
+        Archive arkiv = new Archive();  //TEST        
+        arkiv.writeToHTMLFile();   //TEST
     }
 }

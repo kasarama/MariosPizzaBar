@@ -10,9 +10,7 @@ public class HovedMenu {
     Scanner scan = new Scanner(System.in);
     Menu menu = new Menu();
     BestillingsListe bestListe = new BestillingsListe();
-    private boolean quit = false;
-    String userInputString;
-    Order newOrderObject;
+    private boolean quit = false;     
     Archive arkiv = new Archive();
 
     public HovedMenu() {
@@ -52,8 +50,8 @@ public class HovedMenu {
                     break;
 
                 //Viser ArrayListens indhold.
-                case "3":
-                    System.out.println("Bestillings Liste\n" + bestListe.toString());
+                case "3":                    
+                    System.out.println("Bestillings Liste\n" + bestListe.toString()+"\n");
                     System.out.println("\nIndtast et tilfældigt bogstav eller nummer og tryk enter for at kommer "
                                 + "tilbage til Hovedmenu");
                         scan.next().charAt(0);

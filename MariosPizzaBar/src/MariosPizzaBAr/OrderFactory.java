@@ -1,6 +1,7 @@
 package MariosPizzaBAr;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+
 import static java.lang.String.format;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -14,7 +15,7 @@ public class OrderFactory {
     private String afTid;
     private ArrayList<Pizza> ordrer = new ArrayList();
     Calendar calendar = Calendar.getInstance();
-    Archive arkiv = new Archive();
+
 
     public OrderFactory() {
     }
@@ -26,8 +27,20 @@ public class OrderFactory {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
 
-        //return hour + ":" + minute;
-        return format("%d:%02d", hour, minute);
+
+        return format("%d:%02d",hour,minute);
+
+    }
+    
+    public String pickUpDate() { //NEW !!! HELE DENNE METODE ER NY!!!
+
+        int dayInt = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        int year = calendar.get(Calendar.YEAR);
+
+
+        return format("%d/%d - %d", dayInt, month, year);
+
     }
     
     //Regner den samlede sum af pizza(er) i ordreren ud.
