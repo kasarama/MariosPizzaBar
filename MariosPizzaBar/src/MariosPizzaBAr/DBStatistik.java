@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DBStatistik {
-public void LæsStatistik() throws SQLException, ClassNotFoundException {
+public void LæsStatistikSnitPris() throws SQLException, ClassNotFoundException {
 
                 Connection connection = null;
         Statement statement = null;
