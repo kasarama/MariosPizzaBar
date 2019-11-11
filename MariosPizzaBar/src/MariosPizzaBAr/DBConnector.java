@@ -10,7 +10,7 @@ public class DBConnector {
 
         String url = "jdbc:mysql://localhost:3306/pizza?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
         String user = "root";
-        String kodeord = "gadaMagda88";
+        String kodeord = "Matti12345h";
 
         try {
             connection = DriverManager.getConnection(url,user,kodeord);

@@ -25,7 +25,7 @@ public class PizzaFactory {
     public Pizza getPizzaByPosition(int n) {
         Pizza pizza = null;
         try {
-            String filename = "Data/Pizzaer.txt";
+            String fileame = "Data/Pizzaer.txt";
             String line = Files.readAllLines(Paths.get(filename)).get(n);
             String[] myArr = line.split(";");
             this.position = Integer.parseInt(myArr[0]);
@@ -49,7 +49,7 @@ public class PizzaFactory {
 
         pstmt = myConnector.prepareStatement(query);
         pstmt.setInt(1, id);
-        resultSet = pstmt.executeQuery(query);
+        resultSet = pstmt.executeQuery();
 
         while (resultSet.next()) {
             int nr = resultSet.getInt("NR");
