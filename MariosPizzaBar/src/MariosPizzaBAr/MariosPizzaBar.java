@@ -11,8 +11,7 @@ import java.sql.SQLException;
 public class MariosPizzaBar {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-
-        HovedMenu hm = new HovedMenu();
-        hm.startProgram();
+        DBStatistik db=new DBStatistik();
+        db.LæsStatistik();
     }
 }
