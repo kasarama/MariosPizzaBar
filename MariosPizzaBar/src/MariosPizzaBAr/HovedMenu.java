@@ -13,12 +13,13 @@ public class HovedMenu {
     BestillingsListe bestListe = new BestillingsListe();
     private boolean quit = false;     
     Archive arkiv = new Archive();
+    OrderToSQL orderToSQL = new OrderToSQL();
 
     public HovedMenu() {
     }
 
     //Metode til at køre hovedmenuen. Hver del er skrevet som en case i en switch.
-    public void startProgram() throws SQLException {
+    public void startProgram() throws ClassNotFoundException, SQLException {
         while (quit == false) {
                 visHovedmenu();
                 String brugerInput = scan.nextLine();
@@ -43,7 +44,8 @@ public class HovedMenu {
                     try{
                     Order nyOrdre = myOrderFactory.newOrder();
                     bestListe.addOrder(nyOrdre);
-                    arkiv.sendToArkiv(nyOrdre);}
+                    arkiv.sendToArkiv(nyOrdre);
+                    orderToSQL.SendOrderToDB(nyOrdre);}
                     catch(NumberFormatException ex){
                         System.out.println("Fejl - Dette er ikke et pizzanr. Du vender tilbage til hovedmenuen og starte "
                                 + "forfra på denne ordre og den gemmes heller ikke i arkiv!");
@@ -75,7 +77,7 @@ public class HovedMenu {
                 //Udskriver "Arkiv" filen med gemte ordrer.
                 case "5": 
                     System.out.println("Arkiv");
-                    arkiv.showArchive();
+                    arkiv.showDBArchive();
                     System.out.println("\nIndtast et tilfældigt bogstav eller nummer og tryk enter for at kommer "
                                 + "tilbage til Hovedmenu");
                         scan.next().charAt(0);

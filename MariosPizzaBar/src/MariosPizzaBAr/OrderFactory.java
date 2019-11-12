@@ -70,7 +70,8 @@ public class OrderFactory {
     Indtast et nummer fra menukortet og pizzaen bliver tilføjet.
     Derefter bliver ordreren gemt i Arkivet med BufferedWriter.
     Ordreren bliver så returneret så den kan tilføjet til ArrayListen.*/
-    public Order newOrder() throws SQLException { 
+
+    public Order newOrder() throws SQLException, ClassNotFoundException { // lav metoden ikke void , men returner ordre med nummer
 
         Order ordre = orderMaker();
         System.out.println("Indtast nummeret af pizza(er) og gå videre ved at trykke \"0\":");

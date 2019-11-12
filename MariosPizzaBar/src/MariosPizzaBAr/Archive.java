@@ -6,6 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -43,6 +49,31 @@ public class Archive {
             System.out.println("Fejl - kan ikke finde arkiv-fil!");;
         }
 
+    }
+    
+    //Viser database arkiv
+    public void showDBArchive() throws ClassNotFoundException, SQLException {
+        Connection connection = null;
+        Statement statement = null;
+        //MainController.mainControllerLooop();
+        connection = DBConnector.getConnection();
+        String q = "Select * from pizza.ordrer";
+        statement = connection.createStatement();
+        statement.execute(q);
+        ResultSet resultSet = statement.executeQuery(q);
+
+        ResultSetMetaData rsmd = resultSet.getMetaData();
+        int columnsNumber = rsmd.getColumnCount();
+        while (resultSet.next()) {
+            for (int i = 1; i <= columnsNumber; i++) {
+                if (i > 1) {
+                    System.out.print(",  ");
+                }
+                String columnValue = resultSet.getString(i);
+                System.out.print(columnValue + " " + rsmd.getColumnName(i));
+            }
+            System.out.println("");
+        }
     }
 
     //Sender ordre til arkiv

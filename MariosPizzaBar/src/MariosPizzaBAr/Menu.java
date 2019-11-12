@@ -13,7 +13,8 @@ public class Menu {
     }
 
     //Læser filen "Pizzaer" som er menukortet til restauranten og udskriver det.
-    public void readFiles() throws SQLException {
+    public void readFiles() throws SQLException, ClassNotFoundException {
+
 
         Connection connection = null;
         Statement statement = null;
