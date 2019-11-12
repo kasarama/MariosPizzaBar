@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,23 +17,28 @@ import java.sql.SQLException;
  */
 public class PizzaToSQL {
     
-    public void SendOrderToDB(Order order) throws SQLException {
+    
 
-        Connection myConnector = null;
-        myConnector = DBConnector.getConnection();
-        PreparedStatement pstmt = null;
-        ResultSet resultSet = null;
-        String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "
-                + "values (" + order.getNummer() + order.getAfTid() + "\"" + date() + "\"" + order.getSum()
+       public void SendPizzaToDB(Order order, Pizza pizza) throws ClassNotFoundException, SQLException {
+
+            
+
+        //TODO get movie from DB
+       
+        String query = "Insert into pizza.odrerinfo (pizzaNr, dato) "
+                + "values (\"" + order.getAfTid() + "\"," + "\"" + date() + "\"," + order.getSum()
                 + ")";
 
+        /*String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "
+                + "values (" + order.getNummer() +",\""+ order.getAfTid()+"\"," + "\"" + date() + "\"," + order.getSum()
+                + ") where idOrdrer = " + order.getNummer();*/
         myConnector = DBConnector.getConnection();
         pstmt = myConnector.prepareStatement(query);
-        resultSet = pstmt.executeQuery();
+        pstmt.executeUpdate(query);
 
-        resultSet.close();
+        //resultSet.close();
         pstmt.close();
-        myConnector.close();
+        myConnector.close();*/
 
     }
     

@@ -74,6 +74,7 @@ public class OrderFactory {
             } else if (Integer.parseInt(n) > 0 && Integer.parseInt(n) <= 30) {
                 myFactory.GetPizzaByID(Integer.parseInt(n)).toString();
                 ordre.addPizza(myFactory.GetPizzaByID(Integer.parseInt(n)));
+                
             } else if (Integer.parseInt(n) > 30) {
                 System.out.println("Pizzanummeret findes ikke, prøv igen");
                 newOrder();
