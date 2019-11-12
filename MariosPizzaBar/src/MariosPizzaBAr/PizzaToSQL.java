@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  *
@@ -20,14 +21,23 @@ public class PizzaToSQL {
     
 
        public void SendPizzaToDB(Order order, Pizza pizza) throws ClassNotFoundException, SQLException {
+    Calendar calendar = Calendar.getInstance();
 
             
+        calendar.add(Calendar.MONTH, +(1));
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        int year = calendar.get(Calendar.YEAR);
+
+        String date = year + "." + month + "." + day;
 
         //TODO get movie from DB
-       
+
+        Connection myConnector = null;
+        myConnector = DBConnector.getConnection();
+        PreparedStatement pstmt = null;       
         String query = "Insert into pizza.odrerinfo (pizzaNr, dato) "
-                + "values (\"" + order.getAfTid() + "\"," + "\"" + date() + "\"," + order.getSum()
-                + ")";
+                + "values (pizza.getPosition(), \"" + date + "\")";
 
         /*String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "
                 + "values (" + order.getNummer() +",\""+ order.getAfTid()+"\"," + "\"" + date() + "\"," + order.getSum()
@@ -38,7 +48,7 @@ public class PizzaToSQL {
 
         //resultSet.close();
         pstmt.close();
-        myConnector.close();*/
+        myConnector.close();
 
     }
     
