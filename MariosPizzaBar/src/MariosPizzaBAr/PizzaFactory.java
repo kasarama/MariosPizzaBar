@@ -4,6 +4,7 @@ package MariosPizzaBAr;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.*;
 
 public class PizzaFactory {
 
@@ -24,7 +25,7 @@ public class PizzaFactory {
     public Pizza getPizzaByPosition(int n) {
         Pizza pizza = null;
         try {
-            String filename = "Data/Pizzaer.txt";
+            String fileame = "Data/Pizzaer.txt";
             String line = Files.readAllLines(Paths.get(filename)).get(n);
             String[] myArr = line.split(";");
             this.position = Integer.parseInt(myArr[0]);
@@ -36,6 +37,32 @@ public class PizzaFactory {
             System.out.println("Fejl - kan ikke finde " + filename);
         }
         return pizza;
+    }
+
+    public Pizza GetPizzaByID(int id) throws SQLException {
+        Pizza retValPizza = null;
+        String query = "SELECT * FROM pizza.pizzaer where NR = ?";
+        Connection myConnector = null;
+        PreparedStatement pstmt = null;
+        ResultSet resultSet = null;
+        myConnector = DBConnector.getConnection();
+
+        pstmt = myConnector.prepareStatement(query);
+        pstmt.setInt(1, id);
+        resultSet = pstmt.executeQuery();
+
+        while (resultSet.next()) {
+            int nr = resultSet.getInt("NR");
+            String navn = resultSet.getString("Navn");
+            String ingredienser = resultSet.getString("Ingredienser");
+            int pris = resultSet.getInt("Pris");
+            retValPizza = new Pizza(nr, navn, ingredienser, pris);
+        }
+        resultSet.close();
+        pstmt.close();
+        myConnector.close();
+
+        return retValPizza;
     }
 
 }

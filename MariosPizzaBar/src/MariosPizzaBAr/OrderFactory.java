@@ -3,6 +3,7 @@ package MariosPizzaBAr;
 //@Cathrine, Vibeke, Matti og Magdalena
 
 import static java.lang.String.format;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
@@ -69,7 +70,7 @@ public class OrderFactory {
     Indtast et nummer fra menukortet og pizzaen bliver tilføjet.
     Derefter bliver ordreren gemt i Arkivet med BufferedWriter.
     Ordreren bliver så returneret så den kan tilføjet til ArrayListen.*/
-    public Order newOrder() { // lav metoden ikke void , men returner ordre med nummer
+    public Order newOrder() throws SQLException { 
 
         Order ordre = orderMaker();
         System.out.println("Indtast nummeret af pizza(er) og gå videre ved at trykke \"0\":");
@@ -82,8 +83,8 @@ public class OrderFactory {
             if (Integer.parseInt(n) == 0) {
                 quit = true;
             } else if (Integer.parseInt(n) > 0 && Integer.parseInt(n) <= 30) {
-                myFactory.getPizzaByPosition(Integer.parseInt(n)).toString();
-                ordre.addPizza(myFactory.getPizzaByPosition(Integer.parseInt(n)));
+                myFactory.GetPizzaByID(Integer.parseInt(n)).toString();
+                ordre.addPizza(myFactory.GetPizzaByID(Integer.parseInt(n)));
             } else if (Integer.parseInt(n) > 30) {
                 System.out.println("Pizzanummeret findes ikke, prøv igen");
                 newOrder();
