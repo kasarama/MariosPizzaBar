@@ -17,13 +17,13 @@ import java.util.Calendar;
  * @author Magdalena
  */
 public class PizzaToSQL {
-    
-    
 
-       public void SendPizzaToDB(Order order, Pizza pizza) throws ClassNotFoundException, SQLException {
-    Calendar calendar = Calendar.getInstance();
+    public PizzaToSQL() {
+    }
 
-            
+    public void SendPizzaToDB(Pizza pizza) throws ClassNotFoundException, SQLException {
+        Calendar calendar = Calendar.getInstance();
+
         calendar.add(Calendar.MONTH, +(1));
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int month = calendar.get(Calendar.MONTH);
@@ -32,12 +32,11 @@ public class PizzaToSQL {
         String date = year + "." + month + "." + day;
 
         //TODO get movie from DB
-
         Connection myConnector = null;
         myConnector = DBConnector.getConnection();
-        PreparedStatement pstmt = null;       
+        PreparedStatement pstmt = null;
         String query = "Insert into pizza.odrerinfo (pizzaNr, dato) "
-                + "values (pizza.getPosition(), \"" + date + "\")";
+                + "values ("+pizza.getPosition()+", \" "+date +" \")";
 
         /*String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "
                 + "values (" + order.getNummer() +",\""+ order.getAfTid()+"\"," + "\"" + date() + "\"," + order.getSum()
@@ -51,5 +50,5 @@ public class PizzaToSQL {
         myConnector.close();
 
     }
-    
+
 }

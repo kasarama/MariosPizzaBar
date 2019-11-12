@@ -29,7 +29,7 @@ public void LæsStatistikDagSnitPris(String dato) throws SQLException, ClassNotF
         Statement statement = null;
         //MainController.mainControllerLooop();
         connection = DBConnector.getConnection();
-        dato=null;
+        
         String q = "SELECT AVG(sum) FROM pizza.ordrer where Dato=\"2019.10.12\";";
         statement = connection.createStatement();
         statement.execute(q);

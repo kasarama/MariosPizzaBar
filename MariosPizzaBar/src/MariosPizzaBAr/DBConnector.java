@@ -13,7 +13,7 @@ public class DBConnector {
         url += "serverTimezone=UTC&allowPublicKeyRetrieval=true&";
         url += "useSSL=false";
         String user = "root";
-        String password = "Matti12345h";
+        String password = "gadaMagda88";
 
         //Class.forName("com.mysql.cj.jdbc.Driver");
 
