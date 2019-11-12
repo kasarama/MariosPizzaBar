@@ -49,3 +49,88 @@ Order nr. 1:
 
 Afhentnings tid: 13:37		SamletPris: 135
 
+Order nr. 1:
+1.Pepo (peperoni, ost )
+2.Sofie (peperoni, skinke, ost )
+
+Afhentnings tid: 18:56		SamletPris: 135
+
+Order nr. 2:
+1.Pepo (peperoni, ost )
+2.Sofie (peperoni, skinke, ost )
+2.Sofie (peperoni, skinke, ost )
+2.Sofie (peperoni, skinke, ost )
+
+Afhentnings tid: 19:26		SamletPris: 275
+
+Order nr. 4:
+1.Pepo (peperoni, ost )
+
+Afhentnings tid: 20:26		SamletPris: 65
+
+Order nr. 5:
+
+Afhentnings tid: 20:56		SamletPris: 0
+
+Order nr. 1:
+1.Pepo (peperoni, ost )
+
+Afhentnings tid: 19:14		SamletPris: 65
+
+Order nr. 2:
+8.Anders (tomat, ost, skinke, bacon og eag )
+9.Rasmus (tomat, ost, kylling, loeg og paprika )
+7.Thomas (tomat, ost, skinke, salami og champignon )
+
+Afhentnings tid: 19:44		SamletPris: 230
+
+Order nr. 3:
+9.Rasmus (tomat, ost, kylling, loeg og paprika )
+8.Anders (tomat, ost, skinke, bacon og eag )
+
+Afhentnings tid: 20:14		SamletPris: 143
+
+Order nr. 4:
+1.Pepo (peperoni, ost )
+2.Sofie (peperoni, skinke, ost )
+
+Afhentnings tid: 20:44		SamletPris: 135
+
+Order nr. 5:
+19.Peter (tomat, ost, kebab, loeg, fetaost og tomatskiver )
+23.Martin (tomat, ost, hakket oksekoed, groen peber og gorgonzola )
+
+Afhentnings tid: 21:14		SamletPris: 160
+
+Order nr. 6:
+19.Peter (tomat, ost, kebab, loeg, fetaost og tomatskiver )
+19.Peter (tomat, ost, kebab, loeg, fetaost og tomatskiver )
+19.Peter (tomat, ost, kebab, loeg, fetaost og tomatskiver )
+
+Afhentnings tid: 21:44		SamletPris: 225
+
+Order nr. 1:
+1.Pepo (peperoni, ost )
+
+Afhentnings tid: 19:59		SamletPris: 65
+
+Order nr. 1:
+1.Pepo (peperoni, ost )
+22.Anna (tomat, ost, hakket oksekoed, groen peber, shawarma, chili og hvidloeg )
+23.Martin (tomat, ost, hakket oksekoed, groen peber og gorgonzola )
+24.Greta (tomat, ost, skinke, bacon og loeg )
+
+Afhentnings tid: 20:00		SamletPris: 315
+
+Order nr. 1:
+1.Pepo (peperoni, ost )
+2.Sofie (peperoni, skinke, ost )
+
+Afhentnings tid: 20:12		SamletPris: 135
+
+Order nr. 1:
+18.Simon (tomat, ost, skinke, pepperoni, cocktailpoelser og bacon )
+18.Simon (tomat, ost, skinke, pepperoni, cocktailpoelser og bacon )
+
+Afhentnings tid: 20:13		SamletPris: 160
+

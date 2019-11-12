@@ -60,7 +60,7 @@ public class OrderFactory {
     Derefter bliver ordreren gemt i Arkivet med BufferedWriter.
     Ordreren bliver så returneret så den kan tilføjet til ArrayListen.*/
     public Order newOrder() throws SQLException, ClassNotFoundException { // lav metoden ikke void , men returner ordre med nummer
-
+        PizzaToSQL pizzaToSQL=new PizzaToSQL();
         Order ordre = orderMaker();
         System.out.println("Indtast nummeret af pizza(er) og gå videre ved at trykke \"0\":");
         PizzaFactory myFactory = new PizzaFactory();
@@ -74,6 +74,8 @@ public class OrderFactory {
             } else if (Integer.parseInt(n) > 0 && Integer.parseInt(n) <= 30) {
                 myFactory.GetPizzaByID(Integer.parseInt(n)).toString();
                 ordre.addPizza(myFactory.GetPizzaByID(Integer.parseInt(n)));
+                pizzaToSQL.SendPizzaToDB(myFactory.GetPizzaByID(Integer.parseInt(n)));
+                
                 
             } else if (Integer.parseInt(n) > 30) {
                 System.out.println("Pizzanummeret findes ikke, prøv igen");

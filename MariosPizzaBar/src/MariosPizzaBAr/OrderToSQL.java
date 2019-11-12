@@ -21,7 +21,7 @@ public class OrderToSQL {
         /*String query = "Update ordrer set idOrdrer = " + order.getNummer() + ", Tid = \"" + order.getAfTid() 
                 + "\", Dato = \"" + date() + "\", Sum = " + order.getSum() + " where idOrdrer = " + order.getNummer();*/
         String query = "Insert into ordrer (Tid, Dato, Sum) "
-                + "values (\"" + order.getAfTid() + "\"," + "\"" + date() + "\"," + order.getSum()
+                + "values (\"" + order.getAfTid() + "\"," + "\"" + date() + "\"," + order.sum()
                 + ")";
 
         /*String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "
@@ -40,7 +40,7 @@ public class OrderToSQL {
 
     public String date() {
         String date = "";
-        calendar.add(Calendar.MONTH, +(1));
+      //  calendar.add(Calendar.MONTH, +(1));
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int month = calendar.get(Calendar.MONTH);
         int year = calendar.get(Calendar.YEAR);
