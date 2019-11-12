@@ -39,11 +39,13 @@ public class PizzaFactory {
         return pizza;
     }
 
-    public Pizza GetPizzaByID(int id) throws SQLException {
+
+    public Pizza GetPizzaByID(int id) throws SQLException, ClassNotFoundException {
         Pizza retValPizza = null;
-        String query = "SELECT * FROM pizza.pizzaer where NR = ?";
+        String query = "SELECT * FROM pizzaer WHERE NR = ?";
         Connection myConnector = null;
         PreparedStatement pstmt = null;
+        //Statement pstmt = null;
         ResultSet resultSet = null;
         myConnector = DBConnector.getConnection();
 

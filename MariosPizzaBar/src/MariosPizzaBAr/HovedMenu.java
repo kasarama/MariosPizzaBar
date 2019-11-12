@@ -19,7 +19,7 @@ public class HovedMenu {
     }
 
     //Metode til at køre hovedmenuen. Hver del er skrevet som en case i en switch.
-    public void startProgram() throws SQLException {
+    public void startProgram() throws ClassNotFoundException, SQLException {
         while (quit == false) {
                 visHovedmenu();
                 String brugerInput = scan.nextLine();
