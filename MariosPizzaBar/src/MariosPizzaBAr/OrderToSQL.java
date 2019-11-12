@@ -17,16 +17,19 @@ public class OrderToSQL {
         Connection myConnector = null;
         myConnector = DBConnector.getConnection();
         PreparedStatement pstmt = null;
-        ResultSet resultSet = null;
-        String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "
-                + "values (" + order.getNummer() + order.getAfTid() + "\"" + date() + "\"" + order.getSum()
+        //ResultSet resultSet = null;
+        String query = "Insert into ordrer (Tid, Dato, Sum) "
+                + "values (\""+ order.getAfTid()+"\"," + "\"" + date() + "\"," + order.getSum()
                 + ")";
+        /*String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "
+                + "values (" + order.getNummer() +",\""+ order.getAfTid()+"\"," + "\"" + date() + "\"," + order.getSum()
+                + ") where idOrdrer = " + order.getNummer();*/
 
         myConnector = DBConnector.getConnection();
         pstmt = myConnector.prepareStatement(query);
-        resultSet = pstmt.executeQuery();
+        pstmt.executeUpdate(query);
 
-        resultSet.close();
+        //resultSet.close();
         pstmt.close();
         myConnector.close();
 
@@ -34,6 +37,7 @@ public class OrderToSQL {
 
     public String date() {
         String date = "";
+        calendar.add(Calendar.MONTH, +(1));
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int month = calendar.get(Calendar.MONTH);
         int year = calendar.get(Calendar.YEAR);
