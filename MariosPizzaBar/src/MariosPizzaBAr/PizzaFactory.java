@@ -40,7 +40,7 @@ public class PizzaFactory {
     }
 
 
-    public Pizza GetPizzaByID(int id) throws SQLException {
+    public static Pizza GetPizzaByID(int id) throws SQLException, ClassNotFoundException {
         Pizza retValPizza = null;
         String query = "SELECT * FROM pizzaer WHERE NR = ?";
         Connection myConnector = null;

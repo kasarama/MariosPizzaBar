@@ -8,8 +8,7 @@ public class OrderToSQL {
 
     public OrderToSQL() {
     }
-    
-    
+
     Calendar calendar = Calendar.getInstance();
 
     public void SendOrderToDB(Order order) throws SQLException, ClassNotFoundException {
@@ -18,11 +17,11 @@ public class OrderToSQL {
         myConnector = DBConnector.getConnection();
         PreparedStatement pstmt = null;
         //ResultSet resultSet = null;
-        String query = "Update ordrer set idOrdrer = " + order.getNummer() + ", Tid = \"" + order.getAfTid() 
-                + "\", Dato = \"" + date() + "\", Sum = " + order.getSum() + " where idOrdrer = " + order.getNummer();
-        /*String query = "Insert into ordrer (Tid, Dato, Sum) "
-                + "values (\""+ order.getAfTid()+"\"," + "\"" + date() + "\"," + order.getSum()
-                + ")";*/
+        /*String query = "Update ordrer set idOrdrer = " + order.getNummer() + ", Tid = \"" + order.getAfTid() 
+                + "\", Dato = \"" + date() + "\", Sum = " + order.getSum() + " where idOrdrer = " + order.getNummer();*/
+        String query = "Insert into ordrer (Tid, Dato, Sum) "
+                + "values (\"" + order.getAfTid() + "\"," + "\"" + date() + "\"," + order.getSum()
+                + ")";
         /*String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "
                 + "values (" + order.getNummer() +",\""+ order.getAfTid()+"\"," + "\"" + date() + "\"," + order.getSum()
                 + ") where idOrdrer = " + order.getNummer();*/

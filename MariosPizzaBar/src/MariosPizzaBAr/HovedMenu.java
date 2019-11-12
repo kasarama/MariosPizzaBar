@@ -77,7 +77,7 @@ public class HovedMenu {
                 //Udskriver "Arkiv" filen med gemte ordrer.
                 case "5": 
                     System.out.println("Arkiv");
-                    arkiv.showArchive();
+                    arkiv.showDBArchive();
                     System.out.println("\nIndtast et tilfældigt bogstav eller nummer og tryk enter for at kommer "
                                 + "tilbage til Hovedmenu");
                         scan.next().charAt(0);
