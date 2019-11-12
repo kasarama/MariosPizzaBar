@@ -13,6 +13,7 @@ public class HovedMenu {
     BestillingsListe bestListe = new BestillingsListe();
     private boolean quit = false;     
     Archive arkiv = new Archive();
+    OrderToSQL orderToSQL = new OrderToSQL();
 
     public HovedMenu() {
     }
@@ -43,7 +44,8 @@ public class HovedMenu {
                     try{
                     Order nyOrdre = myOrderFactory.newOrder();
                     bestListe.addOrder(nyOrdre);
-                    arkiv.sendToArkiv(nyOrdre);}
+                    arkiv.sendToArkiv(nyOrdre);
+                    orderToSQL.SendOrderToDB(nyOrdre);}
                     catch(NumberFormatException ex){
                         System.out.println("Fejl - Dette er ikke et pizzanr. Du vender tilbage til hovedmenuen og starte "
                                 + "forfra på denne ordre og den gemmes heller ikke i arkiv!");
