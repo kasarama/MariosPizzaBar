@@ -16,6 +16,56 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `odrerinfo`
+--
+
+DROP TABLE IF EXISTS `odrerinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `odrerinfo` (
+  `idOdrerInfo` int(11) NOT NULL,
+  `idOdrer` int(11) DEFAULT NULL,
+  `PizzaNR` int(11) DEFAULT NULL,
+  `Antal` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idOdrerInfo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `odrerinfo`
+--
+
+LOCK TABLES `odrerinfo` WRITE;
+/*!40000 ALTER TABLE `odrerinfo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `odrerinfo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ordrer`
+--
+
+DROP TABLE IF EXISTS `ordrer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ordrer` (
+  `idOrdrer` int(11) NOT NULL AUTO_INCREMENT,
+  `Tid` varchar(145) DEFAULT NULL,
+  `Dato` varchar(145) DEFAULT NULL,
+  `Sum` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idOrdrer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ordrer`
+--
+
+LOCK TABLES `ordrer` WRITE;
+/*!40000 ALTER TABLE `ordrer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ordrer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pizzaer`
 --
 
@@ -50,4 +100,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-11 11:01:33
+-- Dump completed on 2019-11-11 11:59:12

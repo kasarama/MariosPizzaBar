@@ -25,7 +25,7 @@ public class PizzaFactory {
     public Pizza getPizzaByPosition(int n) {
         Pizza pizza = null;
         try {
-            String filename = "Data/Pizzaer.txt";
+            String fileame = "Data/Pizzaer.txt";
             String line = Files.readAllLines(Paths.get(filename)).get(n);
             String[] myArr = line.split(";");
             this.position = Integer.parseInt(myArr[0]);
@@ -39,7 +39,8 @@ public class PizzaFactory {
         return pizza;
     }
 
-    public static Pizza GetPizzaByID(int id) throws SQLException, ClassNotFoundException {
+
+    public Pizza GetPizzaByID(int id) throws SQLException {
         Pizza retValPizza = null;
         String query = "SELECT * FROM pizzaer WHERE NR = ?";
         Connection myConnector = null;
@@ -50,7 +51,7 @@ public class PizzaFactory {
 
         pstmt = myConnector.prepareStatement(query);
         pstmt.setInt(1, id);
-        resultSet = pstmt.executeQuery(query);
+        resultSet = pstmt.executeQuery();
 
         while (resultSet.next()) {
             int nr = resultSet.getInt("NR");
