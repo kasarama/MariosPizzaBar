@@ -53,6 +53,7 @@ public void LæsStatistikPizzaAntal() throws SQLException, ClassNotFoundExceptio
         //MainController.mainControllerLooop();
         connection = DBConnector.getConnection();
         System.out.println("");
+        System.out.println("Antal solgte pizzaer organiseret efter pizzanr:");
         String q = "select PizzaNR, count(*) from odrerinfo group by pizzaNR order by pizzaNR;";
         statement = connection.createStatement();
         statement.execute(q);
