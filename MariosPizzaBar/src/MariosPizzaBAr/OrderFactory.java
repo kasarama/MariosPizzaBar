@@ -87,7 +87,7 @@ public class OrderFactory {
             if (Integer.parseInt(n) == 0) {
                 quit = true;
             } else if (Integer.parseInt(n) > 0 && Integer.parseInt(n) <= 30) {
-                myFactory.GetPizzaByID(Integer.parseInt(n)).toString();
+                //myFactory.GetPizzaByID(Integer.parseInt(n)).toString();
                 ordre.addPizza(myFactory.GetPizzaByID(Integer.parseInt(n)));
                 pizzaToSQL.SendPizzaToDB(myFactory.GetPizzaByID(Integer.parseInt(n)));
                 

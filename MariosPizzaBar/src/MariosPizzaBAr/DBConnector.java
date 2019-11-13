@@ -16,10 +16,16 @@ public class DBConnector {
         url += "serverTimezone=UTC&allowPublicKeyRetrieaval=true&";
         url += "useSSL=false";
         String user = "root";
-        String password = "1234"; //
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        connector = DriverManager.getConnection(url, user, password);
-        
-        return connector;
+        String password = "1234";
+
+        //Class.forName("com.mysql.cj.jdbc.Driver");
+
+
+        try {
+            connection = DriverManager.getConnection(url,user,password);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return connection;
     }
 }

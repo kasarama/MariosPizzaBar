@@ -3,6 +3,7 @@ Order nr. 6:
 20.Paul (tomat, ost, kylling, friske tomater, paprika, loeg og bacon )
 30.Thor (tomat, ost,  pepperoni, cocktailpoelser og bacon )
 
+<<<<<<< HEAD
 Afhentnings tid: 14:21		SamletPris: 223
 
 Order nr. 7:
@@ -11,3 +12,19 @@ Order nr. 7:
 
 Afhentnings tid: 14:51		SamletPris: 134
 
+=======
+Afhentnings tid: 21:10		SamletPris: 160
+
+Order nr. 3:
+28.Ingrid (tomat, ost, rucola salat, kylling og pesto )
+27.Magdalene (tomat, ost, skinke, hakket oksekoed og bearnaisesauce )
+26.Cathrine (tomat, ost, skinke, hakket oksekoed og bearnaisesauce )
+15.Kevin (tomat, ost, skinke og cocktailpoelser )
+
+Afhentnings tid: 21:40		SamletPris: 346
+
+Order nr. 4:
+1.Pepo (peperoni, ost )
+
+Afhentnings tid: 22:10		SamletPris: 65
+>>>>>>> 9c5f83026bf6e1cac810d0e12cf4348f48c87cde
