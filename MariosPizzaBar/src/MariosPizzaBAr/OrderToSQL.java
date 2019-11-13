@@ -29,7 +29,7 @@ public class OrderToSQL {
 
         /*String query = "Update ordrer set idOrdrer = " + order.getNummer() + ", Tid = \"" + order.getAfTid() 
                 + "\", Dato = \"" + date() + "\", Sum = " + order.getSum() + " where idOrdrer = " + order.getNummer();*/
-        String query = "Insert into ordrer (Tid, Dato, Sum) "
+        String query = "Insert into MarioDB.ordrer (Tid, Dato, Sum) "
                 + "values (\"" + order.getAfTid() + "\"," + "\"" + date + "\"," + order.sum()
                 + ")";
 
