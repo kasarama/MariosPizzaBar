@@ -14,6 +14,7 @@ public class HovedMenu {
     private boolean quit = false;     
     Archive arkiv = new Archive();
     OrderToSQL orderToSQL = new OrderToSQL();
+    DBStatistik dbStat = new DBStatistik();
 
     public HovedMenu() {
     }
@@ -86,7 +87,15 @@ public class HovedMenu {
 
                 //Kører statistik metoderne.
                 case "6":
+                    System.out.println("Statistik:");
+                    dbStat.LæsStatistikDagSnitPris();
+                    dbStat.LæsStatistikPizzaAntal();
+                    dbStat.LæsStatistikSnitPris();
                     
+                    System.out.println("\nIndtast et tilfældigt bogstav eller nummer og tryk enter for at kommer "
+                                + "tilbage til Hovedmenu");
+                        scan.next().charAt(0);
+                        scan.nextLine();
                     break;
                     
                 //Lukker programmet igen.

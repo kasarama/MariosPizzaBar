@@ -21,26 +21,28 @@ public void LæsStatistikSnitPris() throws SQLException, ClassNotFoundException 
         ResultSetMetaData rsmd = resultSet.getMetaData();
         while (resultSet.next()) {
                 String columnValue = resultSet.getString(1);
-                System.out.print(columnValue + " " + rsmd.getColumnName(1));
+                System.out.print(columnValue + " Gennemsnitspris for alle arkiverede ordrer");
             }
             System.out.println("");
         }
-public void LæsStatistikDagSnitPris(String dato) throws SQLException, ClassNotFoundException {
+public void LæsStatistikDagSnitPris() throws SQLException, ClassNotFoundException {
         Connection connection = null;
         Statement statement = null;
         //MainController.mainControllerLooop();
         connection = DBConnector.getConnection();
-        System.out.println("Write Dato, like this format example:2019:11:13");
+        
+        System.out.println("Write Dato, like this format example: 2019.11.13");
         Scanner myScan = new Scanner(System.in);
-        dato=myScan.nextLine();
-        String q = "SELECT AVG(sum) FROM pizza.ordrer where Dato= " + dato +";";
+        String dato=myScan.nextLine();
+        String q = "SELECT AVG(sum) FROM pizza.ordrer where Dato = \"" + dato +"\";";
+        
         statement = connection.createStatement();
         statement.execute(q);
         ResultSet resultSet = statement.executeQuery(q);
         ResultSetMetaData rsmd = resultSet.getMetaData();
         while (resultSet.next()) {
                 String columnValue = resultSet.getString(1);
-                System.out.print(columnValue + " " + rsmd.getColumnName(1));
+                System.out.print(columnValue + " Gennemsnitspris for den valgte dag");
             }
             System.out.println("");
         }
@@ -50,15 +52,18 @@ public void LæsStatistikPizzaAntal() throws SQLException, ClassNotFoundExceptio
         Statement statement = null;
         //MainController.mainControllerLooop();
         connection = DBConnector.getConnection();
-        
+        System.out.println("");
         String q = "select PizzaNR, count(*) from odrerinfo group by pizzaNR order by pizzaNR;";
         statement = connection.createStatement();
         statement.execute(q);
         ResultSet resultSet = statement.executeQuery(q);
         ResultSetMetaData rsmd = resultSet.getMetaData();
         while (resultSet.next()) {
-                String columnValue = resultSet.getString(1);
-                System.out.print(columnValue + " " + rsmd.getColumnName(1));
+                String columnValue1 = resultSet.getString(1); //PizzaNR values
+                String columnValue2 = resultSet.getString(2); //Count(*) values
+                String text = rsmd.getColumnName(1) + " " + columnValue1 + " Antal: " + columnValue2;
+                //System.out.println(columnValue + " hh " + rsmd.getColumnName(2));
+                System.out.println(text);
             }
             System.out.println("");
         }
