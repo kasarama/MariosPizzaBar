@@ -14,6 +14,7 @@ public class HovedMenu {
     private boolean quit = false;     
     Archive arkiv = new Archive();
     OrderToSQL orderToSQL = new OrderToSQL();
+    DBStatistik dbStat = new DBStatistik();
 
     public HovedMenu() {
     }
@@ -84,8 +85,21 @@ public class HovedMenu {
                         scan.nextLine();
                     break;
 
-                //Lukker programmet igen.
+                //Kører statistik metoderne.
                 case "6":
+                    System.out.println("Statistik:");
+                    dbStat.LæsStatistikDagSnitPris();
+                    dbStat.LæsStatistikPizzaAntal();
+                    dbStat.LæsStatistikSnitPris();
+                    
+                    System.out.println("\nIndtast et tilfældigt bogstav eller nummer og tryk enter for at kommer "
+                                + "tilbage til Hovedmenu");
+                        scan.next().charAt(0);
+                        scan.nextLine();
+                    break;
+                    
+                //Lukker programmet igen.
+                case "7":
                     quit = true;
                     System.out.println("Programmet afsluttes...");
                     break;
@@ -108,7 +122,8 @@ public class HovedMenu {
         System.out.println("3) Vis ordrerliste");
         System.out.println("4) Slet ordre");
         System.out.println("5) Vis arkiv");
-        System.out.println("6) Afslut programmet");
+        System.out.println("6) Kør statistik");
+        System.out.println("7) Afslut programmet");
         System.out.println();
     }
 }
