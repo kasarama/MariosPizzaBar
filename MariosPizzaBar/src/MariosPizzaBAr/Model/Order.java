@@ -1,6 +1,7 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.Model;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+import MariosPizzaBAr.Model.Pizza;
 import java.util.ArrayList;
 
 /*

@@ -1,5 +1,10 @@
 package MariosPizzaBAr;
 
+import MariosPizzaBAr.Factory.PizzaFactory;
+import MariosPizzaBAr.Factory.OrderFactory;
+import MariosPizzaBAr.Model.Order;
+import MariosPizzaBAr.Model.Pizza;
+import java.sql.SQLException;
 import java.util.Calendar;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
@@ -7,7 +12,6 @@ import org.junit.Test;
 
 public class OrderTest {
     OrderFactory myOrderFactory = new OrderFactory();
-    Order order = myOrderFactory.orderMaker();
     PizzaFactory myFactory = new PizzaFactory();
     Pizza pizza1 = myFactory.getPizzaByPosition(8);
     Pizza pizza2 = myFactory.getPizzaByPosition(2);
@@ -28,6 +32,7 @@ public class OrderTest {
     
     @Test
     public void TestpickUpTime() throws Exception {
+        Order order = myOrderFactory.orderMaker();
         setUp();
         String expected = time;
         String actual = order.getAfTid();
@@ -35,7 +40,8 @@ public class OrderTest {
     }
 
     @Test
-    public void testAddPizza() {
+    public void testAddPizza() throws ClassNotFoundException, SQLException {
+        Order order = myOrderFactory.orderMaker();
         order.addPizza(pizza1);
         order.addPizza(pizza2);
         System.out.println(order.toString());
@@ -47,7 +53,8 @@ public class OrderTest {
     }
 
     @Test
-    public void testSum() {
+    public void testSum() throws ClassNotFoundException, SQLException {
+        Order order = myOrderFactory.orderMaker();
         order.addPizza(pizza2);
         order.addPizza(pizza3);
         int expected = 140;

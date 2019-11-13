@@ -1,4 +1,4 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.Util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

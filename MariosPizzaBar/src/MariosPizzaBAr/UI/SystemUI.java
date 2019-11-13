@@ -1,5 +1,5 @@
 
-package MariosPizzaBAr;
+package MariosPizzaBAr.UI;
 
 
 public interface SystemUI {

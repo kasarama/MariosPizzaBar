@@ -1,4 +1,4 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.Model;
 //@Cathrine, Vibeke, Matti og Magdalena
 
 public class Pizza {

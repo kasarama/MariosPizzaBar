@@ -3,6 +3,7 @@ package MariosPizzaBAr;
 
 //@Cathrine, Vibeke, Matti og Magdalena
 
+import MariosPizzaBAr.Controller.HovedMenu;
 import java.sql.SQLException;
 
 
