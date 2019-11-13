@@ -1,6 +1,7 @@
 package MariosPizzaBAr;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+import static MariosPizzaBAr.SystemUI.visHovedmenu;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class HovedMenu {
     Scanner scan = new Scanner(System.in);
     Menu menu = new Menu();
     BestillingsListe bestListe = new BestillingsListe();
-    private boolean quit = false;     
+    private boolean quit = false;
     Archive arkiv = new Archive();
     OrderToSQL orderToSQL = new OrderToSQL();
     DBStatistik dbStat = new DBStatistik();
@@ -22,67 +23,71 @@ public class HovedMenu {
     //Metode til at køre hovedmenuen. Hver del er skrevet som en case i en switch.
     public void startProgram() throws ClassNotFoundException, SQLException {
         while (quit == false) {
-                visHovedmenu();
-                String brugerInput = scan.nextLine();
-                switch (brugerInput) {
-                    
-                    //Viser hele menukortet fra "Pizzaer" filen.
-                    case "1": {
-                        try {
-                            menu.readFiles();
-                            System.out.println("\nIndtast et tilfældigt bogstav eller nummer og tryk enter for at kommer "
+            visHovedmenu();
+            String brugerInput = scan.nextLine();
+            switch (brugerInput) {
+
+                //Viser hele menukortet fra "Pizzaer" filen.
+                case "1": {
+                    try {
+                        menu.readFiles();
+                        System.out.println("\nIndtast et tilfældigt bogstav eller nummer og tryk enter for at kommer "
                                 + "tilbage til Hovedmenu");
                         scan.next().charAt(0);
                         scan.nextLine();
-                        } catch (SQLException ex) {
-                            System.out.println("Fejl - Menu-filen ikke fundet!");
-                        }
+                    } catch (SQLException ex) {
+                        System.out.println("Fejl - Menu-filen ikke fundet!");
                     }
-                    break;
+                }
+                break;
 
-                 //Tilføjer en ordre til ArrayListen og arkivet.
+                //Tilføjer en ordre til ArrayListen og arkivet.
                 case "2":
-                    try{
-                    Order nyOrdre = myOrderFactory.newOrder();
-                    bestListe.addOrder(nyOrdre);
-                    arkiv.sendToArkiv(nyOrdre);
-                    orderToSQL.SendOrderToDB(nyOrdre);}
-                    catch(NumberFormatException ex){
+                    try {
+                        Order nyOrdre = myOrderFactory.newOrder();
+                        if (nyOrdre == null) {
+                            break;
+                        } else {
+                            bestListe.addOrder(nyOrdre);
+                            arkiv.sendToArkiv(nyOrdre);
+                            orderToSQL.SendOrderToDB(nyOrdre);
+                        }
+
+                    } catch (NumberFormatException ex) {
                         System.out.println("Fejl - Dette er ikke et pizzanr. Du vender tilbage til hovedmenuen og starte "
                                 + "forfra på denne ordre og den gemmes heller ikke i arkiv!");
                     }
                     break;
 
                 //Viser ArrayListens indhold.
-                case "3":                    
-                    System.out.println("Bestillings Liste\n" + bestListe.toString()+"\n");
+                case "3":
+                    System.out.println("Bestillings Liste\n" + bestListe.toString() + "\n");
                     System.out.println("\nIndtast et tilfældigt bogstav eller nummer og tryk enter for at kommer "
-                                + "tilbage til Hovedmenu");
-                        scan.next().charAt(0);
-                        scan.nextLine();
+                            + "tilbage til Hovedmenu");
+                    scan.next().charAt(0);
+                    scan.nextLine();
                     break;
 
                 //Fjerner en ordre fra ArrayListen.
                 case "4":
-                    try{
-                    System.out.println("Skriv ordrenummer og tryk enter for at tilføje pizza til ordre");
-                    int ordreNummer = scan.nextInt();
-                    scan.nextLine();
-                    bestListe.fjernOrdre(bestListe.findEfterNummer(ordreNummer));
-                    }
-                    catch (NullPointerException ex){
+                    try {
+                        System.out.println("Skriv ordrenummer og tryk enter for at tilføje pizza til ordre");
+                        int ordreNummer = scan.nextInt();
+                        scan.nextLine();
+                        bestListe.fjernOrdre(bestListe.findEfterNummer(ordreNummer));
+                    } catch (NullPointerException ex) {
                         System.out.println("Fejl - Der er ingen ordre med dette nummer at slette i bestillingslisten!");
                     }
                     break;
 
                 //Udskriver "Arkiv" filen med gemte ordrer.
-                case "5": 
+                case "5":
                     System.out.println("Arkiv");
                     arkiv.showDBArchive();
                     System.out.println("\nIndtast et tilfældigt bogstav eller nummer og tryk enter for at kommer "
-                                + "tilbage til Hovedmenu");
-                        scan.next().charAt(0);
-                        scan.nextLine();
+                            + "tilbage til Hovedmenu");
+                    scan.next().charAt(0);
+                    scan.nextLine();
                     break;
 
                 //Kører statistik metoderne.
@@ -108,22 +113,5 @@ public class HovedMenu {
                 }
             }
         }
-    }
-
-    //Instruktioner til at betjene hovedmenuen og kommandoerne i metoden startProgram.
-    public void visHovedmenu() {
-        System.out.println();
-        System.out.println("\t\t\"Hovedmenu\"");
-        System.out.println();
-        System.out.println("Skriv følgende tal og tryk dernæst enter for at gå ind i punktet: ");
-        System.out.println();
-        System.out.println("1) Vis \"Menukort\"");
-        System.out.println("2) Lav ordre");
-        System.out.println("3) Vis ordrerliste");
-        System.out.println("4) Slet ordre");
-        System.out.println("5) Vis arkiv");
-        System.out.println("6) Kør statistik");
-        System.out.println("7) Afslut programmet");
-        System.out.println();
     }
 }

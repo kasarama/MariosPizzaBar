@@ -3,7 +3,6 @@ package MariosPizzaBAr;
 //@Cathrine, Vibeke, Matti og Magdalena
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -14,6 +13,7 @@ public class Menu {
 
     //Læser filen "Pizzaer" som er menukortet til restauranten og udskriver det.
     public void readFiles() throws SQLException, ClassNotFoundException {
+
 
         
         Connection myConnection = null;

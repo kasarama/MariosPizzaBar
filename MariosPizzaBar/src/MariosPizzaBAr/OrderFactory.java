@@ -10,19 +10,17 @@ import java.util.Scanner;
 
 public class OrderFactory {
 
-    private static int count = 1;
+    //private static int count = 1;
     private int nummer;
     private int sum;
     private String afTid;
     private ArrayList<Pizza> ordrer = new ArrayList();
     Calendar calendar = Calendar.getInstance();
-    Archive arkiv = new Archive();
+
 
     public OrderFactory() {
     }
 
-    
-    
      //Regner nuværende tid ud og tilføjer 30 minutter til afhentningstidspunkt.
     public String pickUpTime() {
         calendar.add(Calendar.MINUTE, +(30));
@@ -30,7 +28,20 @@ public class OrderFactory {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
 
+
         return format("%d:%02d",hour,minute);
+
+    }
+    
+    public String pickUpDate() { //NEW !!! HELE DENNE METODE ER NY!!!
+
+        int dayInt = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        int year = calendar.get(Calendar.YEAR);
+
+
+        return format("%d/%d - %d", dayInt, month, year);
+
     }
     
     //Regner den samlede sum af pizza(er) i ordreren ud.
@@ -45,9 +56,12 @@ public class OrderFactory {
     }
 
     //Laver et ordre objekt med id/nummer, afhentningstid og samlet sum.
-    public Order orderMaker() {
+    public Order orderMaker() throws ClassNotFoundException, SQLException {
         Order order = null;
-        this.nummer = count++;
+        //this.nummer = count++;
+        int count = UpdateOrderNumberFromDB.UpdateOrderNumber();
+        count = count++;
+        this.nummer = count;
         this.afTid = pickUpTime();
         this.sum = sum();
         order = new Order(this.nummer, this.sum, this.afTid);
@@ -59,6 +73,7 @@ public class OrderFactory {
     Indtast et nummer fra menukortet og pizzaen bliver tilføjet.
     Derefter bliver ordreren gemt i Arkivet med BufferedWriter.
     Ordreren bliver så returneret så den kan tilføjet til ArrayListen.*/
+
     public Order newOrder() throws SQLException, ClassNotFoundException { // lav metoden ikke void , men returner ordre med nummer
         PizzaToSQL pizzaToSQL=new PizzaToSQL();
         Order ordre = orderMaker();
@@ -77,12 +92,9 @@ public class OrderFactory {
                 pizzaToSQL.SendPizzaToDB(myFactory.GetPizzaByID(Integer.parseInt(n)));
                 
                 
-            } else if (Integer.parseInt(n) > 30) {
-                System.out.println("Pizzanummeret findes ikke, prøv igen");
-                newOrder();
             } else {
-                System.out.println("Dette er ikke et tal, prøv igen");
-                newOrder();
+                System.out.println("Pizzanummeret findes ikke. \nOrdreren er ikke registreret.");
+                return null;
             }
 
         }
@@ -90,21 +102,4 @@ public class OrderFactory {
         System.out.println("^ Denne ordre er tilføjet");
         return ordre;
     }
-/*
-    public int getNummer() {
-        return count;
-    }
-
-    public int getSum() {
-        return sum;
-    }
-
-    public String getAfTid() {
-        return afTid;
-    }
-
-    public ArrayList<Pizza> getOrdrer() {
-        return ordrer;
-    }
-*/
 }

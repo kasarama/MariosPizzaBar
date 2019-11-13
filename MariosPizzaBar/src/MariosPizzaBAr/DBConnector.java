@@ -5,17 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnector {
+
     public static Connection getConnection() throws ClassNotFoundException, SQLException{
+
 
         Connection connection = null;
         
+       Connection connector = null;
         String url = "jdbc:mysql://localhost:3306/pizza?";
-        url += "serverTimezone=UTC&allowPublicKeyRetrieval=true&";
+        url += "serverTimezone=UTC&allowPublicKeyRetrieaval=true&";
         url += "useSSL=false";
         String user = "root";
-        String password = "gadaMagda88";
 
-        //Class.forName("com.mysql.cj.jdbc.Driver");
+        String password = "gadaMagda88";;
 
 
         try {
