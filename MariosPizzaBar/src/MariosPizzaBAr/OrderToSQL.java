@@ -11,18 +11,29 @@ public class OrderToSQL {
     }
 
     Calendar calendar = Calendar.getInstance();
+        
+        
 
     public void SendOrderToDB(Order order) throws SQLException, ClassNotFoundException {
+        
+        calendar.add(Calendar.MONTH, +(1));
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        int year = calendar.get(Calendar.YEAR);
+
+        String date = year + "." + month + "." + day;
 
         Connection myConnector = null;
         myConnector = DBConnector.getConnection();
         PreparedStatement pstmt = null;
         //ResultSet resultSet = null;
+
         /*String query = "Update ordrer set idOrdrer = " + order.getNummer() + ", Tid = \"" + order.getAfTid() 
                 + "\", Dato = \"" + date() + "\", Sum = " + order.getSum() + " where idOrdrer = " + order.getNummer();*/
         String query = "Insert into ordrer (Tid, Dato, Sum) "
-                + "values (\"" + order.getAfTid() + "\"," + "\"" + date() + "\"," + order.getSum()
+                + "values (\"" + order.getAfTid() + "\"," + "\"" + date + "\"," + order.sum()
                 + ")";
+
         /*String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "
                 + "values (" + order.getNummer() +",\""+ order.getAfTid()+"\"," + "\"" + date() + "\"," + order.getSum()
                 + ") where idOrdrer = " + order.getNummer();*/
@@ -37,12 +48,5 @@ public class OrderToSQL {
 
     }
 
-    public String date() {
-        String date = "";
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-        int month = calendar.get(Calendar.MONTH);
-        int year = calendar.get(Calendar.YEAR);
-
-        return date = year + "." + month + "." + day;
-    }
+   
 }

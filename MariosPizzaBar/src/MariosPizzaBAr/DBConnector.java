@@ -11,19 +11,15 @@ public class DBConnector {
 
         Connection connection = null;
         
+       Connection connector = null;
         String url = "jdbc:mysql://localhost:3306/pizza?";
-        url += "serverTimezone=UTC&allowPublicKeyRetrieval=true&";
+        url += "serverTimezone=UTC&allowPublicKeyRetrieaval=true&";
         url += "useSSL=false";
         String user = "root";
-        String password = "1234";
+        String password = "1234"; //
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        connector = DriverManager.getConnection(url, user, password);
         
-      //  Class.forName("com.mysql.cj.jdbc.Driver");
-
-        try {
-            connection = DriverManager.getConnection(url,user,password);
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        return connection;
+        return connector;
     }
 }

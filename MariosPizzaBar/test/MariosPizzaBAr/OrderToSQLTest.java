@@ -24,7 +24,7 @@ public class OrderToSQLTest {
     public void setUp() throws Exception {
 
         Calendar calendar = Calendar.getInstance();
-
+ calendar.add(Calendar.MONTH, +(1));
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int month = calendar.get(Calendar.MONTH);
         int year = calendar.get(Calendar.YEAR);
@@ -37,6 +37,8 @@ public class OrderToSQLTest {
      */
     @Test
     public void testSendOrderToDB() {
+        System.out.println();
+        
     }
 
     /**
@@ -45,8 +47,8 @@ public class OrderToSQLTest {
     @Test
     public void testDate() {
            OrderToSQL orderToSQL = new OrderToSQL();
-        String expResult =date;
-        String result = orderToSQL.date();
+        String expResult ="2019.11.12";
+        String result = date;
         assertEquals(expResult, result);
 
     }
