@@ -169,3 +169,19 @@ Order nr. 4:
 
 Afhentnings tid: 22:10		SamletPris: 65
 
+Order nr. 1:
+3.Ostedroem (gorgonzola, oksekoed og ost )
+
+Afhentnings tid: 11:45		SamletPris: 80
+
+Order nr. 2:
+2.Sofie (peperoni, skinke, ost )
+2.Sofie (peperoni, skinke, ost )
+2.Sofie (peperoni, skinke, ost )
+2.Sofie (peperoni, skinke, ost )
+2.Sofie (peperoni, skinke, ost )
+2.Sofie (peperoni, skinke, ost )
+2.Sofie (peperoni, skinke, ost )
+
+Afhentnings tid: 12:15		SamletPris: 490
+
