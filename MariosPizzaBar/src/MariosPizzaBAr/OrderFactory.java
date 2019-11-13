@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class OrderFactory {
 
-    private static int count = 1;
+    //private static int count = 1;
     private int nummer;
     private int sum;
     private String afTid;
@@ -56,9 +56,12 @@ public class OrderFactory {
     }
 
     //Laver et ordre objekt med id/nummer, afhentningstid og samlet sum.
-    public Order orderMaker() {
+    public Order orderMaker() throws ClassNotFoundException, SQLException {
         Order order = null;
-        this.nummer = count++;
+        //this.nummer = count++;
+        int count = UpdateOrderNumberFromDB.UpdateOrderNumber();
+        count = count++;
+        this.nummer = count;
         this.afTid = pickUpTime();
         this.sum = sum();
         order = new Order(this.nummer, this.sum, this.afTid);
@@ -89,12 +92,9 @@ public class OrderFactory {
                 pizzaToSQL.SendPizzaToDB(myFactory.GetPizzaByID(Integer.parseInt(n)));
                 
                 
-            } else if (Integer.parseInt(n) > 30) {
-                System.out.println("Pizzanummeret findes ikke, prøv igen");
-                newOrder();
             } else {
-                System.out.println("Dette er ikke et tal, prøv igen");
-                newOrder();
+                System.out.println("Pizzanummeret findes ikke. \nOrdreren er ikke registreret.");
+                return null;
             }
 
         }

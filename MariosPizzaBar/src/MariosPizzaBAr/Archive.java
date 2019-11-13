@@ -92,7 +92,7 @@ public class Archive {
     }
     //https://www.codespeedy.com/read-a-specific-line-from-a-text-file-in-java/
 
-    public void createHTMLFile() { //NEW !!! HELE METODEN !!!
+   /* public void createHTMLFile() { //NEW !!! HELE METODEN !!!
 
         try {
             fileNameForHTML.createNewFile();
@@ -105,7 +105,7 @@ public class Archive {
         String date = oF.pickUpDate();
         /*While ()*/
         
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileNameForHTML))) {
+       /* try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileNameForHTML))) {
 
             bw.write("<!doctype html> \n"
                     + "<html>\n"
@@ -164,6 +164,6 @@ public class Archive {
         } catch (IOException ex) {
             System.out.println("Fejl: Kan ikke tilføje til HTML-fil!");
         }
-    }
+    }*/
 
 }
