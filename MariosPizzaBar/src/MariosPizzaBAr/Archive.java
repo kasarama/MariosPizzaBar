@@ -44,6 +44,32 @@ public class Archive {
     
     //Viser database arkiv
     public void showDBArchive() throws ClassNotFoundException, SQLException {
+        
+        Connection myConnection = null;
+        myConnection = DBConnector.getConnection();
+        Statement statement = null;
+        ResultSet resultSet = null;
+        String query = "SELECT * FROM marioDB.ordrer";
+        statement = myConnection.createStatement();
+        resultSet = statement.executeQuery(query);
+        while (resultSet.next()) {
+            int idOrdrer = resultSet.getInt("idOrdrer");
+            String tid = resultSet.getString("Tid");
+            String dato = resultSet.getString("Dato");
+            int sum = resultSet.getInt("Sum");
+            System.out.println("Order ID: \t"+idOrdrer + "\nAfh. tid: \t" + tid + "\nDato: \t\t" + dato + "\nSum: \t\t" + sum + "\n" );
+        }
+        
+
+
+
+        /*lukker efter mig*/
+        resultSet.close();
+        statement.close();
+        myConnection.close();
+        
+        
+        /*
         Connection connection = null;
         Statement statement = null;
         //MainController.mainControllerLooop();
@@ -65,6 +91,7 @@ public class Archive {
             }
             System.out.println("");
         }
+*/
     }
 
     //Sender ordre til arkiv
