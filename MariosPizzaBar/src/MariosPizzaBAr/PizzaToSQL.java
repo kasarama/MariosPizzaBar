@@ -24,9 +24,8 @@ public class PizzaToSQL {
     public void SendPizzaToDB(Pizza pizza) throws ClassNotFoundException, SQLException {
         Calendar calendar = Calendar.getInstance();
 
-        calendar.add(Calendar.MONTH, +(1));
         int day = calendar.get(Calendar.DAY_OF_MONTH);
-        int month = calendar.get(Calendar.MONTH);
+        int month = calendar.get(Calendar.MONTH) + 1;
         int year = calendar.get(Calendar.YEAR);
 
         String date = year + "." + month + "." + day;
