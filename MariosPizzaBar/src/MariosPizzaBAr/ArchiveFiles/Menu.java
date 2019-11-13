@@ -1,6 +1,7 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.ArchiveFiles;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+import MariosPizzaBAr.Util.DBConnector;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class Menu {
         myConnection = DBConnector.getConnection();
         Statement statement = null;
         ResultSet resultSet = null;
-        String query = "SELECT * FROM marioDB.pizzaer";
+        String query = "SELECT * FROM mariodb.pizzaer";
         statement = myConnection.createStatement();
         resultSet = statement.executeQuery(query);
         while (resultSet.next()) {

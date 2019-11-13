@@ -1,6 +1,8 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.Factory;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+import MariosPizzaBAr.Model.Pizza;
+import MariosPizzaBAr.Util.DBConnector;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -46,7 +48,7 @@ public class PizzaFactory {
    
 
         Pizza retValPizza = null;
-        String query = "SELECT * FROM pizzaer WHERE NR = ?";
+        String query = "SELECT * FROM mariodb.pizzaer WHERE NR = ?";
         Connection myConnector = null;
         PreparedStatement pstmt = null;
         //Statement pstmt = null;

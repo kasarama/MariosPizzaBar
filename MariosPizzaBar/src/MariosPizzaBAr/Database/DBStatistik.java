@@ -1,5 +1,6 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.Database;
 
+import MariosPizzaBAr.Util.DBConnector;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -14,10 +15,10 @@ public void LæsStatistikSnitPris() throws SQLException, ClassNotFoundException 
         Statement statement = null;
         //MainController.mainControllerLooop();
         connection = DBConnector.getConnection();
-        String q = "SELECT AVG(sum) FROM pizza.ordrer;";
+        String q = "SELECT CAST(AVG(sum) AS DECIMAL(10,2)) FROM mariodb.ordrer;";
         statement = connection.createStatement();
         statement.execute(q);
-        ResultSet resultSet = statement.executeQuery("SELECT AVG(sum) FROM pizza.ordrer;");
+        ResultSet resultSet = statement.executeQuery("SELECT CAST(AVG(sum) AS DECIMAL(10,2)) FROM mariodb.ordrer;");
         ResultSetMetaData rsmd = resultSet.getMetaData();
         while (resultSet.next()) {
                 String columnValue = resultSet.getString(1);
@@ -34,7 +35,7 @@ public void LæsStatistikDagSnitPris() throws SQLException, ClassNotFoundExcepti
         System.out.println("Write Dato, like this format example: 2019.11.13");
         Scanner myScan = new Scanner(System.in);
         String dato=myScan.nextLine();
-        String q = "SELECT AVG(sum) FROM pizza.ordrer where Dato = \"" + dato +"\";";
+        String q = "SELECT CAST(AVG(sum) AS DECIMAL(10,2)) FROM mariodb.ordrer where Dato = \"" + dato +"\";";
         
         statement = connection.createStatement();
         statement.execute(q);
@@ -54,7 +55,7 @@ public void LæsStatistikPizzaAntal() throws SQLException, ClassNotFoundExceptio
         connection = DBConnector.getConnection();
         System.out.println("");
         System.out.println("Antal solgte pizzaer organiseret efter pizzanr:");
-        String q = "select PizzaNR, count(*) from odrerinfo group by pizzaNR order by pizzaNR;";
+        String q = "select PizzaNR, count(*) from mariodb.odrerinfo group by pizzaNR order by pizzaNR;";
         statement = connection.createStatement();
         statement.execute(q);
         ResultSet resultSet = statement.executeQuery(q);

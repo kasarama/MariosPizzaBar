@@ -1,7 +1,11 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.Factory;
 
 //@Cathrine, Vibeke, Matti og Magdalena
 
+import MariosPizzaBAr.Model.Order;
+import MariosPizzaBAr.Model.Pizza;
+import MariosPizzaBAr.Database.UpdateOrderNumberFromDB;
+import MariosPizzaBAr.Database.PizzaToSQL;
 import static java.lang.String.format;
 import java.sql.SQLException;
 import java.util.ArrayList;

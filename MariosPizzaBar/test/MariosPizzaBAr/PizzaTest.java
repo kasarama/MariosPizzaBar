@@ -1,6 +1,8 @@
     
 package MariosPizzaBAr;
 
+import MariosPizzaBAr.Factory.PizzaFactory;
+import MariosPizzaBAr.Model.Pizza;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
