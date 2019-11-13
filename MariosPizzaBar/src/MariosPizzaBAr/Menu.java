@@ -15,27 +15,29 @@ public class Menu {
     //Læser filen "Pizzaer" som er menukortet til restauranten og udskriver det.
     public void readFiles() throws SQLException, ClassNotFoundException {
 
-        Connection connection = null;
+        
+        Connection myConnection = null;
+        myConnection = DBConnector.getConnection();
         Statement statement = null;
-        //MainController.mainControllerLooop();
-        connection = DBConnector.getConnection();
-        String q = "Select * from pizzaer";
-        statement = connection.createStatement();
-        statement.execute(q);
-        ResultSet resultSet = statement.executeQuery("SELECT * from pizzaer");
-
-        ResultSetMetaData rsmd = resultSet.getMetaData();
-        int columnsNumber = rsmd.getColumnCount();
+        ResultSet resultSet = null;
+        String query = "SELECT * FROM marioDB.pizzaer";
+        statement = myConnection.createStatement();
+        resultSet = statement.executeQuery(query);
         while (resultSet.next()) {
-            for (int i = 1; i <= columnsNumber; i++) {
-                if (i > 1) {
-                    System.out.print(",  ");
-                }
-                String columnValue = resultSet.getString(i);
-                System.out.print(columnValue + " " + rsmd.getColumnName(i));
-            }
-            System.out.println("");
+            int nr = resultSet.getInt("NR");
+            String navn = resultSet.getString("Navn");
+            String ingredienser = resultSet.getString("Ingredienser");
+            int pris = resultSet.getInt("Pris");
+            System.out.println(nr + ". " + navn + " (" + ingredienser + "), pris: " + pris + " kr.");
         }
+
+        /*lukker efter mig*/
+        resultSet.close();
+        statement.close();
+        myConnection.close();
+        
+        
     }
 
+    
 }
