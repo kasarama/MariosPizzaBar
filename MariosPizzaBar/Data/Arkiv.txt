@@ -169,3 +169,9 @@ Order nr. 4:
 
 Afhentnings tid: 22:10		SamletPris: 65
 
+Order nr. 1:
+9.Rasmus (tomat, ost, kylling, loeg og paprika )
+9.Rasmus (tomat, ost, kylling, loeg og paprika )
+
+Afhentnings tid: 12:53		SamletPris: 152
+
