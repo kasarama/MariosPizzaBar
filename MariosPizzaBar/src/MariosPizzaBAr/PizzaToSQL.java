@@ -26,7 +26,7 @@ public class PizzaToSQL {
         Connection myConnector = null;
         myConnector = DBConnector.getConnection();
         PreparedStatement pstmt = null;
-        String query = "Insert into MarioDB.odrerinfo (pizzaNr, dato) "
+        String query = "Insert into mariodb.odrerinfo (pizzaNr, dato) "
                 + "values ("+pizza.getPosition()+", \" "+date +" \")";
 
         /*String query = "Insert into ordrer (idOrdrer, Tid, Dato, Sum) "

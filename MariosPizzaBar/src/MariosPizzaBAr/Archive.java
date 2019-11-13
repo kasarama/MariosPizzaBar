@@ -58,7 +58,7 @@ public class Archive {
         myConnection = DBConnector.getConnection();
         Statement statement = null;
         ResultSet resultSet = null;
-        String query = "SELECT * FROM marioDB.ordrer";
+        String query = "SELECT * FROM pizza.ordrer";
         statement = myConnection.createStatement();
         resultSet = statement.executeQuery(query);
         while (resultSet.next()) {

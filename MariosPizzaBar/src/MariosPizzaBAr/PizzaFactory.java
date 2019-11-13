@@ -46,7 +46,7 @@ public class PizzaFactory {
    
 
         Pizza retValPizza = null;
-        String query = "SELECT * FROM pizzaer WHERE NR = ?";
+        String query = "SELECT * FROM mariodb.pizzaer WHERE NR = ?";
         Connection myConnector = null;
         PreparedStatement pstmt = null;
         //Statement pstmt = null;
