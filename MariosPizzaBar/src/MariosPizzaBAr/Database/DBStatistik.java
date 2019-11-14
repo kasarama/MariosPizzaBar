@@ -27,10 +27,11 @@ public class DBStatistik {
             columnValue = resultSet.getString(1);
             System.out.print(columnValue + " Gennemsnitspris for alle arkiverede ordrer");
         }
-        System.out.println("");
     }
 
-    public void LæsStatistikDagSnitPris() throws SQLException, ClassNotFoundException {
+public void LæsStatistikDagSnitPris() throws SQLException, ClassNotFoundException {
+        columnValue = null;
+
         Connection connection = null;
         Statement statement = null;
         //MainController.mainControllerLooop();
