@@ -10,12 +10,12 @@ import static org.junit.Assert.*;
 
 public class PizzaTest {
     Pizza pizza;    
-    PizzaFactory myFactory = new PizzaFactory();
-    Pizza tmpPizza = myFactory.getPizzaByPosition(3);    
+    //PizzaFactory myFactory = new PizzaFactory();
+    //Pizza tmpPizza = myFactory.getPizzaByPosition(3);    
     
     @Before
     public void setUp() {
-        pizza=new Pizza(1,"toto","takria",1);
+        pizza=new Pizza(1,"toto","takria",70);
     }
      
     @Test
@@ -41,7 +41,7 @@ public class PizzaTest {
     @Test
     public void testGetPris() {
         int expected = 70;
-        int actual = tmpPizza.getPris();
+        int actual = pizza.getPris();
         assertEquals(expected, actual);
                 
     }

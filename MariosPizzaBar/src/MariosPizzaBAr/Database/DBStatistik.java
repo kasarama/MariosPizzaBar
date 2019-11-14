@@ -11,6 +11,8 @@ import java.util.Scanner;
 
 public class DBStatistik {
 
+    String columnValue;
+
     public void LæsStatistikSnitPris() throws SQLException, ClassNotFoundException {
         Connection connection = null;
         Statement statement = null;
@@ -22,7 +24,7 @@ public class DBStatistik {
         ResultSet resultSet = statement.executeQuery("SELECT CAST(AVG(sum) AS DECIMAL(10,2)) FROM mariodb.ordrer;");
         ResultSetMetaData rsmd = resultSet.getMetaData();
         while (resultSet.next()) {
-            String columnValue = resultSet.getString(1);
+            columnValue = resultSet.getString(1);
             System.out.print(columnValue + " Gennemsnitspris for alle arkiverede ordrer");
         }
         System.out.println("");
@@ -36,18 +38,27 @@ public class DBStatistik {
 
         System.out.println("Write Dato, like this format example: 2019.11.13");
         Scanner myScan = new Scanner(System.in);
-        String dato = myScan.nextLine();
-        String q = "SELECT CAST(AVG(sum) AS DECIMAL(10,2)) FROM mariodb.ordrer where Dato = \"" + dato + "\";";
+        while (columnValue == null) {
+            String dato = myScan.nextLine();
+            String q = "SELECT CAST(AVG(sum) AS DECIMAL(10,2)) FROM mariodb.ordrer where Dato = \"" + dato + "\";";
 
-        statement = connection.createStatement();
-        statement.execute(q);
-        ResultSet resultSet = statement.executeQuery(q);
-        ResultSetMetaData rsmd = resultSet.getMetaData();
-        if (resultSet.next()) {
-            String columnValue = resultSet.getString(1);
-            System.out.print(columnValue + " Gennemsnitspris for den valgte dag");
+            statement = connection.createStatement();
+            statement.execute(q);
+            ResultSet resultSet = statement.executeQuery(q);
+            ResultSetMetaData rsmd = resultSet.getMetaData();
+
+            while (resultSet.next()) {
+                columnValue = resultSet.getString(1);
+                System.out.print(columnValue + " Gennemsnitspris for den valgte dag");
+            }
+            System.out.println("");
+
+            if (columnValue != null) {
+                break;
+            }
+
+            System.out.println("Forkert datoformat .- prøv igen");
         }
-        System.out.println("");
     }
 
     public void LæsStatistikPizzaAntal() throws SQLException, ClassNotFoundException {
