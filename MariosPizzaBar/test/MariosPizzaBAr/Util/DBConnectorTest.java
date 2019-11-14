@@ -34,7 +34,7 @@ public class DBConnectorTest {
         Connection expResult = null;
         Connection result = DBConnector.getConnection();
         Statement st = result.createStatement();
-        String query="select * from pizzaer limit 1";
+        String query="select * from mariodb.pizzaer limit 1";
         ResultSet res = (ResultSet) st.executeQuery(query);
         System.out.println(res.getRow());
         assertTrue(result!=null);
