@@ -10,13 +10,11 @@ public class DBConnector {
 
 
         Connection connection = null;
-        
-       Connection connector = null;
-        String url = "jdbc:mysql://localhost:3306/pizza?";
+        String url = "jdbc:mysql://localhost:3306/mariodb?";
         url += "serverTimezone=UTC&allowPublicKeyRetrieaval=true&";
         url += "useSSL=false";
+        String password = "Matti12345h";
         String user = "root";
-        String password = "1234";
 
         //Class.forName("com.mysql.cj.jdbc.Driver");
 
