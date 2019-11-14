@@ -30,6 +30,7 @@ public void LæsStatistikSnitPris() throws SQLException, ClassNotFoundException 
             System.out.println("");
         }
 public void LæsStatistikDagSnitPris() throws SQLException, ClassNotFoundException {
+        columnValue = null;
         Connection connection = null;
         Statement statement = null;
         //MainController.mainControllerLooop();

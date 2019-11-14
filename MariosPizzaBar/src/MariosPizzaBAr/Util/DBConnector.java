@@ -8,11 +8,11 @@ public class DBConnector {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException{
 
-
+// 1) Matti X 2) TestX 3) diagramX 4)SQL script dump? 5)Interface
+        
         Connection connection = null;
         
-       Connection connector = null;
-        String url = "jdbc:mysql://localhost:3306/pizza?";
+        String url = "jdbc:mysql://localhost:3306/mariodb?";
         url += "serverTimezone=UTC&allowPublicKeyRetrieaval=true&";
         url += "useSSL=false";
         String user = "root";

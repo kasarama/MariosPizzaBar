@@ -6,3 +6,14 @@ Order nr. 8:
 
 Afhentnings tid: 15:59		SamletPris: 305
 
+Order nr. 9:
+1.Pepo (peperoni, ost )
+4.bejamin (tomat, ost, gorgonzola, champignon )
+5.Malene (tomat, ost, skinke og champignon )
+
+Afhentnings tid: 14:07		SamletPris: 215
+
+Order nr. 10:
+
+Afhentnings tid: 14:01		SamletPris: 0
+

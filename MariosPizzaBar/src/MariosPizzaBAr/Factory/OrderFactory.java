@@ -37,17 +37,6 @@ public class OrderFactory {
 
     }
     
-    public String pickUpDate() { //NEW !!! HELE DENNE METODE ER NY!!!
-
-        int dayInt = calendar.get(Calendar.DAY_OF_MONTH);
-        int month = calendar.get(Calendar.MONTH);
-        int year = calendar.get(Calendar.YEAR);
-
-
-        return format("%d/%d - %d", dayInt, month, year);
-
-    }
-    
     //Regner den samlede sum af pizza(er) i ordreren ud.
     public int sum() {
         int prisSum = 0;
