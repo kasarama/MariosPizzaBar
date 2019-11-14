@@ -7,16 +7,15 @@ import java.sql.SQLException;
 public class DBConnector {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException{
-        
+
         Connection connection = null;
         
-        String url = "jdbc:mysql://localhost:3306/mariodb?";
+        String url = "jdbc:mysql://localhost:3306/MarioDB?";
         url += "serverTimezone=UTC&allowPublicKeyRetrieaval=true&";
         url += "useSSL=false";
         String user = "root";
-        String password = "1234";
 
-        //Class.forName("com.mysql.cj.jdbc.Driver");
+        String password = "1234";;
 
 
         try {

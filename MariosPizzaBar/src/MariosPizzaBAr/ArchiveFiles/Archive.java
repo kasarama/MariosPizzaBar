@@ -26,7 +26,6 @@ public class Archive {
     OrderFactory oF = new OrderFactory();
     ArrayList<String> pickUpDates = new ArrayList();//NEW !!
     //Order o = new Order();
-  
 
     public Archive() {
     }
@@ -52,10 +51,10 @@ public class Archive {
         }
 
     }
-    
+
     //Viser database arkiv
     public void showDBArchive() throws ClassNotFoundException, SQLException {
-        
+
         Connection myConnection = null;
         myConnection = DBConnector.getConnection();
         Statement statement = null;
@@ -68,17 +67,12 @@ public class Archive {
             String tid = resultSet.getString("Tid");
             String dato = resultSet.getString("Dato");
             int sum = resultSet.getInt("Sum");
-            System.out.println("Order ID: \t"+idOrdrer + "\nAfh. tid: \t" + tid + "\nDato: \t\t" + dato + "\nSum: \t\t" + sum + "\n" );
+            System.out.println("Order ID: \t" + idOrdrer + "\nAfh. tid: \t" + tid + "\nDato: \t\t" + dato + "\nSum: \t\t" + sum + "\n");
         }
-        
 
-
-
-        /*lukker efter mig*/
         resultSet.close();
         statement.close();
         myConnection.close();
-        
     }
 
     //Sender ordre til arkiv
@@ -96,5 +90,6 @@ public class Archive {
         }
     }
     //https://www.codespeedy.com/read-a-specific-line-from-a-text-file-in-java/
+
 
 }
