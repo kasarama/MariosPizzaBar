@@ -8,11 +8,10 @@ public class DBConnector {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException{
 
-
+        
         Connection connection = null;
         
-       Connection connector = null;
-        String url = "jdbc:mysql://localhost:3306/pizza?";
+        String url = "jdbc:mysql://localhost:3306/MarioDB?";
         url += "serverTimezone=UTC&allowPublicKeyRetrieaval=true&";
         url += "useSSL=false";
         String user = "root";

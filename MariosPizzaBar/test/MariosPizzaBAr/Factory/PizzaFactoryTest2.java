@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MariosPizzaBAr;
+package MariosPizzaBAr.Factory;
 
-import MariosPizzaBAr.Factory.PizzaFactory;
 import MariosPizzaBAr.Model.Pizza;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,13 +14,28 @@ import static org.junit.Assert.*;
  *
  * @author vnord
  */
-public class PizzaFactoryTest {
+public class PizzaFactoryTest2 {
     
-    public PizzaFactoryTest() {
+    public PizzaFactoryTest2() {
     }
     
     @Before
     public void setUp() {
+    }
+
+    /**
+     * Test of getPizzaByPosition method, of class PizzaFactory.
+     */
+    @Test
+    public void testGetPizzaByPosition() {
+        System.out.println("getPizzaByPosition");
+        int n = 0;
+        PizzaFactory instance = new PizzaFactory();
+        Pizza expResult = null;
+        Pizza result = instance.getPizzaByPosition(n);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -35,6 +49,8 @@ public class PizzaFactoryTest {
         int expResult = 65;
         int actual = instance.GetPizzaByID(id).getPris();
         assertEquals(expResult, actual);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }
