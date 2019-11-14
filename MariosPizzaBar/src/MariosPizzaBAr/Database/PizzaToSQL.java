@@ -1,5 +1,7 @@
 
-package MariosPizzaBAr;
+package MariosPizzaBAr.Database;
+import MariosPizzaBAr.Model.Pizza;
+import MariosPizzaBAr.Util.DBConnector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

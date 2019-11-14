@@ -1,5 +1,8 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.ArchiveFiles;
 
+import MariosPizzaBAr.Model.Order;
+import MariosPizzaBAr.Factory.OrderFactory;
+import MariosPizzaBAr.Util.DBConnector;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -58,7 +61,7 @@ public class Archive {
         myConnection = DBConnector.getConnection();
         Statement statement = null;
         ResultSet resultSet = null;
-        String query = "SELECT * FROM pizza.ordrer";
+        String query = "SELECT * FROM MarioDB.ordrer";
         statement = myConnection.createStatement();
         resultSet = statement.executeQuery(query);
         while (resultSet.next()) {

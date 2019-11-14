@@ -1,6 +1,8 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.Factory;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+import MariosPizzaBAr.Model.Pizza;
+import MariosPizzaBAr.Util.DBConnector;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

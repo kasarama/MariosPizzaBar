@@ -1,6 +1,7 @@
-package MariosPizzaBAr;
+package MariosPizzaBAr.ArchiveFiles;
 
 //@Cathrine, Vibeke, Matti og Magdalena
+import MariosPizzaBAr.Util.DBConnector;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
