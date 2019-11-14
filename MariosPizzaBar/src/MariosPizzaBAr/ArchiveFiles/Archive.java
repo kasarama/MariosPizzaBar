@@ -27,7 +27,6 @@ public class Archive {
     OrderFactory oF = new OrderFactory();
     ArrayList<String> pickUpDates = new ArrayList();//NEW !!
     //Order o = new Order();
-  
 
     public Archive() {
     }
@@ -53,10 +52,10 @@ public class Archive {
         }
 
     }
-    
+
     //Viser database arkiv
     public void showDBArchive() throws ClassNotFoundException, SQLException {
-        
+
         Connection myConnection = null;
         myConnection = DBConnector.getConnection();
         Statement statement = null;
@@ -69,41 +68,13 @@ public class Archive {
             String tid = resultSet.getString("Tid");
             String dato = resultSet.getString("Dato");
             int sum = resultSet.getInt("Sum");
-            System.out.println("Order ID: \t"+idOrdrer + "\nAfh. tid: \t" + tid + "\nDato: \t\t" + dato + "\nSum: \t\t" + sum + "\n" );
+            System.out.println("Order ID: \t" + idOrdrer + "\nAfh. tid: \t" + tid + "\nDato: \t\t" + dato + "\nSum: \t\t" + sum + "\n");
         }
-        
 
-
-
-        /*lukker efter mig*/
         resultSet.close();
         statement.close();
         myConnection.close();
-        
-        
-        /*
-        Connection connection = null;
-        Statement statement = null;
-        //MainController.mainControllerLooop();
-        connection = DBConnector.getConnection();
-        String q = "Select * from pizza.ordrer";
-        statement = connection.createStatement();
-        statement.execute(q);
-        ResultSet resultSet = statement.executeQuery(q);
 
-        ResultSetMetaData rsmd = resultSet.getMetaData();
-        int columnsNumber = rsmd.getColumnCount();
-        while (resultSet.next()) {
-            for (int i = 1; i <= columnsNumber; i++) {
-                if (i > 1) {
-                    System.out.print(",  ");
-                }
-                String columnValue = resultSet.getString(i);
-                System.out.print(columnValue + " " + rsmd.getColumnName(i));
-            }
-            System.out.println("");
-        }
-*/
     }
 
     //Sender ordre til arkiv
@@ -122,7 +93,7 @@ public class Archive {
     }
     //https://www.codespeedy.com/read-a-specific-line-from-a-text-file-in-java/
 
-   /* public void createHTMLFile() { //NEW !!! HELE METODEN !!!
+    /* public void createHTMLFile() { //NEW !!! HELE METODEN !!!
 
         try {
             fileNameForHTML.createNewFile();
@@ -134,8 +105,7 @@ public class Archive {
     public void writeToHTMLFile() { //NEW !!! HELE METODEN !!! DUER IKKE ENDU !!!
         String date = oF.pickUpDate();
         /*While ()*/
-        
-       /* try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileNameForHTML))) {
+ /* try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileNameForHTML))) {
 
             bw.write("<!doctype html> \n"
                     + "<html>\n"
@@ -195,5 +165,4 @@ public class Archive {
             System.out.println("Fejl: Kan ikke tilføje til HTML-fil!");
         }
     }*/
-
 }
