@@ -8,7 +8,6 @@ public class DBConnector {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException{
 
-        
         Connection connection = null;
 
         String url = "jdbc:mysql://localhost:3306/MarioDB?";
@@ -16,6 +15,7 @@ public class DBConnector {
         url += "useSSL=false";
         String password = "Matti12345h";
         String user = "root";
+
 
 
 
