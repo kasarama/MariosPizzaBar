@@ -1,66 +1,101 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package MariosPizzaBAr;
 
-import MariosPizzaBAr.Factory.PizzaFactory;
-import MariosPizzaBAr.Factory.OrderFactory;
 import MariosPizzaBAr.Model.Order;
 import MariosPizzaBAr.Model.Pizza;
-import java.sql.SQLException;
-import java.util.Calendar;
-import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
+/**
+ *
+ * @author Magdalena
+ */
 public class OrderTest {
-    OrderFactory myOrderFactory = new OrderFactory();
-    PizzaFactory myFactory = new PizzaFactory();
-    Pizza pizza1 = myFactory.getPizzaByPosition(8);
-    Pizza pizza2 = myFactory.getPizzaByPosition(2);
-    Pizza pizza3 = myFactory.getPizzaByPosition(3);
-    Pizza pizza4 = myFactory.getPizzaByPosition(5);
-    String time;
+
+    Pizza pizza1 = new Pizza(31, "AAA", "a,b,c", 50);
+    Pizza pizza2 = new Pizza(32, "BBB", "b,c,d", 60);
+    Pizza pizza3 = new Pizza(33, "CCC", "d,e,f", 70);
+
+    Order order1 = new Order(1, 180, "14:00");
+
+    public OrderTest() {
+    }
 
     @Before
-    public void setUp() throws Exception{
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MINUTE, +(30));
-
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        int minute = calendar.get(Calendar.MINUTE);
-
-        time = hour + ":" + minute;
+    public void setUp() {
     }
-    
+
+    /**
+     * Test of toString method, of class Order.
+     */
     @Test
-    public void TestpickUpTime() throws Exception {
-        Order order = myOrderFactory.orderMaker();
-        setUp();
-        String expected = time;
-        String actual = order.getAfTid();
+    public void testToString() {
+    }
+
+    /**
+     * Test of addPizza method, of class Order.
+     */
+    @Test
+    public void testAddPizza() {
+        order1.addPizza(pizza1);
+        order1.addPizza(pizza2);
+        order1.addPizza(pizza3);
+
+        int expected = 180;
+        int actual = order1.sum();
         assertEquals(expected, actual);
     }
 
+    /**
+     * Test of sum method, of class Order.
+     */
     @Test
-    public void testAddPizza() throws ClassNotFoundException, SQLException {
-        Order order = myOrderFactory.orderMaker();
-        order.addPizza(pizza1);
-        order.addPizza(pizza2);
-        System.out.println(order.toString());
-        
-        int expected = 145;
-        int actual = order.sum();
+    public void testSum() {
+        order1.addPizza(pizza1);
+        order1.addPizza(pizza2);
+        int expected = 110;
+        int actual = order1.sum();
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test of getNummer method, of class Order.
+     */
+    @Test
+    public void testGetNummer() {
+        int expected = 1;
+        int actual = order1.getNummer();
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test of getSum method, of class Order.
+     */
+    @Test
+    public void testGetSum() {
+        int expected = 180;
+        int actual = order1.getSum();
         assertEquals(expected, actual);
 
     }
 
+    /**
+     * Test of getAfTid method, of class Order.
+     */
     @Test
-    public void testSum() throws ClassNotFoundException, SQLException {
-        Order order = myOrderFactory.orderMaker();
-        order.addPizza(pizza2);
-        order.addPizza(pizza3);
-        int expected = 140;
-        int actual = order.sum();
-        assertEquals(expected, actual);
-        
+    public void testGetAfTid() {
     }
-    
+
+    /**
+     * Test of getOrdrer method, of class Order.
+     */
+    @Test
+    public void testGetOrdrer() {
+    }
+
 }
