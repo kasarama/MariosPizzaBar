@@ -1,7 +1,7 @@
 package MariosPizzaBAr.UI;
 
 
-public interface SystemUI {
+public class SystemUI {
     
      
     public static void visHovedmenu() {

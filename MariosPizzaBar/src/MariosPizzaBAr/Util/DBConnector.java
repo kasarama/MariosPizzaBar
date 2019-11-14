@@ -7,8 +7,6 @@ import java.sql.SQLException;
 public class DBConnector {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException{
-
-// 1) Matti X 2) TestX 3) diagramX 4)SQL script dump? 5)Interface
         
         Connection connection = null;
         
