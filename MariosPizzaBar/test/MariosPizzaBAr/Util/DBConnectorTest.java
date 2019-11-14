@@ -5,8 +5,8 @@
  */
 package MariosPizzaBAr.Util;
 
-import com.mysql.cj.protocol.Resultset;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,8 +35,8 @@ public class DBConnectorTest {
         Connection result = DBConnector.getConnection();
         Statement st = result.createStatement();
         String query="select * from pizzaer limit 1";
-        Resultset res = (Resultset) st.executeQuery(query);
-        System.out.println(res.getRows());
+        ResultSet res = (ResultSet) st.executeQuery(query);
+        System.out.println(res.getRow());
         assertTrue(result!=null);
         
         // TODO review the generated test code and remove the default call to fail.

@@ -13,7 +13,7 @@ public class DBConnector {
         String url = "jdbc:mysql://localhost:3306/MarioDB?";
         url += "serverTimezone=UTC&allowPublicKeyRetrieaval=true&";
         url += "useSSL=false";
-        String password = "Matti12345h";
+        String password = "AtM12K13BoC185";
         String user = "root";
 
 
